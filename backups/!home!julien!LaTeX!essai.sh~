@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Vous avez lancé $0, il y a $# paramètres"
+echo "Le paramètre 1 est $1"
+shift
+echo "Le paramètre 1 est maintenet $1"
+
+tableau=('p' 'd' '!')
+
+echo ${tableau[2]}
+echo ${tableau[*]}

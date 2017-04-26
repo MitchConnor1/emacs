@@ -1,0 +1,147 @@
+#include "oss_update_calibrate.hpp"
+#include <fstream>
+#include <X11/Xlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/******************************  OSS_calibrate  ****************************/
+//Displays calibration points, and writes iris coordinates into calibration.txt.
+
+int main(){
+	Display *d;
+	Window w;
+	XEvent e;
+	int s;
+	unsigned int display_width,display_height;
+
+	FILE* s2c;
+
+	char iris_position[] = "iris_position";
+	s2c= fopen(iris_position, "r");
+
+	float xslope;
+	float xintersect;
+
+	float yslope;
+	float yintersect;
+        //iris position.
+	std::vector<int> xpositions;
+	std::vector<int> ypositions;	
+
+        //coordinates of the calibration points.
+	std::vector<int> xscreenpos;
+	std::vector<int> yscreenpos;
+
+	d = XOpenDisplay(NULL);
+	if (d == NULL) {
+		fprintf(stderr, "Cannot open display\n");
+		exit(1);
+	}
+	s = DefaultScreen(d);
+
+	display_width = DisplayWidth(d, s);
+	display_height = DisplayHeight(d, s);
+
+	w = XCreateSimpleWindow(d, RootWindow(d, s), 0,0, display_width, display_height, 1,
+			BlackPixel(d, s), WhitePixel(d, s));
+
+	XSelectInput(d, w, ExposureMask | KeyPressMask | ButtonPressMask);
+	XMapWindow(d, w);
+
+	int rayon = 15;
+
+        //correction on the coordinates of the points due to XDrawArc. 
+	std::vector<int> xdec;
+	std::vector<int> ydec;
+
+	// Insert point 0
+	xscreenpos.push_back(0);
+	yscreenpos.push_back(0);
+	xdec.push_back(0);
+	ydec.push_back(0);
+
+	// Insert point 1
+	xscreenpos.push_back(display_width/2);
+	yscreenpos.push_back(0);
+	xdec.push_back(-rayon);
+	ydec.push_back(0);
+
+	// Insert point 2
+	xscreenpos.push_back(display_width);
+	yscreenpos.push_back(0);
+	xdec.push_back(-2*rayon-1);
+	ydec.push_back(0);
+
+	// Insert point 3
+	xscreenpos.push_back(display_width);
+	yscreenpos.push_back(display_height/2);
+	xdec.push_back(-2*rayon-1);
+	ydec.push_back(-rayon-24);
+
+	// Insert point 4
+	xscreenpos.push_back(display_width);
+	yscreenpos.push_back(display_height);
+	xdec.push_back(-2*rayon-1);
+	ydec.push_back(-2*rayon-1-24);
+
+	// Insert point 5
+	xscreenpos.push_back(display_width/2);
+	yscreenpos.push_back(display_height);
+	xdec.push_back(-rayon);
+	ydec.push_back(-2*rayon-1-24);
+
+	//Insert point 6
+	xscreenpos.push_back(0);
+	yscreenpos.push_back(display_height);
+	xdec.push_back(0);
+	ydec.push_back(-2*rayon-1-24);
+
+	// Insert point 7
+	xscreenpos.push_back(0);
+	yscreenpos.push_back(display_height/2);
+	xdec.push_back(0);
+	ydec.push_back(-rayon-24);
+
+	//Insert point 8
+	xscreenpos.push_back(display_width/2);
+	yscreenpos.push_back(display_height/2);
+	xdec.push_back(-rayon);
+	ydec.push_back(-rayon-24);
+
+
+	while(e.type!=Expose ){
+          XNextEvent(d, &e); //Waits for the next non-expose Event. 
+	}
+	
+	unsigned int cpt=0;
+	while ( cpt <= xscreenpos.size()) {
+		XDrawArc(d, w, DefaultGC(d, s), xscreenpos[cpt] + xdec[cpt] ,yscreenpos[cpt] + ydec[cpt], 2*rayon, 2*rayon, 0, 360*64);
+		XFlush(d);
+
+		XNextEvent(d, &e); 
+
+		/** launching step **/
+		if(e.type==KeyPress ){
+			update_point_positions(s2c,xpositions,ypositions);
+			cpt++;
+		}
+	}
+
+	linear_regression(xpositions, xscreenpos, xslope, xintersect);
+	linear_regression(ypositions, yscreenpos, yslope, yintersect);
+
+	//write to text file calibration_point.txt 
+
+	FILE* calibration_file;
+
+	calibration_file = fopen("calibration_point.txt","w");
+        fprintf(calibration_file,"%f\n",xslope);
+        fprintf(calibration_file,"%f\n",xintersect);
+        fprintf(calibration_file,"%f\n",yslope);
+        fprintf(calibration_file,"%f\n",yintersect);
+	fclose(calibration_file);
+
+	XCloseDisplay(d);
+	fclose(s2c);
+	return 0;
+} 

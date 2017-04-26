@@ -1,0 +1,15 @@
+#include "ZFraction.hpp"
+#include <string>
+#include <iostream>
+using namespace std;
+
+ostream& operator<<(ostream& flux,const ZFraction& Z){
+  Z.affiche(flux);
+  return flux;
+}
+int main(){
+  ZFraction a(4,5);
+  ZFraction b(2);
+  ZFraction c,d;
+  return 0;
+}

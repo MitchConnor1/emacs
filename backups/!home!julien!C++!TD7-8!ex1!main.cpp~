@@ -1,0 +1,6 @@
+#include "Employe.hpp"
+
+int main(){
+  Employe A;
+  A.affiche();
+}

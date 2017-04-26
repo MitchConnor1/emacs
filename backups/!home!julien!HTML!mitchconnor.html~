@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Define the police -->
+    <link rel="stylesheet" href="web_fonts/learningcurvepro_regular_macroman/stylesheet.css" />
+    <!-- General CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title> Mitch Connor </title>
+  </head>
+
+  <body>
+    <h1 id="link">Introduction</h1>
+    <p>Welcome to the Web site of Mitch Connor.<br>
+    This is only the beginning of - I tell you - something bigger.<br>
+    Stay tuned!</p>
+    <h2>Bands</h2>
+    <p>Mitch Connor is the leader of three world infamous bands:
+      <ul>
+        <li class="steel_alive">Steel Alive<ol>
+            <li>Steel Alive
+            <li>Atlantis
+            <li>A tribute to South Park
+            <li>To the Glory of Satan
+            <li>Flight of the Crow
+              </ol>
+          
+        <li>Fairytale<ol>
+            <li>Little Red Riding Hood
+            <li>Malice in Wonderland
+            <li>Ebony Black
+              </ol>          
+        <li>Fallen<ol>
+            <li>Part I: Queen of Ice and Snow
+            <li>Part II: The Darkest One
+              </ol>
+          </ul>
+      <h3>Line-up of Steel Alive</h3>
+      <dl>
+        <dt>Mitch Connor </dt><dd>Lead Singer</dd>
+        <dt> Emma Krüger </dt><dd>Guitars</dd>
+        <dt>Eve Krüger </dt> <dd>Keyboard, backing vocals</dd>
+        <dt> Philippe Krüger </dt> <dd>Bass</dd>
+        <dt> Patrick Eglantier </dt><dd>Drums</dd>
+      </dl>
+    </p>
+    <p>
+      <h2>Un lien vers Emacs</h2>
+      Mitch Connor utilise <a href="https://www.gnu.org/software/emacs/" title="Il a même servi à créer ce site !" target="_blank">cet éditeur de texte</a>.<br>
+      Un lien vers une autre page du site : <a href="page2.html">La page 2</a>.<br>
+      Un lien vers le haut de la page : <a href="#link">Cliquez ici</a>.<br>
+      Un lien vers une ancre sur une autre page : <a href="page2.html#ref_page_2">Cliquez ici</a>.<br>
+      Écrire à <a href="mailto:ormagoden666.42@gmail.com">Mitch Connor</a>.<br>
+      <a href="Livön.png">Une Flickrienne.</a>.
+
+<h1>Annabelle</h1>
+Une des personnages centraux de Rébellion.
+<img src="Annabelle.png" alt="Annabelle" title="Dame Annabelle, reine de Flickr">
+</p>
+    <h1>Une autre Flickrienne</h1>
+    <p><a href="Livön.png"><img src="mini-Livön.png" alt="miniature" title="Cliquer pour agrandir"></a>
+       <img src="mini-Livön.png" alt="miniature" title="Cliquer pour agrandir">
+    </p>
+  <h2>La même en utilisant une figure.</h2>
+  <figure> 
+   <img src="mini-Livön.png" alt="miniature" title="Cliquer pour agrandir">
+   <img src="mini-Livön.png" alt="miniature" title="Cliquer pour agrandir">
+   <img src="mini-Livön.png" alt="miniature" title="Cliquer pour agrandir">
+   <img src="mini-Livön.png" alt="miniature" class="img_flottante">N'est-elle pas belle ? Magnifique ? Sublime ? Héraldique ?
+    <figcaption class="under">Une Flickrienne vivant dans la cité d'Hohndem.</figcaption>
+</figure>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+#include <stdlib.h>
+#include <stdio.h> // contient également les fonctions de lecture et écriture dans un fichier.
+
+#define TAILLE_MAX 1000
+
+int main (int argc, char *argv[]){
+
+  FILE *fichier = NULL;
+
+  fichier = fopen("test.txt", "w");
+
+  if (fichier == NULL){
+    printf("Erreur dans l'ouverture du fichier.\n");
+  }
+  else{
+    fputc('B', fichier);
+    fputc('V', fichier);
+    fputc('\n', fichier);
+    fputs("Et au coeur des montagnes immortelles baignait la sombre cité d'Anderre, froide et déserte, vivant et morte à la fois.\n", fichier);
+    int nb_Anderre = 1500;
+    fprintf(fichier, "On dénombre plus de %d Anderranes, suçant la vie et l'âme de leurs victimes chaque jour que le monde maudit leur accordait.\n", nb_Anderre);
+    fclose(fichier);
+    
+  }
+  /*
+  fichier = fopen("test.txt", "r");
+  
+  char chaine [TAILLE_MAX];
+  
+  if (fichier != NULL){
+    while (fgets(chaine, TAILLE_MAX, fichier) != NULL){
+      printf("%s", chaine);
+    }
+    fclose(fichier);
+  }
+  */
+  /*
+  int caractere_actuel = 0;
+  if (fichier != NULL){
+    do{
+      caractere_actuel = fgetc(fichier);
+      printf("%c",caractere_actuel);
+    }while (caractere_actuel != EOF);
+    fclose(fichier);
+  }
+  */
+  fichier =  fopen("scores.txt", "r");
+  int score[3] = {0};
+
+  if (fichier != NULL){
+
+    fscanf(fichier, "%d %d %d", &score[0], &score[1], &score[2]);
+    printf("Les trois meilleurs scores sont : %d, %d et %d.\n", score[0], score[1], score[2]);
+    fclose(fichier);
+  }
+
+  rename("test.txt", "blaaaaaaaaaaaa");
+  remove("blaaaaaaaaaaaa");
+  remove("scores.txt");
+  return 0;
+}

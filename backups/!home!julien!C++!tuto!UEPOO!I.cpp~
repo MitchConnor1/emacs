@@ -1,0 +1,6 @@
+#include "I.hpp"
+
+Vecteur_Binaire::Vecteur_Binaire(){
+  n=0;
+  date=NULL;
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+  vector <int> tab(5,4); // creates a table with 5 int of value 4
+  tab.pop_back(); //deletes last case of the table
+  tab.push_back(6); //adds 6 at the end of the table
+
+  for (int i(0); i<tab.size();i++){
+    cout<<tab[i]<<endl;
+  }
+  return 0;
+}

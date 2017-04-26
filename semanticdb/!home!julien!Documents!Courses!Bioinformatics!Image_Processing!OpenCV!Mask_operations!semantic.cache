@@ -1,0 +1,60 @@
+;; Object Mask_operations/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Mask_operations/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("opencv2/imgproc/imgproc.hpp" include (:system-flag t) nil [21 59])
+            ("opencv2/objdetect/objdetect.hpp" include (:system-flag t) nil [60 102])
+            ("opencv2/highgui/highgui.hpp" include (:system-flag t) nil [103 141])
+            ("contrast_enhancement.hpp" include nil nil [142 177])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [190 199])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [200 212]))                  
+                :type "int")
+                nil [180 835]))          
+      :file "main.cpp"
+      :pointmax 836
+      :fsize 835
+      :lastmodtime '(22512 4365 993491 9000)
+      :unmatched-syntax nil)
+    (semanticdb-table "contrast_enhancement.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("opencv2/imgproc/imgproc.hpp" include (:system-flag t) nil [21 59])
+            ("opencv2/objdetect/objdetect.hpp" include (:system-flag t) nil [60 102])
+            ("opencv2/highgui/highgui.hpp" include (:system-flag t) nil [103 141])
+            ("contrast_enhancement.hpp" include nil nil [142 177])
+            ("Sharpen" function
+               (:arguments 
+                  ( ("img" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("cv::Mat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [195 214])
+                    ("res" variable
+                       (:reference 1
+                        :type ("cv::Mat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [215 228]))                  
+                :type "void")
+                nil [181 1070]))          
+      :file "contrast_enhancement.cpp"
+      :pointmax 1071
+      :fsize 1070
+      :lastmodtime '(22511 65105 447578 192000)
+      :unmatched-syntax nil)
+    (semanticdb-table "contrast_enhancement.hpp"
+      :file "contrast_enhancement.hpp"
+      :fsize 171
+      :lastmodtime '(22510 59904 662570 572000)))
+  :file "!home!julien!Documents!Courses!Bioinformatics!Image_Processing!OpenCV!Mask_operations!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

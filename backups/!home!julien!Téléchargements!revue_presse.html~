@@ -1,0 +1,11 @@
+<!-- Article 1 -->
+                <div class="row">
+                    <hr>
+			        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <img class="img-responsive msbinobi_img hidden-xs" src="http://www.nature.com/uploads/product/srep/header-0ac9ab04aca2b83e7fcac71b4de96391.svg"/> 
+			        </div>
+			        <div class="col-lg-9  col-md-9 col-sm-9">
+                        <p> Dans cet article publié ce mois-ci dans <b>Scientific Reports</b><sup><a href="#feb2016ref">[1]</a></sup> Les auteurs présentent un nouveau site internet permettant de prédire et de comprendre les effets de <b>recettes médicinales encestrales chinoise</b>. Le but est de pouvoir prédire les voies métaboliques et les couples liguand-récepteurs mis en jeux lors des traitements avec ces remèdes. Le monde de la recherche pharmaceutique s'interresse de plus en plus à la médecine ancestrale chinoise car elle est relativement éfficace et encore peut étudiée, elle présente donc un certain potentiel pour la conception de nouveaux médicaments. C'est donc dans ce sens que vont les auteurs en proposant un outil permettant de simplifier l'approche et la compréhension de ces remèdes.</p>
+                        <br>
+			        </div>
+                </div>

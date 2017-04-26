@@ -1,0 +1,56 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main(){
+  string const nom_fichier("test.txt");
+  ofstream flux(nom_fichier.c_str());
+  if (flux){
+    
+  flux << "Bonjour, je suis une phrase écrite dans un fichier."<<endl;
+  flux << 3.14159 <<endl;
+  int age(23);
+  flux << "J'ai " << age << " ans." << endl;
+
+}else{
+    cout << "ERREUR : Impossible d'ouvrir le fichier." << endl;
+  }
+
+
+  ifstream new_flux(nom_fichier.c_str());
+
+  if (new_flux){
+    int taille (0);
+    new_flux.seekg(0, ios::end);
+    taille = new_flux.tellg();
+    cout << "Le fichier fait " << taille << " octets." << endl;
+    new_flux.seekg(0, ios::beg);
+
+
+    string ligne;
+    int position (0);
+    while (getline(new_flux, ligne)){
+      position = new_flux.tellg();
+      cout << "Nous sommes à la position " << position << " dans le fichier." << endl;
+      cout << ligne << endl;
+      }
+
+
+#if 0 
+    double nombre;
+    new_flux >> nombre;
+    cout << nombre << endl;
+    
+    char a;
+    new_flux.get(a); // Le retour à la ligne. 
+    new_flux.get(a);
+    cout << a << endl;
+
+#endif
+    }else{
+    cout << "ERREUR : Impossible d'ouvrir le fichier." << endl;
+  }
+
+  return 0;
+
+}

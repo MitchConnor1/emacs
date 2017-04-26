@@ -1,0 +1,7 @@
+void display(int *,int);
+int sum(int *,int);
+float mean(int *, float);
+void copy_array(int *,int *,int);
+void save_values_inf_to_max(int *,int, int);
+void sort(int *, int);
+void exchange(int *, int *);

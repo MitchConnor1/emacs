@@ -1,0 +1,6 @@
+class Personne{
+public:
+  char Nom[25];
+  char Societe[25];
+  void sePresente() const;
+};

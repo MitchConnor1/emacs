@@ -1,0 +1,24 @@
+#ifndef f_h
+#define f_g
+
+#include <string>
+#include "Arme.hpp"
+
+class Chienne{
+private:
+  int pointVie;
+  std::string nom;
+  Arme arme;
+public:
+  Chienne(std::string);
+  Chienne(std::string, std::string, int);
+  Chienne(Chienne const&);
+  ~Chienne();
+  void recevoirDegats(int);
+  void attaquer(Chienne&);
+  void restaurer(int);
+  void changerArme(std::string,int);
+  bool enVie() const;
+  void etat() const;
+};
+#endif

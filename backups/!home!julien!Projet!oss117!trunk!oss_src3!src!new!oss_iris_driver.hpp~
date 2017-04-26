@@ -1,0 +1,16 @@
+#ifndef __WEBCAM_HPP__
+#define __WEBCAM_HPP__
+
+/****************** OSS_IRIS_DRIVER**********************/
+//Run the three main threads. It captures iris position, writes into iris_position and into mouse_position. 
+
+
+void pipe_broken(int); //maintains the connection to the pipe. 
+void get_calibration(); 
+
+//the threads
+void* writeMousePos(void*);
+void* writeIrisPosition(void*);
+void* recordIris(void*);
+
+#endif 

@@ -1,0 +1,63 @@
+\documentclass[a4paper, 12pt]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+\author{Mitch \textsc{Connor}}
+\date{\today}
+\title{Aubrey}
+\begin{document}
+
+\maketitle
+
+\chapter*{L'Entrevue}
+
+Personne n'empruntait jamais le pont d'obsidienne de son plein gré ni le c\oe ur léger, personne n'entamait l'ascension des pentes entourées de jardins luxurieux et éclairées de lampadaires sans une intension appréhension lui déchirant les entrailles, et en vérité, l'Anderrane inférieure qui progressait à reculons sous la lune écarlate ne faisait pas exception à la règle. Chacun de ses pas, plus lourd que le précédent, la rapprochait encore davantage d'un lieu qu'elle redoutait par-dessus tout, d'un jugement qui ne saurait être qu'en sa défaveur. Pourtant, alors que dans sa mémoire défilait les moindres instants de ces dernières semaines, la pauvre Aubrey échouait totalement à identifier le moindre écart apte à justifier sa convocation impérative chez la Haute-Comtesse Amanda. Et pourtant, on ne pouvait pas vraiment qualifier sa tâche quotidienne d'\og aisée \fg . \\
+Le nombre d'esclaves à sa charge, une douzaine à ce jour, quantité qui lui aurait paru si ahurissante quelques décennies plus tôt, entraînait de sa part une sollicitation de tous les instants, une implication dans son rôle d'Anderrane telle qu'elle lui interdisait le moindre instant de repos.\\
+Quand Aubrey comprit que toute sa vie appartiendrait à sa tâche, elle commença à griffoner une croix dans un carnet pour chaque nuit que ses esclaves lui otaient. Elle abandonna cette habitude déprimante lorsqu'il devint évident qu'elle ne retrouverait jamais le plaisir simple de fermer les yeux et de laisser son esprit paisiblement rejoindre un monde de paix et de sérénité. De fait, une bonne dizaine d'années s'étaient écoulées depuis sa dernière nuit de sommeil, et la perspective d'enfin en voir une poindre à l'horizon l'avait désertée depuis bien longtemps à présent.\\
+Bien sûr, en tant que Flickrienne, la fatigue échouait à l'atteindre et à lui faire subir le moindre mal, mais si cette privation n'entrainait aucun véritable dégât physique, elle produisait un impact affreusement négatif sur son moral qui stagnait depuis deux lustres à son plus bas niveau. Comment s'attendre à, malgré une victoire de son genre, vivre ainsi encore au service de personnes qui ne vous considéraient plus que comme un outil, un moyen de parvenir à leur fin sans se salir les mains ? Comment ne pas sombrer dans la dépression la plus sombre, quand on se savait située, dans la hiérarchie d'un monde sans humanité, juste au-dessus de celles dont on détruisait jusqu'à l'âme ? Que le moindre écart de sa part pourrait l'entraîner à se retrouver à la place de celles-là même qu'on violentait ? 
+
+Alors qu'elle atteignait le sommet de la pente, Aubrey put observer en contrebas la silhouette majestueuse et imposante de la véritable forteresse de la Haute-Comtesse Amanda.\\
+Pourquoi donc la convoquait-on à elle ici, dans ce lieu habité par une déesse tellement plus importante et influente, quand il lui apparaissait impossible de se trouver la moindre faute à se reprocher ? Le mystère la laissait sans voix et la terrorisait tout autant. \\
+Devant elle, le chemin se mit à serpenter sur quelques mètres avant de donner lieu à une descente initiée par une épaisse arche de pierre grise, sur laquelle étaient gravées à une échelle impressionnante les armoiries de la Haute-Comtesse à qui Aubrey appartenait. Rien que de voir ce lion tricéphale par trois fois courroné et enchâssé dans un bouclier rugir devant elle suffisait à la faire se sentir misérable et insignifiante, et ce sentiment l'accueillait chaque fois qu'elle passait devant un des sceaux gravés dans son manoir. Ici, le symbole était tellement massif qu'il la dominait physiquement comme mentalement, comme pour lui rappeler avec une malsaine subtilité son allégeance \textit{ad vitam eternam} à une autre personne qu'elle. Par réflexe, elle inclina la tête devant l'armoirie et se signa trois fois du signe du lion avant d'oser relever la nuque, à l'image de ce qu'elle faisait plusieurs fois par jour au manoir en s'assurant qu'aucune de ses esclaves ne la regardait. Elle ignorait sincèrement si la noble possédait ou non l'habilité de déterminer son respect de cette règle, mais elle préférait éviter de prendre des risques inutiles et de manquer de respect à une déesse qui pourrait aborter son existence d'un claquement de doigt. Rien que de la voir la mettait déjà dans una angoisse incontrôlable. \\
+Sous l'arche patientait une grande Sans-Âme aux cheveux auburn, le regard comme avalé par le mur devant elle. Insensible au vent comme au froid de la nuit, elle demeurait dans un mutisme et une immobilité parfaite, pareille aux statues de marble blanc qui bordaient le pont d'obsidienne, la noblesse et le prestige en moins. Seuls ses cheveux caressant et narguant ses joues attestaient de la vie qui l'habitait autrefois. Aujourd'hui, il ne restait plus rien d'elle qu'un automate qu'on allumait et éteignait sur commande, bien plus proche des lampadaires qui bordaient la route que de l'esclave appeurée qu'elle avait sûrement été autrefois. Pourtant, malgré toutes les apparences, elle n'en restait pas moins vive et alerte, comme elle le prouva alors qu'Aubrey s'approchait de l'arche. En l'espace de quelques secondes, elle saisit le sabre posé contre la pierre et le brandit dans sa direction, la pointe tendue s'approchant dangeureusement de son cou.
+\begin{itemize}
+\item Personne ne passe sans autorisation, déclara t-elle sans la moindre intonation dans la voix.
+\item Calme-toi, répondit Aubrey en levant les bras. Dame Amanda m'a convoquée en sa demeure.
+\end{itemize}
+Les relations de l'Anderrane ne parurent pas impressionner la Sans-Âme outre mesure.
+\begin{itemize}
+\item Personne ne passe sans autorisation, répéta t-elle avec l'exact même ton monocorde que précédemment.
+\end{itemize}
+Lasse, Aubrey comprit qu'elle ne pourrait pas y couper. À nouveau, s'assurant bien que la Sans-Âme la regardait, elle inclina la tête et effectua trois fois le signe de soumission propre à la Haute-Comtesse. Elle releva ensuite la nuque et avança d'un pas, pour sentir avec effroi la pointe de la lame lui caresser la jugulaire.
+\begin{itemize}
+\item Personne ne passe sans autorisation.
+\item Amanda m'attends ! Tu as bien vu que je lui appartenais, non ?
+\item Personne ne passe sans autorisation.
+\end{itemize}
+Aubrey soupira. Quelle était donc son problème, à cette chose ? 
+\begin{itemize}
+\item Qu'est ce qu'il y a, tu veux quelque chose en plus ? Un mot de passe ?
+\item Personne ne passe sans autorisation.
+\item Mais j'ai une autorisation ! S'énerva Aubrey. Dame Amanda m'attends, et tu vas mettre en retard. Écarte-toi de suite ! 
+\item Personne ne passe sans autorisation.
+\end{itemize}
+Même si elle refusait de l'entendre, une pointe de panique venait de s'insinuer dans sa voix, lui rappelant toute la terreur qu'elle éprouvait à la simple idée d'agacer la noble qui patientait dans son manoir. Ne pouvant plus bouger sous peiner de se retrouver empalée sur le sabre qui la menaçait, Aubrey s'obligea à se calmer et à commencer à raisonner. \\
+La Sans-Âme attendait quelque chose, il s'agissait là d'une évidence absolue. Un signe, une phrase en particulier, l'exact message qu'elle devait recevoir pour autoriser le passage. Les créatures de son espèce ne possédaient ni la capacité de réfléchir ni celle de s'adapter aux situations. Lorsque la Haute-Comtesse l'avait placée ici, elle lui avait probablement donné des ordres simples et précis, des instructions basiques qui allèrent s'inscrire dans sa chair et son sang, et que la Sans-Âme suivrait sans les discuter ni même les comprendre. Pourtant, rien dans le message que le corbeau lui avait remis n'indiquait qu'elle pût encourir la moindre difficulté dans son trajet jusqu'au château de la Haute-Comtesse. Si vraiment son passage requerrait un message spécifique, elle en aurait forcément été informée, non ? \\
+Avec précaution, elle tendit la main vers son Hellion et se saisit du message qui y pendait. Délicatement, elle le plia et baissa les yeux pour le lire, sentant même dans cet infime mouvement la présence de l'arme qui pourrait la neutraliser instantanément.\\
+\begin{it}
+  \og Je t'attends dans ma demeure en cet instant. Rejoins-moi séance tenante, et ne te fais pas attendre. Nous avons à parler toutes les deux. Tu sais où mes appartemments se situent. Ne traîne pas.\\
+  Amanda au lion tricéphale, maîtresse du comté de Nozgarod et sang-azur de la cité d'Anderre en sa qualité de Haute-Comtesse.\fg
+\end{it}
+Sous la signature brillait le sceau au lion coulé dans l'or pur des mines qu'Amanda détenait. Ensuite, la page était vierge.\\
+Il n'y avait donc bien rien qui lui indiquât quoi que ce fût sur un droit de passage. Pourtant, elle ne connaissait que ce chemin pour se rendre chez la noble, et le relief qu'elle constatait depuis là où elle se situait paraissait bien interdire l'accès par une autre direction. Qu'attendait-on donc d'elle au juste ?\\
+À tout hasard, elle se risqua à lire à haute voix le texte de la lettre, mais encore une fois, la réaction de la Sans-Âme ne brilla pas par son originalité. Même lui montrer le sceau au bas du message se révéla inutile. Sentant son c\oe ur commencer à battre avec force contre sa poitrine, elle tenta de l'apaiser en respirant lentement et posément. Il ne fallait pas qu'elle cèdât à la panique. Il existait forcément une solution... Dame Amanda ne lui aurait tout de même pas tendu un piège, si ? À moins qu'il ne s'agisse tout bonnement que d'un oubli de sa part...\\
+Désespérée, Aubrey réalisa que cette explication se tenait. Dénuée de toute considèration ni de compassion, la sang-azur avait probablement griffoné à la va-vite une convocation qu'elle jugea superflu de relire, et à laquelle elle n'avait accordé qu'une attention superficielle. Ainsi, un détail tel que le mot de passe nécessaire à sa traversée de l'arche n'avait jamais fait son chemin jusqu'à la feuille de papier, et à présent, Aubrey faisait les frais d'une négligeance que jamais Amanda n'accepterait de reconnaître. 
+\begin{itemize}
+\item S'il-te-plaît, se retrouva t-elle stupidement à implorer, laisse-moi passer.
+\item Personne ne passe sans invitation.
+\item Mais je suis convoquée ! Je suis convoquée... Comment est-ce que j'aurais eu cette lettre, sinon ?
+\end{itemize}
+Une idée, il lui fallait une idée. Un coup du sort, une ristourne, n'importe quoi. La moindre chose qui pût la sortir de cette galère. 
+\end{document}

@@ -1,0 +1,6 @@
+#include "Cercle.hpp"
+
+Cercle::Cercle(double _x,double _y, double _rayon){
+  centre(_x,_y);
+  rayon=_rayon;
+}

@@ -1,0 +1,9 @@
+#include "Manutentionnaire.hpp"
+
+Manutentionnaire::Manutentionnaire(string _nom,string _prenom,int _age,int _anciennete,int _nb_heure):Employe(_nom,_prenom,_age,_anciennete){
+  nb_heure=_nb_heure;
+}
+
+double calculer_base_salaire(){
+  return (base_Salaire_Horaire*nb_heure);}
+

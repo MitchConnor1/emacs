@@ -1,0 +1,16 @@
+all: Main
+
+Main: main.o Pharmacie.o Requete.o
+	g++ -o Main main.o Pharmacie.o Requete.o
+
+main.o: main.cpp
+	g++ -c -o main.o main.cpp
+
+Pharmacie.o: Pharmacie.cpp
+	g++ -c -o Pharmacie.o Pharmacie.cpp
+
+Requete.o: Requete.cpp
+	g++ -c -o Requete.o Requete.cpp
+
+
+

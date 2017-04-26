@@ -1,0 +1,11 @@
+class Animal{
+protected:
+  int age;
+  string nom_du_cri;
+public:
+  Animal(int age=0,string nom_du_cri=" ");
+  Animal(const Animal&);
+  ~Animal();
+  void vieillir();
+  void presenter();
+};

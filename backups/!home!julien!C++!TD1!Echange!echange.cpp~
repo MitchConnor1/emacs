@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+main(){
+  void echange1(int,int);
+  void echange2(int *,int *);
+  void echange3(int &,int &);
+  int n=10,p=20;
+  cout<<"avant appel : "<<n<<" "<<p<<endl;
+  echange1(n,p);
+  cout<<"après appel : "<<n<<" "<<p<<endl;
+  cout<<"avant appel : "<<n<<" "<<p<<endl;
+  echange2(&n,&p);
+  cout<<"après appel : "<<n<<" "<<p<<endl;
+  cout<<"avant appel : "<<n<<" "<<p<<endl;
+  echange3(n,p);
+  cout<<"après appel : "<<n<<" "<<p<<endl;
+}
+
+void echange1(int a,int b){
+  int c;
+  c=a;a=b;b=c;
+}
+
+void echange2(int *a,int *b){
+  int c;
+  c=*a;*a=*b;*b=c;
+}
+
+void echange3(int &a,int &b){
+  int c;
+  c=a;a=b;b=c;
+}

@@ -1,0 +1,265 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/julien/News/" . "drafts/")
+ ("/home/julien/Documents/Rébellion/En_cours/" . "Battle_Royale/")
+ ("/home/julien/Documents/" . "Rébellion/")
+ ("/home/julien/HTML/web_fonts/" . "learningcurvepro_regular_macroman/")
+ ("/home/julien/HTML/" . "web_fonts/")
+ ("/home/julien/Documents/Rébellion/" . "En_cours/")
+ ("/home/julien/Projet/oss117/trunk/oss/" . "src/")
+ ("/home/julien/Projet/oss117/trunk/" . "oss/")
+ ("/home/julien/Projet/oss117/" . "trunk/")
+ ("/home/julien/Projet/" . "oss117/")
+ ("/home/julien/C/openclassrooms/PART_III/" . "Creation_d_une_fenetre_et_de_surfaces/")
+ ("/home/" . "julien/")
+ ("/" . "home/")
+ ("/home/julien/LaTeX/" . "package/")
+ ("/home/julien/C/openclassrooms/PART_I/" . "Plus_ou_moins/")
+ ("/home/julien/C/openclassrooms/" . "PART_I/")
+ ("/home/julien/C/openclassrooms/PART_II/" . "allocation_dynamique/")
+ ("/home/julien/libX11 tests/basicwin/" . "basic/")
+ ("/home/julien/libX11 tests/" . "basicwin/")
+ ("/home/julien/Algorithme/TD6/" . "Révisions/")
+ ("/home/julien/Algorithme/" . "Graphes/")
+ ("/home/julien/" . "Algorithme/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/julien/Algorithme/Graphes/"
+ "/home/julien/"
+ "/home/julien/Documents/Rébellion/En_cours/Battle_Royale/"
+ "/home/julien/Documents/Rébellion/En_cours/"
+ "/home/julien/Projet/oss117/trunk/oss/src/"
+ "/home/julien/test/"
+ "/home/julien/bash/"
+ "/home/julien/HTML/"
+ "/home/julien/HTML/web_fonts/learningcurvepro_regular_macroman/"
+ "/home/julien/Projet/test/"
+ "/home/julien/C/openclassrooms/PART_III/Creation_d_une_fenetre_et_de_surfaces/"
+ "/home/julien/shell/"
+ "/home/julien/Projet/oss117/trunk/oss_src3/src/"
+ "/usr/share/info/emacs-24/"
+ "/home/julien/LaTeX/package/"
+ "/home/julien/C/openclassrooms/PART_II/Structures/"
+ "/home/julien/C/openclassrooms/PART_IV/liste_chainees/"
+ "/home/julien/C/openclassrooms/PART_II/Pendu/"
+ "/home/julien/C/openclassrooms/PART_I/Plus_ou_moins/"
+ "/home/julien/C/openclassrooms/PART_II/allocation_dynamique/"
+ "/home/julien/Perl/TD1/"
+ "/home/julien/C/openclassrooms/PART_II/Fichiers/"
+ "/home/julien/C/openclassrooms/PART_II/strings/"
+ "/home/julien/C/openclassrooms/PART_II/tableaux/"
+ "/home/julien/C/openclassrooms/PART_II/Prog_modulaire/"
+ "/home/julien/Projet/oss117/trunk/oss_src3/src/new/"
+ "/home/julien/C/openclassrooms/Une_bête_de_calcul/"
+ "/home/julien/C++/cours/C2/imbrique/"
+ "/home/julien/C++/cours/C2/Pint/"
+ "/home/julien/C++/cours/C2/Personne/"
+ "/home/julien/C++/cours/C2/Point/"
+ "/home/julien/C++/cours/"
+ "/home/julien/C++/Projet/oss117/trunk/oss_src/src/"
+ "/home/julien/C++/tuto/UEPOO/"
+ "/home/julien/libX11 tests/basicwin/basic/"
+ "/home/julien/C++/Projet/oss117/trunk/oss_src2/src/"
+ "/home/julien/C++/Projet/"
+ "/home/julien/Bureau/Projet/"
+ "/home/julien/C++/openclassroom/Les classes/"
+ "/home/julien/C++/openclassroom/ZFraction/"
+ "/home/julien/C++/openclassroom/Duree/"
+ "/home/julien/C++/TD1/Banque/"
+ "/home/julien/C++/TD1/Point/"
+ "/home/julien/Projet/C/"
+ "/home/julien/C++/Projet/test/"
+ "/home/julien/C++/openclassroom/"
+ "/home/julien/Téléchargements/"
+ "/home/julien/Algorithme/TD6/Révisions/"
+ "/home/julien/Algorithme/TD5/"
+ "/home/julien/Algorithme/Révisions/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "correction_tp1_tp2.py"
+ "new"
+ ".emacs"
+ "I-Battle_Royale.tex"
+ "matrices_ressources.hpp"
+ "iris.cpp"
+ "tools_iris_driver.cpp"
+ "oss_move_cursor.cpp"
+ "oss_calibrate.cpp"
+ "findEyeCorner.cpp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/julien/Algorithme/Graphes/" (22372 8150 747789 732000) "../" "./" "graphe_bio_tp_5_fr.pdf" "graphe_bio_tp_2_fr.pdf" "correction_tp1_tp2.py" "graphe_bio_tp_1_fr.pdf" "graphe_bio_tp_4_fr.pdf" "graphe_bio_tp_3_fr.pdf")
+
+ ("/home/julien/Algorithme/" (22324 60293 183302 547000) "../" "TD5/" "./" "TD2/" "TD4/" "TD3/" "Graphes/" "annales/" "TD1/")
+
+ ("/home/julien/" (22429 27624 540584 64000) ".ircmotd" ".gnome2/" ".emacs.bak" "iris.cpp" ".ido.last" "Python/" "Images/" ".Xauthority" ".xdvirc" ".bashrc" ".idlerc/" ".lesshst" ".macromedia/" "News/" ".nano_history" ".bash_history" ".mozilla/" "Vidéos/" "Musique/" "R_stats/" ".newsrc-dribble" ".oracle_jre_usage/" ".pam_environment" "Downloads/" ".Private/" ".xsession-errors.old" ".java/" ".virtualenvs/" "test/" "Téléchargements/" ".libgdx/" "Public/" ".bash_logout" "Projet/" "LaTeX/" ".gconf/" ".pki/" ".bash_profile" "HTML/" ".dbus/" ".emacs-places" "bash/" ".emacs.d/" "Java/" ".spyder2/" "Music/" ".continuum/" ".Rhistory" ".npm/" ".emacs~" ".lyx/" ".selected_editor" ".vimrc" ".w3m/" "C++/" ".profile" ".subversion/" "autotool" ".eclipse/" "C/" ".p2/" ".lgames/" "Alex/" ".gvfs/" ".gnupg/" ".ICEauthority" ".compiz/" ".local/" ".dmrc" ".thunderbird/" ".ecryptfs/" ".gimp-2.8/" ".tooling/" ".rstudio-desktop/" ".bashrc~" ".emacs" "Videos/" "libX11 tests/" "Perl/" ".nanorc" "Pictures/" "Back-ups/" ".xinputrc" "Modélisation/" "Algorithme/" "Firefox_wallpaper.png" ".thumbnails/" "ImageJ/" ".ipython/" ".ssh/" ".gksu.lock" "Base de données/" ".converseen.conf" "Games/" "Desktop/" ".config/" ".kde/" ".cache/" "iris_position" "Templates/" ".texmf-var/" "iris.hpp" "Semantique/" ".xsession-errors" ".adobe/" ".protege/" "Documents/" ".openarena/" ".viminfo" ".tuxguitar-1.2/" ".xchat2/" ".bashrc-anaconda.bak" ".hardinfo/" ".imagej/" "../" "./")
+
+ ("/home/julien/News/drafts/" (22107 10462 608412 620000) "../" "drafts/" "queue/" "./")
+
+ ("/home/julien/News/" (22107 10462 608412 620000) "../" "drafts/" "./")
+
+ ("/usr/share/info/emacs-24/" (22429 24933 242774 138000) "efaq.info.gz" "eshell.info.gz" "emacs.info.gz" "ada-mode.info.gz" "info.info.gz" "eudc.info.gz" "wisent.info.gz" "rcirc.info.gz" "viper.info.gz" "../" "erc.info.gz" "auth.info.gz" "elisp.info.gz" "ediff.info.gz" "flymake.info.gz" "speedbar.info.gz" "srecode.info.gz" "pgg.info.gz" "edt.info.gz" "./" "ede.info.gz" "reftex.info.gz" "newsticker.info.gz" "ert.info.gz" "sieve.info.gz" "autotype.info.gz" "calc.info.gz" "pcl-cvs.info.gz" "dbus.info.gz" "smtpmail.info.gz" "mairix-el.info.gz" "url.info.gz" "eintr.info.gz" "cl.info.gz" "emacs-gnutls.info.gz" "dired-x.info.gz" "gnus.info.gz" "sasl.info.gz" "emacs-mime.info.gz" "woman.info.gz" "forms.info.gz" "sc.info.gz" "epa.info.gz" "org.info.gz" "mh-e.info.gz" "tramp.info.gz" "ccmode.info.gz" "ses.info.gz" "bovine.info.gz" "widget.info.gz" "eieio.info.gz" "nxml-mode.info.gz" "idlwave.info.gz" "ebrowse.info.gz" "message.info.gz" "vip.info.gz" "htmlfontify.info.gz" "semantic.info.gz" "remember.info.gz")
+
+ ("/home/julien/bash/" (22429 25332 131212 345000) "../" "cours.log" "./" "cours.tex" "learning_the_bash_shell.pdf" "cours.aux" "cours.pdf")
+
+ ("/home/julien/test/" (22426 3373 125723 734000) "log" "../" "Erini.jpg" "./" "draw.cpp" "Makefile" "LUT.cpp" "how_to_scan_images.cpp" "Eùa.jpg" "test.cpp" "head" "main")
+
+ ("/home/julien/Projet/oss117/trunk/oss/src/" (22426 5604 989624 228000) "faceDetection.cpp" "iris.cpp" "findEyes.hpp" "oss_iris_driver.cpp.fstreams" "test_tools_iris_driver.trs" "findEyeCorner.hpp" "test_tools_iris_driver.cpp" "findEyeCorner.cpp" "test_tools_iris_driver" "oss_calibrate.cpp.back" "test_tools_iris_driver-iris.o" "tools_iris_driver.hpp" "constants.hpp" "oss_iris_driver-webcam.o" "tools_iris_driver.cpp" "stamp-h1" "config.h.in" "oss_iris_driver-oss_iris_driver.o" "oss_iris_driver-iris.o" "oss_calibrate-oss_calibrate.o" "oss_move_cursor" "oss_iris_driver-tools_iris_driver.o" "oss_calibrate-oss_update_calibrate.o" "test_tools_iris_driver.log" "webcam.cpp" "Makefile" "test_tools_iris_driver-faceDetection.o" "oss_iris_driver-faceDetection.o" "oss_update_calibrate.cpp" "oss_update_calibrate.hpp" "oss_calibrate" "test_tools_iris_driver-tools_iris_driver.o" "constants.cpp" "test_tools_iris_driver-findEyeCorner.o" "calibration_point.txt" "test_calibration.txt" "config.h" "mouse_position" "Makefile.in" "oss_iris_driver-findEyeCorner.o" "test_tools_iris_driver-findEyes.o" "tools_oss_iris_driver.cpp" ".deps/" "matrices_ressources.hpp" "Makefile.am" "calibration_points.txt" "findEyes.cpp" "oss_move_cursor.cpp" "test_tools_iris_driver-webcam.o" "head" "webcam.hpp" "oss_iris_driver" "oss_calibrate.cpp" "oss_iris_driver.cpp" "oss_iris_driver.cpp.back" "iris_position" "oss_move_cursor-oss_move_cursor.o" "test_tools_iris_driver-test_tools_iris_driver.o" "iris.hpp" "test-suite.log" "reserv/" "faceDetection.hpp" "oss_iris_driver-findEyes.o" "config.h.in~" "../" "./")
+
+ ("/home/julien/Documents/Rébellion/En_cours/" (22429 8692 262995 490000) "Ignition/" "Battle_Royale/" "Bouc-émissaire/" "Vers_l'Oblivion/" ".Rhistory" "La_déchue/" "Un_mot_dans_la_brume/" "Songes/" "../" "./")
+
+ ("/home/julien/Documents/Rébellion/En_cours/Battle_Royale/" (22425 63659 185957 799000) "I-Battle Royale.odt" "../" "I-Battle_Royale.aux" "./" "I-Battle Royale.pdf" "I-Battle_Royale.log" "I-Battle_Royale.tex" "I-Battle_Royale.pdf")
+
+ ("/home/julien/Documents/Rébellion/En_cours/La_Traque/" (22428 62631 787262 125000) "../" "La_traque.odt" "./" "La_traque.pdf" ".#La_traque.tex")
+
+ ("/home/julien/C++/openclassroom/" (22418 35092 779125 285000) "math.hpp" "../" "containers/" "main.cpp" "Les classes/" "math.cpp" "Main" "./" "fichiers/" "Les tableaux/" "#cours.tex#" "ZFraction/" "main" "Duree/")
+
+ ("/home/julien/C++/" (22318 17855 939556 521000) "openclassroom/" "TD7-8/" "cours/" "../" "Projet/" "tuto/" "./" "TD3/" "debugger/" "TD1/")
+
+ ("/home/julien/Documents/Rébellion/" (22400 17848 605720 342000) "Stand-by/" "../" "En_cours/" "./" "À propos/" ".~lock.La déchue.odt#")
+
+ ("/home/julien/Documents/" (22418 27670 358266 162000) "Documents_Clef/" "Rébellion/" "untitled(2).pdf" "../" "./" "Lettres.pdf" "bashrc.bak" "La_Fille_Du_Delaware/" "Vrac.txt" "Vrac.txt~" "Mollat.odt")
+
+ ("/home/julien/HTML/" (22402 43374 691564 649000) "texput.log" "../" "mini-Livön.png" "cours.log" "style.css" "page2.html" "./" "mitchconnor.html" "Blue Vinyl License.txt" "Annabelle.png" "cours.tex" "bonjour.html~" "rayon-vert.jpg" "web_fonts/" "Livön.png" "cours.aux" "How_to_use_webfonts.html" "cours.pdf")
+
+ ("/home/julien/HTML/web_fonts/learningcurvepro_regular_macroman/" (22392 20141 829780 880000) "specimen_files/" "LearningCurve_OT-webfont.ttf" "LearningCurve_OT-webfont.woff" "LearningCurve_OT-demo.html" "../" "./" "stylesheet.css" "LearningCurve_OT-webfont.eot" "LearningCurve_OT-webfont.svg")
+
+ ("/home/julien/HTML/web_fonts/" (22392 18005 665876 119000) "../" "learningcurvedashedpro_regular_macroman/" "./" "learningcurvepro_regular_macroman/")
+
+ ("/home/julien/Projet/oss117/trunk/oss/" (22394 27318 721161 929000) "configure.ac" "config.log" "aclocal.m4" "../" "doc/" "README" "./" "ChangeLog" "configure" "ressources/" "Makefile" "#configure.ac#" "autogen.sh" "LICENSE" "Makefile.in" "Makefile.am" "COPYING" "INSTALL" "config.status" "src/" "oss_dwm/" "AUTHORS" "NEWS" "autom4te.cache/" "lgpl-3.0.txt" "config/")
+
+ ("/home/julien/C++/Projet/" (22361 57511 242044 821000) "../" "test/" "Projet/" "Main" "./" "#Makefile#" "Rapport.odt" "Requete.o" "Pharmacie.o" "main.o")
+
+ ("/home/julien/C++/cours/" (22382 56585 632241 124000) "Personne.hpp" "Personne.cpp" "../" "main.cpp" "./" "C2/" "main")
+
+ ("/home/julien/C++/cours/C2/Personne/" (22382 56638 760238 756000) "Personne.hpp" "Personne.cpp" "../" "main.cpp" "./" "main")
+
+ ("/home/julien/Projet/test/" (22384 26887 893288 365000) "../" "./" "iris_driver.cpp")
+
+ ("/home/julien/Projet/" (22384 26756 373294 229000) "oss117/" "../" "opencv/" "test/" "dwm-6.1/" "X.odt" "oss_final.tar" "./" "C/" "cmake_binary_dir/" "EyeLikeMaster/")
+
+ ("/home/julien/Projet/oss117/trunk/" (22386 27408 365040 613000) "oss117/" "../" "svn-commit.3.tmp" "./" "oss/" "oss_final/" "tests/" "svn-commit.2.tmp" "svn-commit.tmp")
+
+ ("/home/julien/C/openclassrooms/PART_III/Creation_d_une_fenetre_et_de_surfaces/" (22381 277 378666 676000) "main.c" "../" "./" "main")
+
+ ("/home/julien/Projet/oss117/" (22323 18577 244097 724000) "../" "./" "trunk/" "branches/" ".svn/" "website/" "tags/" "svn-commit.tmp")
+
+ ("/home/julien/C/openclassrooms/PART_III/" (22364 6301 902098 350000) "../" "cours.log" "./" "cours.tex" "cours.aux" "cours.pdf" "Creation_d_une_fenetre_et_de_surfaces/")
+
+ ("/home/julien/shell/" (22358 5366 737028 718000) "highest" "../" "script" "./" "albums" "alice")
+
+ ("/home/julien/Projet/oss117/trunk/oss_src3/src/" (22353 58156 708800 555000) "webcam2.cpp" "faceDetection.cpp" "iris.cpp" "findEyes.hpp" "recordEyes.cpp" "faceDetection.o" "reader.cpp" "calibration.cpp" "#oss_calibrate.hpp#" "webcam2.hpp" "findEyeCorner.hpp" "findEyeCorner.cpp" "webcam.o" "calibration.hpp" "recordEyes.hpp" "run.sh" "oss_move_cursor" "writer.cpp" "oss_update_calibrate.o" "webcam.cpp" "oss_move_cursor.o" "Makefile" "main2.cpp" "constants.h" "oss_update_calibrate.cpp" "oss_update_calibrate.hpp" "oss_calibrate" "calculation.cpp" "calibration_point.txt" "findEyeCorner.o" "test.c" "mouse_position" "iris2.hpp" "Xinput2.cpp" "findEyes.o" "findEyes.cpp" "oss_move_cursor.cpp" "iris.o" "oss_calibrate.o" "webcam.hpp" "calculation.o" "calculation.hpp" "oss_iris_driver" "oss_calibrate.cpp" "oss_iris_driver.cpp" "oss_calibrate2.cpp" "oss_iris_driver.hpp" "iris_position" "iris.hpp" "oss_iris_driver.o" "iris2.cpp" "faceDetection.hpp" "../" "./")
+
+ ("/home/julien/LaTeX/TP1/" (22352 44178 777255 798000) "declaration_des_droits_de_l'homme_et_du_citoyen.dvi" "../" "./" "declaration_des_droits_de_l'homme_et_du_citoyen.tex" "declaration_des_droits_de_l'homme_et_du_citoyen.aux" "declaration_des_droits_de_l'homme_et_du_citoyen.log")
+
+ ("/home/" (21319 5950 0 0) "../" ".ecryptfs/" "./" "julien/")
+
+ ("/usr/" (21953 39725 0 0) "sbin/" "../" "include/" "./" "games/" "bin/" "lib/" "local/" "share/" "src/")
+
+ ("/usr/share/" (22346 15829 741049 607000) "iptables/" "gdb/" "keyutils/" "locale/" "usb-creator/" "nautilus-share/" "debconf/" "samba/" "soprano/" "gnome-user-share/" "pam-configs/" "example-content/" "icons/" "rsyslog/" "ibus/" "accounts/" "mozilla/" "graphviz/" "app-install/" "libtimezonemap/" "misc/" "webkitgtk-3.0/" "pkg-config-crosswrapper" "hardening-includes/" "grub/" "sphinx-voxforge-en/" "pkgconfig/" "gst-plugins-base/" "gvfs/" "ghostscript/" "apport/" "base-passwd/" "djvu/" "gir-1.0/" "gnome-background-properties/" "themes/" "doc-base/" "speech-dispatcher/" "lintian/" "emacs/" "emacs24/" "ca-certificates-java/" "insserv/" "tex-common/" "unity/" "os-prober/" "snmp/" "update-notifier/" "man/" "gettext/" "enchant/" "nux/" "zoneinfo/" "usb_modeswitch/" "xdiagnose/" "glib-2.0/" "totem/" "texlive/" "console-setup/" "libaudio2/" "gnome-bluetooth/" "apt-file/" "geoclue-providers/" "webbrowser-app/" "poppler/" "package-data-downloads/" "cmake/" "cmake-2.8/" "gnome-disk-utility/" "intltool-debian/" "guile/" "notify-osd/" "yelp/" "system-config-printer/" "gnome-control-center/" "help/" "foo2qpdl/" "consoletrans/" "evolution-data-server/" "python-support/" "unity-webapps/" "sgml/" "mime-info/" "language-support/" "pixmaps/" "aclocal/" "aisleriot/" "emoticons/" "mimelnk/" "hwdata/" "ecryptfs-utils/" "gtk-doc/" "simple-scan/" "locales/" "orca/" "build-essential/" "bash-completion/" "unity-scopes/" "m17n/" "apturl/" "language-selector/" "applications/" "unity-lens-friends/" "vino/" "gv/" "idl/" "nano/" "libreoffice/" "unity-control-center/" "language-tools/" "ccsm/" "nautilus/" "libgnomekbd/" "po-debconf/" "python3-plainbox/" "gstreamer-0.10/" "seahorse/" "matplotlib/" "myspell/" "nautilus-sendto/" "liblouis/" "accountsservice/" "empathy/" "gnome-terminal/" "appdata/" "update-manager/" "gnome-mines/" "adium/" "tcltk/" "info/" "activity-log-manager/" "pulseaudio/" "command-not-found/" "postfix/" "strigi/" "mousetweaks/" "pyshared/" "sgml-data/" "sounds/" "gnome-online-accounts/" "pnm2ppa/" "dbus-1/" "gnome-shell/" "transmission/" "popularity-contest/" "unity-greeter/" "xml/" "upstart/" "cheese/" "software-properties/" "GConf/" "gcr-3/" "spotify/" "gnupg/" "brasero/" "rhythmbox/" "ssl-cert/" "compizconfig/" "gutenprint/" "pygtk/" "session-migration/" "ibus-pinyin/" "ibus-table/" "gnome-video-effects/" "ubufox/" "xpdf/" "gnome-mahjongg/" "2013.com.canonical.certification:plainbox-resources/" "rlwrap/" "ubuntu-release-upgrader/" "metacity/" "mythes/" "man-db/" "readline/" "binfmts/" "libc-bin/" "gdm/" "hal/" "desktop-directories/" "gnome/" "gnome-vpn-properties/" "bug/" "groff/" "gksu/" "application-registry/" "omf-langpack/" "dpkg/" "foo2zjs/" "libgweather/" "ubuntu-drivers-common/" "software-center/" "ImageMagick-6.7.7/" "locale-langpack/" "java-config/" "plainbox-providers-1/" "i18n/" "evince/" "gconf/" "indicator-application/" "gnome-sudoku/" "checkbox-gui/" "libwacom/" "perl5/" "qtdeclarative5-ubuntu-ui-extras-browser-plugin/" "java/" "apps/" "xsessions/" "X11/" "initramfs-tools/" "hplip/" "apt/" "maven-repo/" "nm-applet/" "omf/" "colord/" "vim/" "aspell/" "autostart/" "xgreeters/" "libgksu/" "gedit/" "calendar/" "debhelper/" "hardinfo/" "base-files/" "columbus1/" "python/" "common-licenses/" "kde4/" "libvirtodbc0/" "webkitgtk-1.0/" "oneconf/" "debianutils/" "doc/" "file/" "dict/" "alsa/" "numpy/" "yelp-xsl/" "linux-sound-base/" "nodejs/" "2013.com.canonical.certification:checkbox/" "GeoIP/" "keyrings/" "texmf/" "friends/" "cowsay/" "help-langpack/" "apt-xapian-index/" "gnome-session/" "unattended-upgrades/" "tuxguitar/" "branding/" "perl/" "libexttextcat/" "sysv-rc/" "brltty/" "acpi-support/" "zenity/" "vte/" "libnm-gtk/" "gimp/" "purple/" "cm-super/" "menu/" "mobile-broadband-provider-info/" "tabset/" "farstream/" "git-core/" "alsa-base/" "xml-core/" "gnome-system-monitor/" "recovery-mode/" "hyphen/" "cogl/" "ppd/" "libsensors4/" "pam/" "libparse-debianchangelog-perl/" "libvisual-plugins-0.4/" "gstreamer-1.0/" "fonts/" "gcc-4.8/" "audacious/" "python3/" "qt4/" "unity-settings-daemon/" "lightdm/" "gtksourceview-3.0/" "sgml-base/" "adduser/" "eog/" "ufw/" "mime/" "deja-dup/" "ca-certificates/" "liblangtag/" "cups/" "url-dispatcher/" "gtk-engines/" "thumbnailers/" "qtchooser/" "file-roller/" "pyzy/" "javazi/" "libthai/" "consolefonts/" "onboard/" "hunspell/" "directfb-1.2.10/" "ontology/" "compiz/" "backgrounds/" "p11-kit/" "zeitgeist/" "shotwell/" "vlc/" "secureboot/" "python-apt/" "color/" "polkit-1/" "avahi/" "ppp/" "dh-python/" "dictionaries-common/" "libgphoto2/" "indicators/" "telepathy/" "media-player-info/" "gitweb/" "im-config/" "../" "./")
+
+ ("/usr/share/info/" (22351 15580 750494 541000) "dir.old" "sed.info.gz" "speech-dispatcher.info.gz" "sharutils.info.gz" "wget.info.gz" "coreutils.info.gz" "mailutils.info-1.gz" "dvips.info.gz" "mtools.info.gz" "../" "mailutils.info.gz" "mailutils.info-2.gz" "autosprintf.info.gz" "web2c.info.gz" "./" "tds.info.gz" "ed.info.gz" "latex2man.info.gz" "find.info.gz" "gv.info.gz" "dc.info.gz" "grub.info.gz" "emacs-24/" "bc.info.gz" "rluserman.info.gz" "ssip.info.gz" "kpathsea.info.gz" "spd-say.info.gz" "gettext.info.gz" "grub-dev.info.gz" "nano.info.gz" "gnupg1.info.gz" "dir" "mf2pt1.info.gz" "grep.info.gz" "gzip.info.gz" "diffutils.info.gz" "fontname.info.gz" "time.info.gz" "gdbm.info.gz")
+
+ ("/home/julien/Téléchargements/" (22336 33442 263817 828000) "regions2.html~" "Requete.sql~" "IMGP0090.JPG" "1280x720.jpg" "probleme.py~" "OS_Corrige_Acides_Bases.pdf" "../" "./")
+
+ ("/home/julien/C/openclassrooms/PART_II/Fichiers/" (22338 17786 630298 97000) "main.c" "test.txt" "cours" "../" "./" "main")
+
+ ("/home/julien/Perl/TD1/" (22326 18138 195328 681000) "../" "./" "exercice2.pl" "exercice1.pl" "oligo.txt")
+
+ ("/home/julien/C/openclassrooms/PART_II/allocation_dynamique/" (22335 32338 925032 896000) "main.c" "cours" "../" "./" "main")
+
+ ("/home/julien/C/openclassrooms/PART_II/Pendu/" (22341 47755 26133 917000) "main.c" "../" "dico.h" "./" "game.o" "Makefile" "game.h" "dico.o" "mots.txt" "game.c" "dico.c" "main" "main.o")
+
+ ("/home/julien/C/openclassrooms/PART_IV/liste_chainees/" (22343 35244 58165 624000) "../" "chaine.h" "./" "chaine.c")
+
+ ("/home/julien/C/openclassrooms/PART_II/Structures/" (22344 35866 5571 161000) "main.c" "cours" "../" "./" "structures.h" "main")
+
+ ("/home/julien/Projet/oss117/trunk/oss_src3/" (22338 15141 107777 871000) "../" "./" "res/" "scr2/" "src/")
+
+ ("/home/julien/LaTeX/maitriser_sa_mise_en_page2/" (22349 50040 688955 205000) ".#texte.tex" "../" "texte.log" "./" "#texte.tex#" "texte.tex" "texte.aux" "texte.dvi")
+
+ ("/home/julien/LaTeX/package/" (22347 34374 671788 15000) "packages.log" "../" "./" "packages.aux" "packages.tex" "packages.dvi")
+
+ ("/home/julien/LaTeX/" (22349 4271 742760 239000) "package/" "../" "enumitem.sty" "first/" "./" "maitriser_sa_mise_en_page/" "maitriser_sa_mise_en_page2/")
+
+ ("/home/julien/LaTeX/first/" (22346 16555 253017 260000) "../" "./" "hello.tex" "hello.dvi" "hello.aux" "hello.log" "hello.pdf")
+
+ ("/home/julien/C/openclassrooms/PART_I/" (22323 31679 468624 811000) "../" "Boucles/" "./" "Les_conditions/" "Votre premier programme/" "Une_affaire_de_mémoire/" "Plus_ou_moins/" "fonctions/" "Une_bête_de_calcul/")
+
+ ("/home/julien/C/openclassrooms/" (22323 31693 940624 166000) "PART_II/" "../" "./" "PART_I/")
+
+ ("/home/julien/C/openclassrooms/PART_II/" (22328 61079 185793 662000) "Preprocesseur/" "Pendu/" "../" "Pointeurs/" "./" "Prog_modulaire/" "allocation_dynamique/" "tableaux/" "saisie_securisee/" "Structures/" "strings/" "Fichiers/")
+
+ ("/home/julien/C/openclassrooms/PART_II/strings/" (22325 52396 576723 171000) "functions_to_know.h" "main.c" "../" "chaine.h" "./" "chaine.c" "main")
+
+ ("/home/julien/C/openclassrooms/PART_I/Plus_ou_moins/" (22325 53718 424664 237000) "main.c" "../" "./" "game.o" "Makefile" "game.h" "game.c" "main" "main.o")
+
+ ("/home/julien/Algorithme/TD5/" (22324 59879 335320 998000) "../" "td5.pdf" "./")
+
+ ("/home/julien/C/openclassrooms/PART_II/tableaux/" (22324 47572 975869 669000) "main.c" "../" "./" "tab.h" "tab.c" "main")
+
+ ("/home/julien/C/openclassrooms/PART_II/Prog_modulaire/" (22324 30650 368624 151000) "main.c" "cours" "../" "./" "main")
+
+ ("/home/julien/Projet/oss117/trunk/oss_src3/src/new/" (22323 17052 556165 701000) "faceDetection.cpp" "iris.cpp" "findEyes.hpp" "faceDetection.o" "findEyeCorner.hpp" "../" "findEyeCorner.cpp" "webcam.o" "./" "oss_move_cursor" "oss_update_calibrate.o" "webcam.cpp" "oss_move_cursor.o" "Makefile" "constants.h" "oss_update_calibrate.cpp" "oss_update_calibrate.hpp" "oss_calibrate" "calibration_point.txt" "findEyeCorner.o" "findEyes.o" "findEyes.cpp" "oss_move_cursor.cpp" "iris.o" "oss_calibrate.o" "webcam.hpp" "oss_iris_driver" "oss_calibrate.cpp" "oss_iris_driver.cpp" "oss_iris_driver.hpp" "iris.hpp" "oss_iris_driver.o" "faceDetection.hpp")
+
+ ("/home/julien/C++/TD1/Echange/" (22319 54929 673451 210000) "../" "echange.cpp" "Main" "./" "main")
+
+ ("/home/julien/C++/TD1/Banque/" (22319 55082 153444 411000) "#Compte.hpp#" "../" "./")
+
+ ("/home/julien/C++/cours/C2/Point/" (22319 42740 581994 651000) "../" "main.cpp" "Point.cpp" "./" "Point.hpp" "Cercle.cpp" "Cercle.hpp" "main")
+
+ ("/home/julien/C++/cours/C2/Pint/" (22319 48642 37731 539000) "../" "main.cpp" "Pont.cpp" "./" "Pint.hpp" "main")
+
+ ("/home/julien/C++/cours/C2/imbrique/" (22319 54585 437466 557000) "List.hpp" "../" "main.cpp" "./" "List.cpp" "main")
+
+ ("/home/julien/C/openclassrooms/Une_bête_de_calcul/" (22320 61738 304069 826000) "main.c" "cours" "../" "./" "main")
+
+ ("/home/julien/C++/tuto/UEPOO/" (22318 27735 384010 315000) "../" "main.cpp" "./" "I.cpp" "I.hpp")
+
+ ("/home/julien/C++/Projet/test/" (22302 759 710791 145000) "../" "main.cpp" "./" "#Pharmacie.cpp#")
+
+ ("/home/julien/Bureau/Projet/" (22308 45770 867461 232000) "ListeMedicaments.txt" "Requete.cpp" "../" "Pharmacie.cpp" "Requete.hpp" "main.cpp" "Rapport Estebeteguy-Hutinet.pdf" "README" "./" "Makefile" "Pharmacie.hpp")
+
+ ("/home/julien/C++/Projet/oss117/trunk/oss_src2/src/" (22306 14681 798691 245000) "webcam2.cpp" "faceDetection.cpp" "findEyes.hpp" "eyelike" "webcam2.hpp" "../" "./" "main2.cpp" "iris2.hpp" "findEyes.cpp" "iris2.cpp" "faceDetection.hpp")
+
+ ("/home/julien/libX11 tests/basicwin/basic/" (22302 997 578800 866000) "../" "README" "basicwin.o" "basicwin.c" "icccm.r4" "./" "Imakefile" "Makefile" "basicwin")
+
+ ("/home/julien/libX11 tests/basicwin/" (10476 61599 0 0) "dashes/" "bitmaps/" "attribs/" "../" "getvis/" "README" "predproc/" "motion/" "./" "color/" "basic/" "Imakefile" "Makefile" "popup/" "tiles/" "trans/" "doreg/" "reflect/")
+
+ ("/home/julien/libX11 tests/" (22300 64049 499283 538000) "basecalc/" "../" "test/" "README.2" "README" "winman/" "./" "Imakefile" "Makefile" "Copyright" "basicwin/" "r5/" "README.3")
+
+ ("/home/julien/C++/Projet/oss117/trunk/oss_src/src/" (22305 50880 117604 181000) "iris.cpp" "helpers.h" "../" "findEyeCorner.cpp" "main.cpp" "findEyeCenter.cpp" "./" "webcam.cpp" "constants.h" "findEyeCenter.h" "helpers.cpp" "webcam.hpp" "findEyeCorner.h" "makefile" "iris.hpp")
+
+ ("/home/julien/C++/openclassroom/Duree/" (22284 3790 654922 723000) "../" "Duree.hpp" "main.cpp" "Main" "./" "Duree.cpp")
+
+ ("/home/julien/C++/openclassroom/ZFraction/" (22284 53765 902356 338000) "../" "main.cpp" "Main" "./" "ZFraction.cpp" "ZFraction.hpp")
+
+ ("/home/julien/C++/openclassroom/Les classes/" (22284 47310 166644 162000) "f.hpp" "../" "f.cpp" "main.cpp" "Main" "./" "Arme.cpp" "Arme.hpp")
+
+ ("/home/julien/C++/TD1/Point/" (22282 8861 553616 918000) "../" "main.cpp" "Main" "Point.cpp" "./" "Point.hpp")
+
+ ("/home/julien/Projet/C/" (22281 44338 219133 634000) "enum.c" "../" "Main" "./" "test.c" "dynamique.c")
+
+ ("/home/julien/Algorithme/TD6/" (22270 40169 638154 403000) "Révisions/" "../" "./" "#test.py#" "graph/")
+
+ ("/home/julien/Algorithme/TD6/Révisions/" (22269 16881 285233 821000) "../" "./" "NonOrientedGraph.py" "F.py" "F.pyc")
+
+ ("/home/julien/Algorithme/Révisions/" (22268 35195 671828 452000) "../" "./" "trees.py" "#graph.dot#" "Binary_trees.py")
+
+ ("/home/julien/Emacs/" (22261 56039 76474 408000) "../" "./" "variables.sh" "tutoriel-commandes.txt" "chmod.txt")
+
+ ("/home/julien/C++/TD1/" (22261 54235 676554 811000) "../" "Hello/" "./" "Echange/" "fct/")
+
+ ("/home/julien/C++/TD1/fct/" (22261 54633 808537 61000) "fct.cpp" "../" "./" "fct")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

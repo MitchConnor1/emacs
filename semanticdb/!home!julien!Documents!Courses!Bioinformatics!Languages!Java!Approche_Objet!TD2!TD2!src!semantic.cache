@@ -1,0 +1,158 @@
+;; Object src/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "src/"
+  :tables
+  (list
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("src" package nil nil [1 13])
+            ("java.awt.Color" include nil nil [14 36])
+            ("java.util.ArrayList" include nil nil [37 64])
+            ("java.util.List" include nil nil [65 87])
+            ("javax.swing.JFrame" include nil nil [89 115])
+            ("Main" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [166 179]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [142 2012]))                  
+                :type "class")
+                nil [117 2015]))          
+      :file "Main.java"
+      :pointmax 2016
+      :fsize 2015
+      :lastmodtime '(22497 17902 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "Animation.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("src" package nil nil [1 13])
+            ("java.awt.Graphics" include nil nil [15 40])
+            ("java.awt.Graphics2D" include nil nil [41 68])
+            ("java.awt.Rectangle" include nil nil [69 95])
+            ("java.awt.event.ActionEvent" include nil nil [96 130])
+            ("java.awt.event.ActionListener" include nil nil [131 168])
+            ("java.util.ArrayList" include nil nil [169 196])
+            ("java.util.List" include nil nil [197 219])
+            ("javax.swing.JPanel" include nil nil [221 247])
+            ("javax.swing.Timer" include nil nil [248 273])
+            ("Animation" type
+               (:typemodifiers ("public")
+                :interfaces ("ActionListener")
+                :superclasses "JPanel"
+                :members 
+                  ( ("G" variable
+                       (:typemodifiers ("final" "static")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [401 433])
+                    ("STEP" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [472 499])
+                    ("MSSTEP" variable
+                       (:typemodifiers ("final" "static")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [550 593])
+                    ("MARGIN" variable
+                       (:typemodifiers ("final" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [627 655])
+                    ("SCALE" variable
+                       (:typemodifiers ("final" "static")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [696 727])
+                    ("COEF" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [729 769])
+                    ("xmin" variable
+                       (:typemodifiers ("private")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [806 826])
+                    ("xmax" variable
+                       (:typemodifiers ("private")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [827 832])
+                    ("ymin" variable
+                       (:typemodifiers ("private")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [833 838])
+                    ("ymax" variable
+                       (:typemodifiers ("private")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [839 844])
+                    ("timer" variable
+                       (:typemodifiers ("private")
+                        :type "Timer")
+                        (reparse-symbol class_member_declaration) [971 991])
+                    ("Animation" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("width" variable (:type "int") (reparse-symbol formal_parameters) [1036 1045])
+                            ("height" variable (:type "int") (reparse-symbol formal_parameters) [1047 1057]))                          )
+                        (reparse-symbol class_member_declaration) [1019 1451])
+                    ("addBasketball" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("b" variable (:type "Basketball") (reparse-symbol formal_parameters) [1487 1499]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1461 1552])
+                    ("addJokari" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("j" variable (:type "Jokari") (reparse-symbol formal_parameters) [1584 1592]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1562 1692])
+                    ("paintFrame" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("g" variable (:type "Graphics2D") (reparse-symbol formal_parameters) [1726 1738]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1702 2786])
+                    ("paint" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("g" variable (:type "Graphics") (reparse-symbol formal_parameters) [2827 2837]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2809 3046])
+                    ("actionPerformed" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("e" variable (:type "ActionEvent") (reparse-symbol formal_parameters) [3084 3097]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3056 3118])
+                    ("getXmax" function
+                       (:typemodifiers ("public")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [3124 3169])
+                    ("getXmin" function
+                       (:typemodifiers ("public")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [3175 3220])
+                    ("getYmax" function
+                       (:typemodifiers ("public")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [3226 3271])
+                    ("getYmin" function
+                       (:typemodifiers ("public")
+                        :type "double")
+                        (reparse-symbol class_member_declaration) [3277 3322])
+                    ("getSolids" function (:constructor-flag t) (reparse-symbol class_member_declaration) [3344 3376]))                  
+                :type "class")
+                nil [303 3379]))          
+      :file "Animation.java"
+      :pointmax 3380
+      :fsize 3391
+      :lastmodtime '(22497 17901 0 0)
+      :unmatched-syntax '((GT 3342 . 3343) (PUBLIC 3325 . 3331) (LT 3336 . 3337) (SEMICOLON 958 . 959) (GT 950 . 951) (LT 944 . 945) (SEMICOLON 924 . 925) (GT 915 . 916) (LT 908 . 909) (SEMICOLON 888 . 889) (GT 875 . 876) (PRIVATE 852 . 859) (LT 864 . 865) (PAREN_BLOCK 292 . 302) (IDENTIFIER 275 . 292))))
+  :file "!home!julien!Documents!Courses!Bioinformatics!Languages!Java!Approche_Objet!TD2!TD2!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

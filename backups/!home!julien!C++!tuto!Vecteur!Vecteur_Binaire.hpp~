@@ -1,0 +1,12 @@
+
+
+class Vecteur_Binaire{
+private:
+  int n;
+  int *data;
+public:
+  Vecteur_Binaire();
+  Vecteur_Binaire(const Vecteur_Binaire&);
+  ~Vecteur_Binaire();
+};
+

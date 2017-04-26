@@ -1,0 +1,15 @@
+#ifndef Man_h
+#define Man_h
+
+#include "Employe.hpp"
+
+class Manutentionnaire:public Employe{
+protected:
+  static const double base_Salaire_Horaire=10.6;
+  int nb_heure;
+public:
+  Employe(string,string,int,int,int);
+  double calculer_base_salaire();
+};
+
+#endif

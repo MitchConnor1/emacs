@@ -1,0 +1,23 @@
+#exemple de parcours ligne par ligne d'un fichier passé sur l'entrée standard du script perl
+
+
+while (<>){
+    #traitement
+    print $_;
+}
+
+#Par défaut, $_ contient la ligne active.
+#On peut la nommer explicitement : while (my $ligne = <>);
+
+#FILEHANDLE = un distributeur de fichier
+#STDIN, STDOUT, STDERR
+
+open (FILE1, "nom_fichier"); #ouverture en lecture seule
+open (FILE2, ">nom_file"); #ouverture en écriture (écrase).
+open (FILE3, ">>nom_file"); #ouverture en écriture (ajoute à la fin);
+
+
+#fermeture du fichier
+
+close (FILE1);
+

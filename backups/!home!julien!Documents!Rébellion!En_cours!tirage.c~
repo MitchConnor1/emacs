@@ -1,0 +1,15 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+
+int main(){
+  int nombre_mystere = 0;
+  srand(time(NULL));
+  nombre_mystere = (rand() % (5 - 1 +1 )) + 1;
+
+  printf("Les personnages principales sont les %d premieres Flickriennes.\n", nombre_mystere);
+
+  return 0;
+
+}

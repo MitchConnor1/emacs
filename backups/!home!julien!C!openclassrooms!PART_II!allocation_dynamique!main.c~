@@ -1,0 +1,26 @@
+#include <stdlib.h> //contient malloc et free
+#include <stdio.h>
+
+
+int main(){
+
+  printf("char : %ld octets \n", sizeof(char));
+  printf("int : %ld octets \n", sizeof(int));
+  printf("long : %ld octets \n", sizeof(long));
+  printf("double : %ld octets \n", sizeof(double));
+  printf("char* : %ld octets \n", sizeof(char*));
+  printf("int* : %ld octets \n", sizeof(int*));
+  printf("void* : %ld octets \n", sizeof(void*));
+
+  int *memoire_allouee = NULL;
+  printf("memoire_allouee : %ld octets \n", sizeof(memoire_allouee));
+  memoire_allouee = malloc(sizeof(int));
+
+  printf("Quel age avez vous ? ");
+  scanf("%d", memoire_allouee);
+  printf("Vous avez %d ans.\n", *memoire_allouee);
+
+  free (memoire_allouee);
+  return 0;
+
+}

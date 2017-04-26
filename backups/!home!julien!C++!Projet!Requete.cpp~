@@ -1,0 +1,51 @@
+#include "Requete.hpp"
+#include <algorithm>
+
+void Requete::afficheMedoc(){
+  map<string,vector<string> >::iterator p;
+  for (p=entree.begin();p!=entree.end();p++){
+    cout<<p->first<<endl;
+  }
+  cout<<endl;
+}
+
+Requete::Requete(string s){
+  size_t z = s.find(':');
+  size_t t = 0;
+  string nam = s.substr(0, z-1); // nom du mÃ©dicament (de la position 0 dans le string Ã  z-1, vu qu'il y a un espace avant ':')
+  vector<string> effects;  // liste d'effets secondaires
+  int i = z+2; // position du premier caractÃ¨re aprÃ¨s les ':'
+  while(i < s.length()){ // boucle jusqu'Ã  la fin de la ligne
+    t = s.find(",", i);
+    if( t >= s.length()){ // pas de vigule trouvÃ©e, on en est donc au dernier effet secondaire
+      t=s.find("et",i);
+      if (t>=s.length()){
+	effects.push_back(s.substr(i,s.length()-i));
+	break;
+      }
+      else{
+          effects.push_back(s.substr(i,t-i));
+          i=t+3;
+      }
+    }
+    else{ // il y a plusieurs effets secondaires Ã  traiter encore
+      effects.push_back(s.substr(i, t-i));
+      i = t+2;	// on fait avancer i de la taille de la chaine + l'espace et la virgule
+    }
+  }
+  entree.insert(pair<string, vector<string> >(nam, effects)); //insertion de la paire reprÃ©sentant le mÃ©dicament dans la map
+}
+
+void Requete::afficheSecond(){
+  vector <string> tmp;
+  map <string,vector<string> >::iterator p;
+  for (p=entree.begin();p!=entree.end();p++){
+    vector <string>::iterator q;
+    for (q=p->second.begin();q!=p->second.end();q++){
+      if (std::find(tmp.begin(),tmp.end(),*q)==tmp.end()){
+        tmp.push_back(*q);
+        cout<<*q<<endl;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+#include "Compte.hpp"
+
+using namespace std;
+
+Compte::Compte(int _NumClient,string _Name,int _Solde){
+  NumClient=_NumClient;
+  Name=_Name;
+  Solde=_Solde;
+}

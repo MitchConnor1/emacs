@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+#Les blocs d'instructions sont toujours entourés d'accolades
+
+#les conditions
+
+$a = 4;
+if ($a == 5){
+    print "ok\n";
+}
+else{
+    print "raté\n";
+}
+
+$t = "ttt";
+print "Hello\n" if ($t eq "ttt");
+print "pd\n" unless ($a == 6);

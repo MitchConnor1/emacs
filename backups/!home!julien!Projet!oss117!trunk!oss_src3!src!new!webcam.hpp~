@@ -1,0 +1,16 @@
+#ifndef __WEBCAM_HPP__
+#define __WEBCAM_HPP__
+
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+
+/******************** WEBCAM ********************/
+
+//crée une instance de la classe VideoCapture => lance la capture video avec la caméra par défaut (la webcam).
+
+cv::VideoCapture activate_webcam();
+
+#endif

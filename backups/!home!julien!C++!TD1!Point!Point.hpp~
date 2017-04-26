@@ -1,0 +1,10 @@
+class Point{
+private:
+  double x;
+  double y;
+  char name;
+public:
+  Point();
+  void deplace();
+  void affiche();
+};

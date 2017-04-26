@@ -1,0 +1,19 @@
+#include <iostream>
+#include "Point.hpp"
+using namespace std;
+
+Point::Point(){
+  x=0;
+  y=0;
+  name="";
+}
+
+
+void Point::deplace(float _x,float _y){
+  x=_x;
+  y=_x;
+}
+
+void Point::affiche(){
+  cout<<"x = "<<x<<" and y = "<<y<<"."<<endl;
+}

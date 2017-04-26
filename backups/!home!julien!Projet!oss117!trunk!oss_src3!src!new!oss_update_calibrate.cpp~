@@ -1,0 +1,85 @@
+#include "oss_update_calibrate.hpp"
+#include <X11/Xlib.h>
+#include <stdio.h>
+#include <vector>
+#include <cmath>
+
+int update_point_positions(FILE* s2c,std::vector<int> &xpositions, std::vector<int> &ypositions){
+
+	int x;
+	int y;
+	int eye_is_detected;
+	
+	double sumx;
+	double sumy;
+	
+	sumx=0;
+	sumy=0;
+	
+	int i=0;
+	while (i<3){
+		int n = fscanf( s2c, "%d %d %d", &x, &y, &eye_is_detected );
+		if (n==3){
+			sumx+=x;
+			sumy+=y;
+			i++; 
+		}
+	}
+	sumx=sumx/3;
+	sumy=sumy/3;
+	
+	xpositions.push_back(sumx);
+	ypositions.push_back(sumy);
+	
+	return 0;
+}
+
+int linear_regression(std::vector<int> &xpositions, std::vector<int> &ypositions,float &finalslope,float &finalintersect){
+	std::vector<int> xxpositions;
+	std::vector<int> yypositions;
+
+	float nr=0;
+	float dr=0;
+
+	double sum_y=0;
+	double sum_xy=0;
+
+	double sum_x=0;
+	double sum_xx=0;
+	double sum_x2=0;
+	double slope=0;
+	double intercept=0;
+
+	int i;
+	int n;
+
+	n = xpositions.size();
+	for(i=0;i<n;i++)
+	{
+		xxpositions.push_back(xpositions[i]*xpositions[i]);
+		yypositions.push_back(ypositions[i]*ypositions[i]);
+	}
+
+	for(i=0;i<n;i++)
+	{
+		sum_x+=xpositions[i];
+		sum_y+=ypositions[i];
+		sum_xx+= xxpositions[i];
+		sum_xy+= xpositions[i]*ypositions[i];
+	}
+	nr=(n*sum_xy)-(sum_x*sum_y);
+	sum_x2=sum_x*sum_x;
+	dr=(n*sum_xx)-sum_x2;
+	slope=nr/dr;
+	double fac = pow(10, 2);
+	slope=round(slope*fac)/fac;       
+	intercept=(sum_y- slope*sum_x)/n;
+	
+
+	finalslope = slope;
+	finalintersect = intercept;
+
+	return 0;
+}
+
+

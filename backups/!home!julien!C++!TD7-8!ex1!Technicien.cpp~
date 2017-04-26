@@ -1,0 +1,4 @@
+#include "Techicien.hpp"
+
+Technicien::Technicien(string _nom,string _prenom,int _age,int _anciennete,int _nb_unite_produite):Employe(_nom,_prenom,_age,_anciennete){
+  nb_unite_produite=_nb_unite_produite;}

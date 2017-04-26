@@ -1,0 +1,176 @@
+#include <cassert>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <stdexcept>
+#include <map>
+#include <algorithm>
+#include "Pharmacie.hpp"
+#include "Requete.hpp"
+using namespace std;
+
+Pharmacie::Pharmacie(string s){
+	
+  //vÃ©rification que le fichier est valide
+  ifstream input(s.c_str());
+  if(input.good()) //vérifie que le fichier est valide
+    parsePharma(input);
+  else
+    throw runtime_error("file not good");
+  //retourne une exception
+  map<string,vector<string> >::iterator p;
+}
+
+vector <string> Pharmacie:: getSec(){
+   vector <string> tmp;
+  map <string,vector<string> >::iterator p;
+  for (p=meds.begin();p!=meds.end();p++){
+    vector <string>::iterator q;
+    for (q=p->second.begin();q!=p->second.end();q++){
+      tmp.push_back(*q);
+    }
+  }
+  return (tmp);
+}
+void Pharmacie::afficheMedoc(){
+  map<string,vector<string> >::iterator p;
+  for (p=meds.begin();p!=meds.end();p++){
+      cout<<p->first<<endl;
+  }
+}
+
+void Pharmacie::afficheSecond(){
+  vector <string> tmp;
+  map <string,vector<string> >::iterator p;
+  for (p=meds.begin();p!=meds.end();p++){
+    vector <string>::iterator q;
+    for (q=p->second.begin();q!=p->second.end();q++){
+      if (std::find(tmp.begin(),tmp.end(),*q)==tmp.end()){
+        tmp.push_back(*q);
+        cout<<*q<<endl;
+      }
+    }
+  }
+}
+
+map<string,int> Pharmacie::Histo(){
+  map<string,int> histo;
+  map<string,vector<string> >::iterator p;
+  for (p=meds.begin();p!=meds.end();p++){
+    vector<string>::iterator q;
+    for(q=p->second.begin();q!=p->second.end();q++){
+      if(histo.find(*q)==histo.end()){
+        histo.insert(pair<string,int>(*q,0));
+      }
+      else{
+        histo[*q]++;
+      }
+    }
+  }
+  return (histo);
+}
+void Pharmacie::afficheHisto(){
+  cout<<"\n **************** Histogram *****************\n"<<endl;
+  map <string,int> tmp;
+  tmp=Histo();
+  map<string, int>::iterator it;
+  for (it=tmp.begin();it!=tmp.end();it++){
+    cout<<it->first<<"   ";
+    for (int i=0;i<=it->second;i++){
+      cout<<"*";
+    }
+    cout<<endl;
+  }
+}
+
+void Pharmacie::parsePharma(ifstream& in){
+  string s;
+  while(in.good()){ // tant que le fichier n'est pas vide
+    s = '\0';
+    getline(in,s,'\n');//récupère la ligne jusqu'à  \n
+    parseMed(s);
+  }
+}
+
+void Pharmacie::parseMed(string s){
+  size_t test=s.find(", et");
+  if (test<=s.length()){
+    s.erase(test,1);
+  }
+  test=s.find("  ");
+  if (test<=s.length()){
+    s.erase(test,1);
+  }
+  size_t z = s.find(':');
+  size_t t = 0;
+  string nam = s.substr(0, z-1); // nom du médicament (de la position 0 dans le string à  z-1, vu qu'il y a un espace avant ':')
+  vector<string> effects;  // liste d'effets secondaires
+  z = s.find(':',z+2);
+  int i = z+2; // position du premier caractère après les ':'
+  while(i < s.length()){ // boucle jusqu'à  la fin de la ligne
+    t = s.find(",", i);
+    if( t >= s.length()){ // pas de vigule trouvée, on en est donc au dernier effet secondaire
+      t=s.find("et",i);
+      if (t>=s.length()){
+	effects.push_back(s.substr(i,s.length()-2-i));
+	break;
+      }
+      else{
+          effects.push_back(s.substr(i,t-i-1));
+          i=t+3;
+      }
+    }
+    else{ // il y a plusieurs effets secondaires à  traiter encore
+      effects.push_back(s.substr(i, t-i));
+      i = t+2;	// on fait avancer i de la taille de la chaine + l'espace et la virgule
+    }
+  }
+  meds.insert(pair<string, vector<string> >(nam, effects)); //insertion de la paire reprÃ©sentant le mÃ©dicament dans la map
+}
+
+
+void Pharmacie::secondCorresp(){
+  cout<<"Veuillez entrer un effet secondaire"<<endl;
+  string s;
+  cin>>s;
+  map<string,vector<string> > ::iterator p;
+  for (p=meds.begin();p!=meds.end();p++){
+    vector <string>::iterator q;
+    for(q=p->second.begin();q!=p->second.end();q++){
+      if (*q==s){
+        cout<<p->first<<endl;
+      }
+    }
+  }
+}
+
+void Pharmacie::correspEntree(){
+  cout<<"Veuillez entrer un médicament au format suivant : \"Nom du médicament : effet secondaire, effet secondaire et effet secondaire \""<<endl;
+  string s;
+  cin.ignore(100,'\n'); 
+  getline(cin,s,'\n');
+  Requete r(s);
+  vector <string> ::iterator p;
+  map <string,vector<string> >::iterator q;
+  vector <string> test=r.afficheSecond();
+  for (p=test.begin();p!=test.end();p++){
+    for (q=meds.begin();q!=meds.end();q++){
+      vector <string>::iterator pp;
+      for (pp=q->second.begin();pp!=q->second.end();pp++){
+        if (*pp==*p){
+          cout<<q->first<<endl;
+        }
+      }
+    }
+  }
+}
+
+void Pharmacie::Ajout(){
+  cout<<"Veuillez entrer un médicament au format suivant : \"Nom du médicament : effet secondaire, effet secondaire et effet secondaire \""<<endl;
+  string s;
+  cin.ignore(100,'\n'); 
+  getline(cin,s);
+  cout<<s<<endl;
+  Requete r(s);
+  meds.insert(pair<string, vector<string> >(r.afficheMedoc(), r.afficheSecond())); 
+}

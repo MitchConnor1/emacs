@@ -1,0 +1,440 @@
+#include "webcam.hpp"
+#include "faceDetection.hpp"
+#include "findEyes.hpp"
+#include "findEyeCorner.hpp"
+#include "iris.hpp"
+#include "oss_iris_driver.hpp"
+#include "constants.hpp"
+
+#include <unistd.h>
+#include <fcntl.h>
+
+#include <signal.h>
+#include <iostream>
+#include <string>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+#include <cstdlib>
+#include <fstream>
+#include <cerrno>
+
+/** FIFOS **/
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#include <pthread.h>
+#include <semaphore.h>
+
+#include <stdlib.h>
+#include <unistd.h>
+
+/** Open CV **/
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <errno.h>
+#include <mutex>
+#include <thread>
+
+#define DEBUG(x) std::cerr << "DEBUG : " << x << " - line : "<< __LINE__ << " - file : " << __FILE__ << std::endl;
+
+using namespace std;
+using namespace cv;
+
+
+//FIFO files names
+
+const char *iris_position="iris_position";
+const char *mouse_position="mouse_position";
+const char *calibration_points="calibrations_points";
+
+
+// Critical memory
+
+
+//static pthread_mutex_t mutex_iris = PTHREAD_MUTEX_INITIALIZER;
+mutex mutex_iris;
+int xeye;
+int yeye;
+clock_t last_frame;
+
+
+float xslope;
+float xintersect;
+float yslope;
+float yintersect;
+
+
+class ofstream_thread_safe {
+private:
+    std::ofstream f;
+    std::mutex mtx;
+public:
+
+	void open( const std::string & file ){
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+		f.open( file );
+		DEBUG("");
+	}
+
+	void flush(){
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+		f.flush();
+		DEBUG("");
+	}
+
+	bool is_open(){
+		bool result;
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+		result = f.is_open();
+		DEBUG("");
+		return result;
+	}
+
+	void close(){
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+		f.close();
+		DEBUG("");
+	}
+
+	bool good(){
+		DEBUG("");
+		bool result;
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+		result = f.good();
+		DEBUG("");
+		return result;
+	}
+
+    template <typename T>
+	ofstream_thread_safe &operator<<(const T &x) {
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+        f << x;
+		DEBUG("");
+        return *this;
+    }
+
+    typedef std::basic_ostream<char, std::char_traits<char> > CoutType;
+    typedef CoutType& (*StandardEndLine)(CoutType&);
+
+	ofstream_thread_safe &operator<<( StandardEndLine pf ) {
+		DEBUG("");
+        std::lock_guard<std::mutex> lock(mtx);
+		DEBUG("");
+        pf(f); // même chose que f << pf;
+		DEBUG("");
+        return *this;
+    }
+
+};
+			
+
+ofstream_thread_safe fifo_iris;
+int id_fifo_iris;
+ofstream fifo_mouse;
+int id_mouse;
+
+
+void pipe_broken(int signo) {
+	DEBUG("");
+	if( ! fifo_iris.good() ){
+		DEBUG("Interactive attention signal caught.");
+
+		DEBUG("")
+		fifo_iris.close();
+    DEBUG("");
+		fifo_iris.open(iris_position);
+    DEBUG("");
+		if( ! fifo_iris.is_open()){
+			DEBUG("Impossible d'ouvrir le fichier : " << strerror(errno) );
+			exit(1);
+		}
+		DEBUG("");
+	}
+	DEBUG("");
+
+	if( ! fifo_mouse.good() ){
+		cout << "Interactive attention signal caught." << endl;
+		DEBUG("");
+
+		fifo_mouse.open(mouse_position);
+		DEBUG("");
+		if( ! fifo_mouse.is_open()){
+			DEBUG("Impossible d'ouvrir le fichier : " << strerror(errno));
+			exit(1);
+		}
+		DEBUG("");
+	}
+	DEBUG("");
+} 
+
+
+
+void distance_calcul(cv::Point &iris, cv::Point2f &corner){
+  iris.x = iris.x - corner.x;
+  iris.y = iris.y - corner.y;
+}
+
+void get_calibration(){
+
+  ifstream calibration_file;
+
+  xslope = 0;
+  xintersect = 0;
+  yslope = 0;
+  yintersect = 0;    
+
+  calibration_file.open("calibration_point.txt");
+  if( calibration_file ){
+    int nb_lines = 0 ;
+    string line;
+    while (getline(calibration_file, line)){
+
+        nb_lines++;
+
+      }
+    
+    calibration_file.seekg(0, ios::beg);
+
+    if (nb_lines == 4) {  //check if the file is empty or not.
+
+      calibration_file >> xslope;
+      calibration_file >> xintersect;
+      calibration_file >> yslope;
+      calibration_file >> yintersect;
+
+    }else if( nb_lines > 4){
+
+      cerr << "Bug : Calibration_point.text contains too many lines." << endl;
+      assert(false);
+
+    }
+    calibration_file.close();
+    }
+}
+
+
+int writeMousePos(){
+  
+
+  mouse_position = "mouse_position";
+
+  fifo_mouse.close();
+
+  struct stat st2;
+  // if no fifos, create them
+  if (stat(mouse_position, &st2) != 0){
+    mkfifo(mouse_position, 0666);
+  }
+
+  fifo_mouse.open(mouse_position);
+
+  if( ! fifo_mouse.is_open()){
+    cerr << "Impossible d'ouvrir le fichier : " << strerror(errno) << endl;
+    exit(1);
+  }
+
+  //id_mouse = fileno(fifo_mouse);
+  cout << "reconnection done!" << endl;
+
+  get_calibration();
+  
+  int x_cursor;
+  int y_cursor;
+  int x = 0;
+  int y = 0;
+
+  clock_t last_value_time = 0;
+  clock_t ltime = 0;
+  while (true){
+    mutex_iris.lock();
+    ltime = last_frame;
+    x = xeye;
+    y = yeye;
+    mutex_iris.unlock();
+    if( last_value_time < ltime ){
+      last_value_time = clock();
+
+      x_cursor = xslope*x + xintersect;
+      y_cursor = yslope*y + yintersect;
+      fifo_mouse << x_cursor << " " << y_cursor << endl;
+      fifo_mouse.flush();
+    }
+  }
+  fifo_mouse.close();
+  
+  return 0;
+}
+
+int writeIrisPosition(){
+	 DEBUG("");
+  if (signal(SIGPIPE, pipe_broken) == SIG_ERR) {
+    cerr << "An error occurred while setting a signal handler " << strerror(errno) << endl;
+    //return (EXIT_FAILURE);
+  }
+
+  fifo_iris.close();
+  struct stat st;
+
+  // if no fifos, create them
+  if (stat(iris_position, &st) != 0){
+    mkfifo(iris_position, 0666);
+  }
+
+	  DEBUG("");
+  fifo_iris.open(iris_position);
+	  DEBUG("");
+
+  if( ! fifo_iris.is_open()){
+
+    cerr << "Impossible d'ouvrir le fichier : " << strerror(errno) << endl;;
+    exit(1);
+
+  }
+	  DEBUG("");
+  
+  //id_fifo_iris = fileno(fifo_iris);
+
+  int x ;
+  int y ;
+  clock_t last_value_time = 0;
+  clock_t ltime = 0;
+  
+	  DEBUG("");
+  while (1){
+    mutex_iris.lock();
+    ltime = last_frame;
+    x = xeye;
+    y = yeye;
+    mutex_iris.unlock();
+    if( last_value_time < ltime ){
+      last_value_time = clock();
+
+	  DEBUG("");
+	  fifo_iris << x;
+		DEBUG("");
+	 // fifo_iris << std::endl;
+      //fifo_iris << x << " " << y << " 1" << endl;
+	  DEBUG("");
+      if( fifo_iris.good() ){
+	      fifo_iris.flush();
+	  }
+	  DEBUG("");
+    }
+  }
+
+  fifo_iris.close();
+  unlink(iris_position);
+  
+  return 0;
+
+}
+	
+int recordIris (){
+
+
+  cv::VideoCapture cap;
+  cv::Rect face;
+  cv::Rect leftEyeRegion;
+  cv::Point leftPupil;
+  cv::Mat leftEyeROI;
+  cv::Mat leftCornerROI;
+  cv::Point2f leftCorner;
+  cv::Mat frame;
+  int face_detected;
+  int leftCornerDetected;
+  int leftPupilFound;
+  int eyeRegionFound;
+
+  cap=activate_webcam();	
+
+  while(1){
+    cap >> frame;
+    cv::flip(frame, frame, 1);
+
+    if( !frame.empty() ){
+      face_detected=detectFace(frame,face); 
+
+      if (face_detected == 0){ //if a face has been found 
+        eyeRegionFound = findEyesRegion(frame,face,leftEyeRegion,leftEyeROI);
+				
+      }
+
+      if (eyeRegionFound == 0){
+        /** the coordinates of left and right pupil corresponds of the coordinates of a point on 
+         * an image of 50x50 pixels 
+         * */
+        leftPupilFound = findPupil(leftEyeROI,leftPupil);
+				
+
+        /** Find Corners **/
+        if (leftPupilFound == 0){
+          leftCornerDetected = findCorner(leftEyeROI,leftEyeRegion,leftCorner,leftCornerROI);
+        }else{
+          leftPupil.x = 0;
+          leftCorner.x = 0;
+          leftPupil.y = 0;
+          leftCorner.y = 0;
+        }
+
+        /** Establish iris coordinates by taking account of corners coordinates **/
+        distance_calcul(leftPupil,leftCorner);
+
+
+	
+        int x = 0;
+        int y = 0;
+        if (leftCornerDetected == 0){		
+          x = leftPupil.x;
+          y = leftPupil.y;
+        }
+
+        /** Beginning of the protected zone by the mutexes **/
+        mutex_iris.lock();
+        xeye = x;
+        yeye = y;
+        last_frame = clock();
+        // The protected zone ends
+        mutex_iris.unlock();
+      }
+			
+    }
+  }
+  return 0;
+}
+
+
+int main( ){
+  //Beginning the threads
+  mutex_iris.lock();
+  xeye = 0;
+  yeye = 0;
+  last_frame = clock();
+  mutex_iris.unlock();
+  
+  thread thread1 (recordIris);
+  thread thread2 (writeIrisPosition);
+  thread thread3 (writeMousePos);
+	
+  thread1.join();
+  thread2.join();
+  thread3.join();
+
+  return 0;
+}

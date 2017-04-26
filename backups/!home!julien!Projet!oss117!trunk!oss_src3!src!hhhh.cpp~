@@ -1,0 +1,16 @@
+#include <stdio.h>      /* printf */
+#include <stdlib.h>     /* system, NULL, EXIT_FAILURE */
+#include <X11/extensions/XInput2.h>
+#include <iostream>
+int main ()
+{
+  Display *dpy;
+  int OriginScreen=0;
+  int i;
+  //i=system ("xinput create-master pd");
+  system("xinput list | grep 'pd XTEST pointer' | cut -f 2 | cut -d '=' -f 2 >test.txt");
+  XIWarpPointer(dpy,4,None,RootWindow(dpy,0),0,0,0,0,0,0);
+  XCloseDisplay(dpy);
+
+  return 0;
+}

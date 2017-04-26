@@ -1,0 +1,53 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include "game.h"
+#include "dico.h"
+
+int main (int argc, char *argv[]){
+  
+  srand(time(NULL));
+  while (1){
+    switch (main_page()){
+    case 1:
+      while (1){
+        system("clear");
+        char word[MOT_LE_PLUS_LONG]; 
+        get_word(FILE_NAME, word); // find this word into the file
+        const char len = strlen(word);
+        unsigned char cpt = 10;
+        char test [26] = {0};
+        char *answer = malloc (len * sizeof(char));
+
+        if (answer == NULL){
+          exit (1);
+        }
+        
+        init_answer(answer, len);
+        printf("Bienvenue dans le Pendu ! \n\n");
+        while(end_game(answer, len, cpt) == 0){
+          game(word, answer,len, &cpt, test);
+        }
+        if (end_game(answer, len, cpt) == -1){
+          printf("Perdu ! Le mot secret etait en fait : %s.\n", word);
+        }
+        else{
+          printf("Gagne ! Le mot secret etait bien : %s.\n", answer);
+        }
+        free(answer);
+        printf("Souhaitez vous rejouer ?\ny/n");
+        char choice = 0;
+        scanf("%c", &choice);
+        getchar();
+        if (choice == 'n'){
+          break;}
+      }
+      break;
+    case 0:
+      system("clear");
+      exit(1);
+    }
+  }
+  return (0);
+}

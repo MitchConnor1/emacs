@@ -1,0 +1,27 @@
+CC=g++
+OPENCV_CFLAGS = `pkg-config opencv --cflags `
+OPENCV_LIBS = `pkg-config opencv --libs `
+LIBS=-lX11
+CPPFLAGS= -g -Wall $(OPENCV_CFLAGS) 
+LDLIBS= $(OPENCV_LIBS)  -lX11 -lpthread
+
+PROG= oss_iris_driver oss_calibrate oss_move_cursor 
+FILES=mouse_position iris_position 
+
+all: $(PROG)
+
+
+oss_iris_driver: oss_iris_driver.o findEyes.o iris.o webcam.o faceDetection.o findEyeCorner.o 
+
+oss_calibrate: oss_calibrate.o oss_update_calibrate.o
+
+oss_move_cursor: oss_move_cursor.o
+
+
+
+clean:
+	-rm -rf *.o
+	-rm $(PROG)
+	-rm $(FILES)
+
+.PHONY: clean all 

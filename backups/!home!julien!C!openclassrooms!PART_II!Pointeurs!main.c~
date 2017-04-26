@@ -1,0 +1,11 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+  int age=8;
+
+  printf("La variable age vaut : %d\n",age);
+  
+  return 0;
+
+}

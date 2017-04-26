@@ -1,0 +1,7 @@
+#include "Vecteur_Binaire.hpp"
+#include <iostream>
+
+Vecteur_Binaire::Vecteur_Binaire(){
+  n=0;
+  data=NULL;
+}

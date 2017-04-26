@@ -1,0 +1,17 @@
+#include "Arme.hpp"
+
+using namespace std;
+
+Arme::Arme(string _name,int _degats){
+  name=_name;
+  degats=_degats;
+}
+
+void Arme::changer(string _name,int _degats){
+  name=_name;
+  degats=_degats;
+}
+
+void Arme::afficher() const{
+  cout<<"Arme : "<<name<<"(Dégats : "<<degats<<" )."<<endl;
+}

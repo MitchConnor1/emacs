@@ -1,0 +1,24 @@
+;; Object plugin/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "plugin/"
+  :tables
+  (list
+    (semanticdb-table "Plugin.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava.plugin" package nil nil [1588 1615])
+            ("java.lang.annotation.ElementType" include nil nil [1617 1657])
+            ("java.lang.annotation.Retention" include nil nil [1658 1696])
+            ("java.lang.annotation.RetentionPolicy" include nil nil [1697 1741])
+            ("java.lang.annotation.Target" include nil nil [1742 1777])
+            ("org.scijava.Priority" include nil nil [1779 1807])
+            ("org.scijava.UIDetails" include nil nil [1808 1837])
+            ("org.scijava.annotations.Indexable" include nil nil [1838 1879]))          
+      :file "Plugin.java"
+      :pointmax 7374
+      :fsize 7373
+      :lastmodtime '(22717 27725 288094 662000)
+      :unmatched-syntax '((BRACE_BLOCK 2159 . 7373) (IDENTIFIER 2152 . 2158) (IDENTIFIER 2141 . 2151) (IDENTIFIER 2123 . 2133) (PAREN_BLOCK 2104 . 2122) (IDENTIFIER 2097 . 2104) (PAREN_BLOCK 2071 . 2096) (IDENTIFIER 2061 . 2071))))
+  :file "!home!julien!testJava!SciJava!scijava!org!scijava!plugin!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

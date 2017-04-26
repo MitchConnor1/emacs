@@ -1,0 +1,46 @@
+;; Object todolist/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "todolist/"
+  :tables
+  (list
+    (semanticdb-table "test.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.util.List" include nil nil [1 23])
+            ("javafx.scene.Scene" include nil nil [24 50])
+            ("javafx.application.Application" include nil nil [51 89])
+            ("javafx.stage.Stage" include nil nil [90 116])
+            ("javafx.scene.layout.BorderPane" include nil nil [117 155])
+            ("javafx.scene.Parent" include nil nil [156 183])
+            ("javafx.scene.control.Button" include nil nil [184 219])
+            ("test" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static" "final")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :typemodifiers ("final")
+                                :type "String")
+                                (reparse-symbol formal_parameters) [589 608]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [559 633])
+                    ("start" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [658 676]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [639 817]))                  
+                :type "class")
+                nil [397 819]))          
+      :file "test.java"
+      :pointmax 820
+      :fsize 819
+      :lastmodtime '(22753 31786 311324 607000)
+      :unmatched-syntax nil))
+  :file "!home!julien!com!knoplab!todolist!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

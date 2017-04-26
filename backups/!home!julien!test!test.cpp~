@@ -1,0 +1,49 @@
+#include <iostream>
+#include <opencv2/core/core.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <cerrno>
+
+
+int main(){
+  
+  cv::Vec2d Vec1(4,3);
+
+  cv::Vec2d Vec2(2, 1);
+
+  cv::normalize (Vec1, Vec1);
+  cv::normalize (Vec2, Vec2);
+
+  cv::Vec2d Vec3 (4,3);
+  cv::Vec2d Vec4 (2,1);
+  double t = (double)cv::getTickCount();
+  const double magnitude1 = sqrt ( 4 * 4 + 3 * 3);
+  const double magnitude2 = sqrt (2*2 + 1 *1);
+  Vec1 /= magnitude1;
+  Vec2 /= magnitude2;
+
+  // do something ...
+  t = ((double)cv::getTickCount() - t)/cv::getTickFrequency() *1000000;
+  std::cout << "Times passed in microseconds: " << t << std::endl;
+  t = 0.0;
+  t = (double)cv::getTickCount();
+  const double mag1 = cv::norm (Vec3);
+  const double mag2 = cv::norm (Vec4);
+  Vec3 /= mag1;
+  Vec4 /= mag2;
+  // do something ...
+  t = ((double)cv::getTickCount() - t)/cv::getTickFrequency() * 1000000;
+  std::cout << "Times passed in microseconds: " << t << std::endl;
+
+
+
+  std::cout << Vec3.dot(Vec4) << std::endl;
+  std::cout << Vec1.dot(Vec2) << std::endl;
+  return (EXIT_SUCCESS);
+   
+}
+
+
+
+

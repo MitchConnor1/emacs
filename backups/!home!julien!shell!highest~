@@ -1,0 +1,19 @@
+#     
+#     highest filemane [how many]
+#     
+#     Print howmany highest-numbered lines in file filename.
+#     The input file is assumed to have lines that start with number.
+#     Default for howmany is 10.
+#     
+
+
+filename=${1:?"filename missing"}
+#filename=$1
+#filename=${filename:?"missing"}
+howmany=${2:-10}
+
+echo -e -n ${header:+"ALBUMS ARTISTS\n"} # would Print a header line if -h is given
+
+echo ${album_line:8} #would print only the album name without considering the number in the file.
+echo ${album_line:0:7} #would print only the number of album you have.
+sort -nr $filename | head $howmany

@@ -1,0 +1,46 @@
+#include "faceDetection.hpp"
+#include "findEyes.hpp"
+#include "constants.h"
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <stdio.h>
+#include <vector>
+#include <string>
+
+using namespace std;
+using namespace cv;  
+
+int detectFace(cv::Mat &frame,cv::Rect &face){
+	
+
+  	cv::String face_cascade_name = "../../res/haarcascade_frontalface_alt.xml";
+  	cv::CascadeClassifier face_cascade;
+  	face_cascade.load(face_cascade_name); 
+  
+  	std::vector<cv::Rect> faces;
+
+  	cv::cvtColor( frame, frame, CV_BGR2GRAY ); //turns RGB frame into gray. 
+
+  	cv::equalizeHist( frame, frame );
+  
+  	face_cascade.detectMultiScale( frame, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE|CV_HAAR_FIND_BIGGEST_OBJECT, cv::Size(150, 150) ); 
+  
+  	if (faces.size() > 0) {
+	 	if (frame.cols == 0) {
+     			printf("Error reading matrice faceDetection ");
+     			return 1;
+			}
+    	frame = frame(faces[0]); //crops the face. 
+    	face=faces[0];
+    	return 0;
+    
+  	}
+  
+	return 1;
+  	
+  
+  
+}

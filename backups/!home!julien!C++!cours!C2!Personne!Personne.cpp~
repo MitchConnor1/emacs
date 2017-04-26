@@ -1,0 +1,25 @@
+#include "Personne.hpp"
+#include <iostream>
+#include <string.h>
+
+Personne::Personne(const char* _Nom, const char* _Societe){
+  int lena,lenb;
+  lena=strlen(_Nom)+1;
+  lenb=strlen(_Societe)+1;
+  pNom=new char[lena];
+  pSociete=new char[lenb];
+  strcpy(pNom,_Nom);
+  strcpy(pSociete,_Societe);
+  std::cout<<"Créé"<<std::endl;
+}
+
+void Personne::affiche() const{
+  std::cout<<"La personne "<<pNom<<" travaille dans la societe "  \
+                     <<pSociete<<std::endl;
+}
+
+Personne::~Personne(){
+  delete []pNom;
+  delete []pSociete;
+  std::cout<<"Détruit"<<std::endl;
+}

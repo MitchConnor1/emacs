@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+
+int main(){
+
+  std::cout << "Hello World!" << std::endl;
+  
+  int a, b;
+  int res;
+
+  a = 5;
+  b = 2;
+  a++;
+  res = a - b;
+
+  std::cout << res << std::endl;
+  return (EXIT_SUCCESS);
+
+}
+
+
+
+

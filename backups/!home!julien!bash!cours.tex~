@@ -1,0 +1,141 @@
+\documentclass{book}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+
+
+\begin{document}
+
+\section*{Brace expansion}
+
+echo b{ed,olt,ar}s => beds, bolts, ars\\
+echo b{ar{d,n,k},ed}s => bards, barns, barks, beds\\
+echo {2..5} => 2 3 4 5\\
+echo {d..h} => d e f g h\\
+ls *.[cho] => fichier.c, fichier.h, fichier.o\\
+
+\section*{Popular UNIX data filtering utilities}
+
+cat => Copy input to output\\
+grep => Search for strings in the input\\
+sort => Sort lines in the input\\
+cut => Extract columns from input\\
+sed => Perform editing operations on input\\
+tr => Translate characters in the input to other characters\\
+more => Copy input to output, and prints it screen by screen\\ 
+diff => Examine two input files, and output a summary of their differences\\
+nice => Lowers the priority of any job (root can use it to raise a job's priority)\\
+echo => Takes input and prints it to output\\
+file => Searches for file throughout entire directory trees\\
+help => Gives information on commands in bash\\
+
+command < filename => command takes standard input from a file instead of from a terminal. 
+command > filename => command standard's output is redirected to the named file.\\
+
+\section*{Pipelines}
+Redirect the output of a command into the input of another command instead of a file.\\
+Ex: /etc/passwd stores information about users' accounts on a UNIX system. Each line in the file contains a users' login name, user ID number, encrypted password, home directory, login shell, and so on. Fields are separated with colons (:).\\
+\texttt{cut -d: -f1 < /etc/passwd | sort} gets you a sorted listing of all users on the system.
+
+\section*{Special characters}
+\~ => Home directory\\
+\# => Comment\\
+\$ => Variable expression\\
+\& => Background job\\
+ \** => String wildcard\\
+( => Start subshell\\
+) => End subshell\\
+\textbackslash{} => Quote next character\\
+\| => Pipe\\
+\[\] => Start - end character-set wildcard\\
+\{\} => Start - end command block\\
+; => Shell command separator\\
+' => Strong quote\\
+" => Weak quote\\
+< > => I/O redirect\\
+/ => Pathnanme directory separator
+? => Single-character wildcard\\
+! => Pipeline logical NOT\\
+
+\section*{control commands}
+Control Key => stty name => description\\
+C => intr => Stop current command\\
+D => eof => End of input\\
+\ => quit => Stop current command if Ctrl-C doesn't work\\
+S => stop => Halt output to screen\\
+Q => => Restart output to screen\\
+DEL or ? => erase last character\\
+U => kill => Erase entire command line\\
+Z => susp => Suspend current command\\
+
+
+B => Move backward one character (without deleting)\\
+F => Move forward one character\\
+H => Delete one character backward\\
+D => Delete one character forward\\
+A => Move beginning of line\\
+E => Move end of line\\
+K => Kill forward to the end of line\\
+P => Move to previous line\\
+N => Move to next line\\
+R => Search backward\\
+J => Same as RETURN\\
+L => Clears the screen, placing the current line at the top of the screen\\
+M => Same as RETURN\\
+O => Same as RETURN, then displays next line in command history\\
+T => Transpose two characters on either side of point and move point forward by one\\
+U => Kill the line from the beginning to point\\
+V => Quoted insert\\
+
+\section* {esc commands}
+B => Move one word backward\\
+F => Move one word forward\\
+DEL - Ctrl H => Kill one word backward\\
+D => Kill one word forward\\
+Y => Retrieve (yank) last item killed\\
+< => Move to first line of history list\\
+> => Move to last line of history list\\
+? => Expands the prefix to all possibles choices and lists them to the standard output\\
+/ => Attempt filename completion\\
+~ => Attempt username completion\\
+$ => Attempt variable completion\\
+! => Attempt command completion\\
+C => Capitalize word after point\\
+U => Change word after point to all capital letters\\
+L => Change word after point to all lowercase letters\\
+. => Insert last word in previous command line after point\\
+\_ => De même\\
+
+\section*{build-in}
+\begin{description}
+\item [fc: ] provides a superset of the C shell history mechanism, it allow to examine the most recent commands we entered, to edit them, and to run old commands with changes without having to type it all over again -l list previous commands.\\
+  -s rerun the last command containing a string, or with that number. You can use it to make replacement. Ex: echo ps --- other commands --- fc -s ps=pd echo => echo pd
+\item [history: ] displays the history.
+
+\end{description}
+
+\section*{History Expansion}
+! => Start a history substition\\
+!! => The last command\\
+!n => Command line n\\
+!-n => Current command line minus n\\
+!string => Most recent command starting with string\\
+!?string => Most recent command containing string\\
+\^string1\^string2 => Repeat the last command, replacing string1 with string2.
+
+\section*{Word designators}
+It is possible to refer to certain words in a previous command by the use of a word designator. When counting words, bash starts with 0.\\
+0 => The zeroth (first) word in a line\\
+n => The nth word in a line\\
+\^ => The first argument (the second word)\\
+\$ => The last argument in a line\\
+\% => The word matched by the most recent ?string search\\
+x-y => A range of words from x to y. -y is synonymous with 0-y\\
+* => All words but the zeroth. Synonymous with 1-\$ \\
+x* => Synonymous with x-\$\\
+x- => The words from x to the second to last word\\
+
+\end{document}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+  const int MIN = 1, MAX = 100, nb;
+  srand(time(NULL));
+  nb=(rand()%(MAX-MIN+1))+MIN;
+  int rep=0;
+  while (rep!=nb){
+    printf("Quel est le nombre ? ?");
+    scanf("%d",&rep);
+    if (rep>nb){
+      printf("C'est moins !");
+    }
+    if (rep<nb){
+      printf("C'est plus !");
+    }
+  }
+    printf("Bravo, vous avez trouvé le nombre mytere !!!");
+    return °;
+}

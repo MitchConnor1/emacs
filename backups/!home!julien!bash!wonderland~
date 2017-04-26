@@ -1,0 +1,40 @@
+# $? est une valeur qui donne le code le code de retour de la dernière commande exécutée. 
+# Le problème est que le shell ne conserve que la valeur de retour de la dernière commande exécutée. Il nous faudra donc la stocker dans une variable si une en particulier nous intéresse.
+
+# statement1 && statement2 exécute la deuxième commande si la première a bien fonctionné.
+
+# statement1 || statement2 exécute la deuxième commande si la première échoue.
+
+if [ -n "$1" ];then
+    echo ok
+    else
+    echo pas ok
+fi
+
+# Options pour le if [ ] 
+# -d file -> file existe et est un répertoire.
+# -e file -> file existe
+# -f file -> file existe et est un simple fichier.
+# -r file -> L'utilisateur possède le droit de lecture.
+# -s file -> file existe et n'est pas vide.
+# -w file -> L'utilisateur possède les droits d'écriture.
+# -x file -> L'utilisateur possède les droits d'exécution.
+# -O file -> L'utilisateur possède (Own) le fichier.
+# -G file -> L'ID du groupe du fichier correspond à celui de l'utilisateur.
+# file1 -nt file2 -> file1 est plus récent que file2.
+# file1 -ot file2 -> file1 est plus vieux que file2.
+
+if [ $1 -eq 23 ]; then
+    echo ok
+else
+    echo pas ok
+fi
+
+#Comparaison algébrique
+
+# -lt inférieur
+# -le inférieur ou égal
+# -eq égal
+# -ge supérieur ou égal
+# -gt supérieur
+# -ne différent

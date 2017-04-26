@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  double resultat;
+  resultat=5/2;
+  printf("5 + 2 = %d\n",resultat);
+  return 0;
+}

@@ -1,0 +1,325 @@
+#include "webcam.hpp"
+#include "faceDetection.hpp"
+#include "findEyes.hpp"
+#include "findEyeCorner.hpp"
+#include "iris.hpp"
+#include "oss_iris_driver.hpp"
+#include "constants.h"
+
+#include <signal.h>
+#include <iostream>
+#include <string>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+#include <cstdlib>
+#include <fstream>
+
+/** FIFOS **/
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#include <pthread.h>
+#include <semaphore.h>
+
+#include <stdlib.h>
+#include <unistd.h>
+
+/** Open CV **/
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <errno.h>
+
+
+#define DEBUG(x) std::cout << "DEBUG : " << x << " - line : "<< __LINE__ << " - file : " << __FILE__ << std::endl;
+
+using namespace std;
+using namespace cv;
+
+
+//FIFO files names
+
+const char *iris_position="iris_position";
+const char *mouse_position="mouse_position";
+const char *calibration_points="calibrations_points";
+
+
+// Critical memory
+
+
+static pthread_mutex_t mutex_iris = PTHREAD_MUTEX_INITIALIZER;
+int xeye;
+int yeye;
+clock_t last_frame;
+
+
+float xslope;
+float xintersect;
+float yslope;
+float yintersect;
+			
+
+
+FILE* s2c;
+
+
+
+void pipe_broken(int signo) {
+  printf("Interactive attention signal caught.\n");
+  s2c= fopen(iris_position, "w");
+
+  if( s2c == 0 ){
+    fprintf(stderr, "Impossible d'ouvrir le fichier : %s .\n", strerror(errno) );
+    exit(1);
+  }
+}
+
+
+
+void distance_calcul(cv::Point &iris, cv::Point2f &corner){
+  iris.x = iris.x-corner.x;
+  iris.y = iris.y-corner.y;
+}
+
+void get_calibration(){
+  FILE* calibration_file;
+
+  xslope = 0;
+  xintersect = 0;
+  yslope = 0;
+  yintersect = 0;    
+
+  calibration_file = fopen("calibration_point.txt","r");
+
+  if( ! calibration_file ){
+    fseek(calibration_file, 0, SEEK_END);
+    unsigned long len = (unsigned long)ftell(calibration_file);
+    rewind(calibration_file);
+    if (len == 4) {  //check if the file is empty or not.
+      fscanf(calibration_file,"%f",&xslope);
+      fscanf(calibration_file,"%f",&xintersect);
+      fscanf(calibration_file,"%f",&yslope);
+      fscanf(calibration_file,"%f",&yintersect);    
+    }else if( len >4 ){
+      fprintf(stderr, "Bug : Calibration_point.text contains too many lines.\n");
+      assert(false);
+    }
+    fclose(calibration_file);
+  }
+}
+
+
+void* writeMousePos(void *param2){
+  
+  FILE* fifo_mouse;
+  mouse_position = "mouse_position";
+
+  fifo_mouse = NULL;	
+
+  struct stat st2;
+  // if no fifos, create them
+  if (stat(mouse_position, &st2) != 0){
+    mkfifo(mouse_position, 0666);
+  }
+
+  fifo_mouse= fopen(mouse_position, "w");
+  if( fifo_mouse == 0 ){
+    fprintf(stderr, "Impossible d'ouvrir le fichier : %s .\n", strerror(errno) );
+    exit(1);
+  }
+  printf("reconnection done!");
+
+  get_calibration();
+
+  int x_cursor;
+  int y_cursor;
+  int x = 0;
+  int y = 0;
+
+  clock_t last_value_time = 0;
+  clock_t ltime = 0;
+  while (true){
+    pthread_mutex_lock (& mutex_iris);
+    ltime = last_frame;
+    x = xeye;
+    y = yeye;
+    pthread_mutex_unlock (& mutex_iris);
+    if( last_value_time < ltime ){
+      last_value_time = clock();
+
+      x_cursor = xslope*x + xintersect;
+      y_cursor = yslope*y + yintersect;
+      fflush(fifo_mouse);
+    }
+  }
+
+  fclose(fifo_mouse);
+  return 0;
+}
+
+void* writeIrisPosition(void *param2){
+  if (signal(SIGPIPE, pipe_broken) == SIG_ERR) {
+    fprintf(stderr, "An error occurred while setting a signal handler, %s .\n", strerror(errno) );
+    //return EXIT_FAILURE;
+  }
+  s2c = NULL;
+
+  struct stat st;
+
+  // if no fifos, create them
+  if (stat(iris_position, &st) != 0){
+    mkfifo(iris_position, 0666);
+  }
+
+  s2c= fopen(iris_position, "w");
+
+  if( s2c == 0 ){
+    fprintf(stderr, "Impossible d'ouvrir le fichier : %s .\n", strerror(errno) );
+    exit(1);
+  }
+
+  int x;
+  int y;
+  clock_t last_value_time = 0;
+  clock_t ltime = 0;
+  while (1){
+    pthread_mutex_lock (& mutex_iris);
+    ltime = last_frame;
+    x = xeye;
+    y = yeye;
+    pthread_mutex_unlock (& mutex_iris);
+    if( last_value_time < ltime ){
+      last_value_time = clock();
+
+      fflush(s2c);
+    }
+  }
+  fclose(s2c);
+  unlink(iris_position);
+  return 0;
+}
+	
+void* recordIris(void *param){
+
+
+  cv::VideoCapture cap;
+  cv::Rect face;
+  cv::Rect leftEyeRegion;
+  cv::Point leftPupil;
+  cv::Mat leftEyeROI;
+  cv::Mat leftCornerROI;
+  cv::Point2f leftCorner;
+  cv::Mat frame;
+  int face_detected;
+  int leftCornerDetected;
+  int leftPupilFound;
+  int eyeRegionFound;
+
+  cap=activate_webcam();	
+
+  while(1){
+    cap >> frame;
+    cv::flip(frame, frame, 1);
+
+    if( !frame.empty() ){
+      face_detected=detectFace(frame,face); 
+
+      if (face_detected == 0){ //if a face has been found 
+        eyeRegionFound = findEyesRegion(frame,face,leftEyeRegion,leftEyeROI);
+				
+      }
+
+      if (eyeRegionFound == 0){
+        /** the coordinates of left and right pupil corresponds of the coordinates of a point on 
+         * an image of 50x50 pixels 
+         * */
+        leftPupilFound = findPupil(leftEyeROI,leftPupil);
+				
+
+        /** Find Corners **/
+        if (leftPupilFound == 0){
+          leftCornerDetected = findCorner(leftEyeROI,leftEyeRegion,leftCorner,leftCornerROI);
+        }else{
+          leftPupil.x = 0;
+          leftCorner.x = 0;
+          leftPupil.y = 0;
+          leftCorner.y = 0;
+        }
+
+        /** Establish iris coordinates by taking account of corners coordinates **/
+        distance_calcul(leftPupil,leftCorner);
+
+
+	
+        int x = 0;
+        int y = 0;
+        if (leftCornerDetected == 0){		
+          x = leftPupil.x;
+          y = leftPupil.y;
+        }
+
+        /** Beginning of the protected zone by the mutexes **/
+        pthread_mutex_lock (& mutex_iris);
+        xeye = x;
+        yeye = y;
+        last_frame = clock();
+        // The protected zone ends
+        pthread_mutex_unlock (& mutex_iris);
+      }
+			
+    }
+  }
+  return 0;
+}
+
+
+int main( ){
+  //Beginning the threads 
+  pthread_t thread1; //thread for iris positions modifying
+  pthread_t thread2; //thread for writing these modifications to iris_position file 
+  pthread_t thread3; //thread for writing to mouse_position file
+  int err_thread1;
+  int err_thread2;
+  int err_thread3;
+
+  pthread_mutex_lock (& mutex_iris);
+  xeye = 0;
+  yeye = 0;
+  last_frame = clock();
+  pthread_mutex_unlock (& mutex_iris);
+
+  // First thread 
+  err_thread1 = pthread_create(&thread1, NULL, recordIris, NULL);
+  if (err_thread1 != 0){
+    printf("can't create thread 1 :[%s]\n", strerror(err_thread1));
+  }else{
+    printf("Thread 1 created successfully\n");
+  }
+
+  //second thread
+  err_thread2 = pthread_create(&thread2, NULL, writeIrisPosition, NULL);
+  if (err_thread2 != 0){
+    printf("can't create thread 2 :[%s]\n", strerror(err_thread2));
+  }else{
+    printf("Thread 2 created successfully\n");
+  }
+
+  //third thread
+  err_thread3 = pthread_create(&thread3, NULL, writeMousePos, NULL);
+  if (err_thread3 != 0){
+    printf("can't create thread 3 :[%s]\n", strerror(err_thread3));
+  }else{
+    printf("Thread 3 created successfully\n");
+  }
+	
+  pthread_join(thread1, NULL);   
+  pthread_join(thread2, NULL);
+  pthread_join(thread3, NULL);
+
+  return 0;
+}

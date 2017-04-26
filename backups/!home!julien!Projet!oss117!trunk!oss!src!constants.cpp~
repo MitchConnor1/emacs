@@ -1,0 +1,8 @@
+#include "constants.hpp"
+
+#include "iris.hpp"
+
+#include <algorithm>
+
+const int ROW_SIZE_DETECTION_PUPIL = std::max(50, limit_cols_size_for_image_to_detect_pupil);
+const int COL_SIZE_DETECTION_PUPIL = std::max(50, limit_rows_size_for_image_to_detect_pupil);

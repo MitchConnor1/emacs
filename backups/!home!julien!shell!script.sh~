@@ -1,0 +1,4 @@
+hatter=2
+echo "$hatter"
+echo "$@"
+echo "$#"

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- En-tête de la page -->
+    <meta charset = "utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title> Hylon </title>
+  </head>
+  
+  <body>
+
+    <h1>Helfern</h1>
+    <h2 id = "nom de la page" > Hylon </h2>
+    <h3>Anderre</h3>
+    <h4>Tsun-Kuhn-Mang</h4>
+    <h5>Kostya</h5>
+    <h6>Würdel</h6>
+    <!-- Corps de la page -->
+    <p> La seule page consacrée à la <em>cité</em> des <strong>plaisirs</strong>.<br>
+    <span class="balise_universelle">Gouvernée</span> par la dénommée <mark>Camille</mark>, elle recelle certaines des déesses les plus dangeureuses de Flickr.
+    <p>Elles sont craintes même des oligarques des autres cités.</p>
+
+<ul class="steel_alive">
+  <li>Mitch
+  <li>Emma
+  <li>Eve
+  <li>Phil
+    <li>Pete
+    </ul>
+
+<ol>
+  <li>Steel Alive
+    <ul>
+      <li>Steel Alive
+      <li>Atlantis
+      <li>A tribute to South Park
+    </ul>
+  <li>Fairytale
+    <ol>
+      <li> Little Red Riding Hood
+      <li>Malice in Wonderland
+      <li>          Ebony Black
+        </ol>
+  <li>The Fallen
+</ol>
+
+    <p>
+      Un exemple d'Anderrane : <a href="https://www.flickr.com/photos/41540960@N03/27865137595/in/photostream/lightbox/" title = "Une Anderrane" target = "_blank">Slincy</a> est une <em>Anderrane</em> de rang <strong>inférieur</strong>.
+
+</p>
+
+<p> Un lien vers une autre page contenue dans le dossier : <a href="page2.html">page2</a>. <br>
+  On a utilisé pour y accéder un <strong>lien relatif</strong>.</p>
+<br>
+<a href="#nom de la page">Forgot where you are?</a>
+<p>Un lien vers un paragraphe en particulier sur la page 2 : 
+<a href="page2.html#ref_page_2">Suivez-moi !</a>
+</p>
+<p>Il est possible de se faire envoyer un mail :
+  <a href="mailto:ormagoden666.42@gmail.com">Adresse mail</a>
+</p>
+
+<p>Ou encore de proposer de télécharger un fichier :
+<a href="Katie.png">Une autre Anderrane</a>
+Voici une autre Anderrane, nommée Christie, en image directement cette fois : 
+<a href="Christie.png"><img src="mini_Christie.png" alt="Christie" title="Cliquez pour agrandir"></a>
+
+</p>
+<p>
+  <figure>
+    <img src="mini_Katie.png" alt="Katie">
+    <img src="mini_Christie.png" alt="Christie">
+    <figcaption>Deux Anderranes</figcaption>
+  </figure>
+  </body>
+</html>
+<!-- em => Mettre un peu en valeur -->
+<!-- strong => Mettre bien en valeur -->
+<!-- mark => faire ressortir visuellement une portion du texte. Il n'est pas nécessairement important, il se fistingue juste du reste. -->
+<!-- # => crée des ancres, des liens vers d'autres parties de la page nommées grâce à id -->
+<!-- span est une balise "inutile", permettant de donner une classe à un mot unique. -->

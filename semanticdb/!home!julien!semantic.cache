@@ -1,0 +1,60 @@
+;; Object julien/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "julien/"
+  :tables
+  (list
+    (semanticdb-table "test.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [1 39])
+            ("javafx.scene.layout.StackPane" include nil nil [40 77])
+            ("javafx.stage.Stage" include nil nil [78 104])
+            ("javafx.scene.control.Button" include nil nil [105 140])
+            ("javafx.scene.Scene" include nil nil [141 167])
+            ("javafx.event.ActionEvent" include nil nil [168 200])
+            ("test" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("init" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public" "final")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [613 714])
+                    ("start" function
+                       (:typemodifiers ("public" "final")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [759 777]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [734 1457])
+                    ("stop" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public" "final")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1657 1745])
+                    ("main" function
+                       (:typemodifiers ("public" "static" "final")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :typemodifiers ("final")
+                                :type "String")
+                                (reparse-symbol formal_parameters) [1899 1918]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1869 2192])
+                    ("onAction" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("event" variable (:type "ActionEvent") (reparse-symbol formal_parameters) [2221 2238]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2199 2283]))                  
+                :type "class")
+                nil [378 2287]))          
+      :file "test.java"
+      :pointmax 2288
+      :fsize 2287
+      :lastmodtime '(22779 56585 213468 504000)
+      :unmatched-syntax nil))
+  :file "!home!julien!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

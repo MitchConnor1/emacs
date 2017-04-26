@@ -1,0 +1,26 @@
+/*Les ordinateurs possèdent deux types de mémoire : une rapide, pour
+ *récupérer une info très vite, et une importante, pour stocker 
+ *un grand nombre de données.
+ *La mémoire rapide est chère.**/
+
+/*Quatre type de mémoire, de la plus rapide à la plus lente :
+ *1. Les registres : Une mémoire ultra-rapide située directement dans le processeur
+ *2. La mémoire cache : Fait le lien entre les registres et la mémoire vive.
+ *3. La mémoire vive : Celle dont se servent les programmes.
+ *4. Le disque dur : C'est là qu'on enregistre les fichiers.
+ Les trois premières se vident lorque l'ordinateur s'éteint.
+**/
+
+/* La RAM associe une adresse à une valeur. 
+ *Une adresse est un nombre permettant à l'ordinateur de se repérer dans la mémoire vive. 
+ *La valeur est un nombre. On ne peut stocker que des nombres, et un seul et unique nombre par adresse.
+
+
+ /*Une variable est une information temporaire que l'on stocke dans la RAM.
+ *Elle est 'variable' car sa valeur peut varier durant le déroulement du progamme.
+ *Une variable est constituée d'un nom et d'une valeur :
+ *La valeur est le nombre stocké.
+ *Le nom est ce qui permet de la reconnaître. Le compilateur fera le lien entre le nom et l'adresse. 
+ *Lorsqu'on crée une variable, il faut en indiquer son type. 
+
+ /**Déclarer une variable :

@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string.h>
+#include "Personne.hpp"
+using namespace std;
+
+int main(){
+  Personne Ind;//instancie un objet vide de la classe Personne.
+  Personne Indi("Michel","Carglass");
+  //strcpy(Ind.Nom,"Michel");//copie le const char * Michel dans le tableau pointé par le pointeur Nom.
+  //strcpy(Ind.Societe,"Carglass");
+  Ind.sePresente();//affiche caractéristiques de l'objet.
+  
+  return 0;
+}

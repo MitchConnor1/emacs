@@ -1,0 +1,72 @@
+;; Object todoListVersion2/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "todoListVersion2/"
+  :tables
+  (list
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [1 39])
+            ("javafx.application.Platform" include nil nil [40 75])
+            ("javafx.event.ActionEvent" include nil nil [76 108])
+            ("javafx.event.EventHandler" include nil nil [109 142])
+            ("javafx.scene.Scene" include nil nil [143 169])
+            ("javafx.stage.Stage" include nil nil [170 196])
+            ("javafx.scene.control.*" include nil nil [197 227])
+            ("javafx.scene.control.cell.*" include nil nil [228 263])
+            ("javafx.scene.layout.*" include nil nil [264 293])
+            ("javafx.geometry.*" include nil nil [294 319])
+            ("javafx.collections.*" include nil nil [320 348])
+            ("javafx.util.*" include nil nil [349 370])
+            ("javafx.beans.value.*" include nil nil [371 399])
+            ("javafx.beans.property.*" include nil nil [400 431])
+            ("Main" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("selectAll" variable (:type "Button") (reparse-symbol class_member_declaration) [483 528])
+                    ("main" function
+                       (:typemodifiers ("public" "static" "final")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :typemodifiers ("final")
+                                :type "String")
+                                (reparse-symbol formal_parameters) [564 583]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [534 608])
+                    ("start" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [647 665]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [628 900])
+                    ("check" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("item" variable (:type "Item") (reparse-symbol formal_parameters) [936 945]))                          
+                        :type "BooleanProperty")
+                        (reparse-symbol class_member_declaration) [906 1118]))                  
+                :type "class")
+                nil [434 1121]))          
+      :file "Main.java"
+      :pointmax 1122
+      :fsize 1120
+      :lastmodtime '(22718 33703 840202 257000)
+      :unmatched-syntax nil)
+
+    (semanticdb-table "Model.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Model" type
+               (:typemodifiers ("public")
+                :type "class")
+                nil [1 111]))          
+      :file "Model.java"
+      :pointmax 112
+      :fsize 111
+      :lastmodtime '(22718 41650 398578 784000)
+      :unmatched-syntax nil))
+  :file "!home!julien!testJava!todoListVersion2!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

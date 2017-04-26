@@ -1,0 +1,13 @@
+class Employe{
+protected:
+  string nom;
+  string prenom;
+  int age;
+  int anciennete;
+public:
+  Employe(string nom=" ",string prenom=" ",int age=0,int anciennete=0);
+  ~Employe();
+  double calculer_base_salaire();
+  void afficher();
+  double calculer_salaire();
+  

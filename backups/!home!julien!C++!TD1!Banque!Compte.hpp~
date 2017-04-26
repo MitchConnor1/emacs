@@ -1,0 +1,13 @@
+#ifndef Banque_H
+#define Banque_H
+
+#include <string>
+class Banque{
+private:
+  int NumClient;
+  string Name;
+  int Solde;
+public:
+  Banque(int,string,int);
+  
+#endif

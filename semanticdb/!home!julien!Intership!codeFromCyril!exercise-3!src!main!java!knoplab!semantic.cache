@@ -1,0 +1,43 @@
+;; Object knoplab/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "knoplab/"
+  :tables
+  (list
+    (semanticdb-table "App.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("knoplab" package nil nil [1 17])
+            ("javafx.application.Application" include nil nil [19 57])
+            ("javafx.scene.Scene" include nil nil [58 84])
+            ("javafx.stage.Stage" include nil nil [85 111])
+            ("knoplab.todoui.TodoUi" include nil nil [112 141])
+            ("App" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [238 251]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [213 327])
+                    ("start" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [365 383]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [347 744]))                  
+                :type "class")
+                nil [170 746]))          
+      :file "App.java"
+      :pointmax 747
+      :fsize 746
+      :lastmodtime '(22712 7380 573028 822000)
+      :unmatched-syntax nil))
+  :file "!home!julien!Intership!codeFromCyril!exercise-3!src!main!java!knoplab!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

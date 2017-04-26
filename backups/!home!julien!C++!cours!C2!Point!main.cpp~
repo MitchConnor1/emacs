@@ -1,0 +1,8 @@
+#include "Point.hpp"
+
+
+int main(){
+  Point *ptr_point;
+  ptr_point=new Point;
+  point->affiche();
+}

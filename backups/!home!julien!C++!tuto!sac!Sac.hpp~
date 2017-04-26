@@ -1,0 +1,16 @@
+
+
+class Sac{
+private:
+  class Element{
+  public:
+    int val;
+    Element* suivant;
+    Element(int v=0){val=v;suivant=NULL;}
+  };
+  Element *tete;
+public:
+  List();
+  range();
+  ~Sac();
+};

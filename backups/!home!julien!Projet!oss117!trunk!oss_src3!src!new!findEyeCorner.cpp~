@@ -1,0 +1,42 @@
+#include "constants.h"
+#include "findEyeCorner.hpp"
+#include "iris.hpp"
+
+/** Open CV **/
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+int findCorner(cv::Mat &frame,cv::Rect &EyeRegion,cv::Point2f &corner,cv::Mat &cornerROI){
+
+  //Smoothing the noise
+  cv::equalizeHist( frame, frame );
+  
+  EyeRegion.width=EyeRegion.width*0.2;
+  EyeRegion.x=0;
+  EyeRegion.y=0;		
+  EyeRegion.height=EyeRegion.height*0.2;
+
+  if (frame.cols == 0) {
+    printf("Error reading file findEyeCorner ");
+    return 1;
+  }
+
+  // Resizing to obtain only eye corner region
+  cornerROI = frame(EyeRegion);
+
+
+  std::vector< cv::Point2f > corners;	
+  cv::Mat mask;
+
+  cv::goodFeaturesToTrack( cornerROI, corners, maxCorners, qualityLevel, minDistance, mask, blockSize, useHarrisDetector, k );
+	
+  if (corners.size()>0){
+    corner.y=corners[0].y + EyeRegion.y;
+    corner.x=corners[0].x + EyeRegion.x;
+    return 0;
+  }
+	
+  return 1;}
+

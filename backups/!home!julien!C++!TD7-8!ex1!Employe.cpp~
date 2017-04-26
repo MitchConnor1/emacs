@@ -1,0 +1,23 @@
+Employe::Employe(string _nom,string _prenom,int _age, int _anciennete){
+  nom=_nom;
+  prenom=_prenom;
+  age=_age;
+  anciennete=_anciennete;
+}
+
+Employe::~Employe(){
+  cout<<"Un employé a été viré, longue vie à l'entreprise"<<endl;
+}
+
+/*double Employe::calculer_base_salaire(){
+  return (Base + chiffre_affaire * PART);
+  }*/
+
+void Employe::afficher(){
+  cout<<"L'employé "<<nom<<" "<<prenom<<" âgé de "<<age<<" ans a une ancienneté de "<<anciennete<<" ans."<<endl;
+}
+
+/*double Employe::calculer_salaire(){
+  calculer_base_salaire()*((Anciennete/10)*100);
+}
+*/

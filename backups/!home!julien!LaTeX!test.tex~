@@ -1,0 +1,14 @@
+\documentclass{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{enumitem}
+\begin{document}
+
+\chapter{Début}
+
+Snezhanka regarda plein de mépris la rousse pitoyable qui rampait devant elle, dans un espoir \
+ridicule d'échapper à son sort. Quelle misérable garce...
+\begin{itemize}
+\item 

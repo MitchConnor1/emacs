@@ -1,0 +1,30 @@
+;; Object SciJava/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "SciJava/"
+  :tables
+  (list
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Main" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static" "final")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :typemodifiers ("final")
+                                :type "String")
+                                (reparse-symbol formal_parameters) [173 192]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [143 202]))                  
+                :type "class")
+                nil [1 205]))          
+      :file "Main.java"
+      :pointmax 206
+      :unmatched-syntax nil)
+)
+  :file "!home!julien!testJava!SciJava!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

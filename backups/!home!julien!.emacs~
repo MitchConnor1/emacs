@@ -1,0 +1,65 @@
+ (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+  '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(custom-enabled-themes (quote (deeper-blue)))
+  '(inhibit-startup-screen t)
+  '(send-mail-function (quote smtpmail-send-it))
+  '(show-paren-mode t)
+  '(text-mode-hook (quote (text-mode-hook-identify))))
+ (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+  )
+
+;; ;; init.el --- Emacs configuration
+
+;; ;; INSTALL PACKAGES
+;; ;; --------------------------------------
+
+
+(require 'package)
+
+ (add-to-list 'package-archives
+       '("melpa" . "http://melpa.org/packages/") t)
+
+ (package-initialize)
+ (when (not package-archive-contents)
+   (package-refresh-contents))
+
+(defvar myPackages
+  '(better-defaults
+  material-theme))
+
+ (mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+
+;; ;; BASIC CUSTOMIZATION
+;; ;; --------------------------------------
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+ (setq inhibit-startup-message t) ;; hide the startup message
+ ;;(load-theme 'material t) ;; load material theme
+ (load-theme 'jbeans t)
+ (global-linum-mode t) ;; enable line numbers globally
+
+
+ (add-to-list 'package-archives
+             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+
+
+ (defvar myPackages
+  '(better-defaults
+   elpy ;; add the elpy package
+    material-theme))
+
+ (elpy-enable)
+
+ (require 'iso-transl)
+
+;; init.el ends here

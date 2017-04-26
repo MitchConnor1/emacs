@@ -1,0 +1,23 @@
+#ifndef REQUETE_H
+#define REQUETE_H
+
+#include <cassert>
+#include <iostream>
+#include <fstream>
+#include <stdexcept>
+#include <map>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Requete{
+private:
+  string nom;
+  vector <string> effects;
+public:
+  Requete(string);
+  string afficheMedoc();
+  vector <string> afficheSecond();
+};
+#endif

@@ -1,0 +1,107 @@
+;; Object scijava/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "scijava/"
+  :tables
+  (list
+    (semanticdb-table "CustomDataService.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava.service.SciJavaService" include nil nil [1 43])
+            ("java.util.List" include nil nil [44 66])
+            ("CustomDataService" type
+               (:typemodifiers ("public")
+                :interfaces ("SciJavaService")
+                :members 
+                  ( ("addData" function
+                       (:arguments 
+                          ( ("data" variable (:type "String") (reparse-symbol formal_parameters) [145 156]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [132 158])
+                    ("removeData" function
+                       (:arguments 
+                          ( ("data" variable (:type "String") (reparse-symbol formal_parameters) [213 224]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [196 226]))                  
+                :type "interface")
+                nil [68 229]))          
+      :file "CustomDataService.java"
+      :pointmax 231
+      :fsize 230
+      :lastmodtime '(22717 32389 498238 995000)
+      :unmatched-syntax nil)
+    (semanticdb-table "DefaultCustomDataService.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava.service.SciJavaService" include nil nil [1 43])
+            ("org.scijava.service.AbstractService" include nil nil [44 87])
+            ("java.util.List" include nil nil [88 110])
+            ("org.scijava.plugin.Plugin" include nil nil [111 144])
+            ("DefaultCustomDataService" type
+               (:typemodifiers ("public")
+                :interfaces ("CustomDataService")
+                :superclasses "AbstractService"
+                :members 
+                  ( ("addData" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("data" variable (:type "String") (reparse-symbol formal_parameters) [344 355]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [323 386])
+                    ("getDataList" function (:constructor-flag t) (reparse-symbol class_member_declaration) [413 453])
+                    ("removeData" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("data" variable (:type "String") (reparse-symbol formal_parameters) [481 492]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [458 495]))                  
+                :type "class")
+                nil [198 497]))          
+      :file "DefaultCustomDataService.java"
+      :pointmax 500
+      :fsize 499
+      :lastmodtime '(22717 32663 876470 149000)
+      :unmatched-syntax nil)
+    (semanticdb-table "UIMain.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava.plugin.Parameter" include nil nil [1 37])
+            ("UIMain" type
+               (:typemodifiers ("public")
+                :type "class")
+                nil [39 116]))          
+      :file "UIMain.java"
+      :pointmax 117
+      :fsize 116
+      :lastmodtime '(22717 33236 89059 544000)
+      :unmatched-syntax '((IDENTIFIER 66 . 76) (IDENTIFIER 99 . 110) (SEMICOLON 110 . 111)))
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava.SciJava" include nil nil [1 28])
+            ("org.scijava.event.ContextDisposingEvent" include nil nil [29 76])
+            ("org.scijava.NoSuchServiceException" include nil nil [77 119])
+            ("org.scijava.plugin.DefaultPluginFinder" include nil nil [120 166])
+            ("org.scijava.service.ServiceHelper" include nil nil [167 208])
+            ("Main" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static" "final")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :typemodifiers ("final")
+                                :type "String")
+                                (reparse-symbol formal_parameters) [264 283]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [234 394]))                  
+                :type "class")
+                nil [209 397]))          
+      :file "Main.java"
+      :pointmax 398
+      :fsize 397
+      :lastmodtime '(22718 30853 17680 62000)
+      :unmatched-syntax nil))
+  :file "!home!julien!testJava!SciJava!scijava!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

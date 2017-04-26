@@ -1,0 +1,21 @@
+
+
+class List{
+private:
+  class Element{
+  public:
+    int donnee;
+    Element *suivant;
+    Element(int val=0){
+      donnee=val;
+      suivant=0;
+    }
+  };
+  Element *tete;
+public:
+  List(){tete=0;}
+  void affiche();
+  void ajoute(int v);
+  int supprime();
+  ~List();
+};

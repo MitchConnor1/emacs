@@ -1,0 +1,141 @@
+\documentclass[a4paper, 12pt]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{layout} %Visualisation du rendu-final des marges
+\usepackage[top = 2cm, bottom = 2cm, left = 2cm, right = 2cm]{geometry} %Permet la modification des marges.
+\usepackage{setspace} %Permet de modifier les interlignes.
+\pagestyle{headings} %défini la forme de l'en-tête et du pied de page
+\usepackage{color} %Gère la colorisation du texte.
+\usepackage{mathptmx} %Change la police générale
+\begin{document}
+\layout
+
+\chapter{Lipsum}
+\section{Interligne simple}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit viverra arcu id rutrum. Aliquam id elit non lacus ultrices placerat vitae a lectus. Maecenas commodo quis nibh eget iaculis. Pellentesque lacinia scelerisque mi, vel tristique turpis molestie et. Duis sit amet tortor egestas augue mollis laoreet. Vivamus sit amet interdum ante. In a diam vel neque sollicitudin bibendum id venenatis dui. Sed sollicitudin nec turpis ac condimentum. Maecenas bibendum velit vel rutrum lobortis. Sed orci ante, ultricies sit amet eleifend sed, volutpat vel metus. Suspendisse ligula ante, molestie a aliquet sed, elementum molestie neque. Nam ut arcu vel nunc accumsan pulvinar sit amet sit amet eros. Nam sed varius mauris.  
+
+\section{Interligne intermédiaire}
+\begin{onehalfspace}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit viverra arcu id rutrum. Aliquam id elit non lacus ultrices placerat vitae a lectus. Maecenas commodo quis nibh eget iaculis. Pellentesque lacinia scelerisque mi, vel tristique turpis molestie et. Duis sit amet tortor egestas augue mollis laoreet. Vivamus sit amet interdum ante. In a diam vel neque sollicitudin bibendum id venenatis dui. Sed sollicitudin nec turpis ac condimentum. Maecenas bibendum velit vel rutrum lobortis. Sed orci ante, ultricies sit amet eleifend sed, volutpat vel metus. Suspendisse ligula ante, molestie a aliquet sed, elementum molestie neque. Nam ut arcu vel nunc accumsan pulvinar sit amet sit amet eros. Nam sed varius mauris. 
+\end{onehalfspace}
+
+\section{Internligne double}
+\begin{doublespace}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit viverra arcu id rutrum. Aliquam id elit non lacus ultrices placerat vitae a lectus. Maecenas commodo quis nibh eget iaculis. Pellentesque lacinia scelerisque mi, vel tristique turpis molestie et. Duis sit amet tortor egestas augue mollis laoreet. Vivamus sit amet interdum ante. In a diam vel neque sollicitudin bibendum id venenatis dui. Sed sollicitudin nec turpis ac condimentum. Maecenas bibendum velit vel rutrum lobortis. Sed orci ante, ultricies sit amet eleifend sed, volutpat vel metus. Suspendisse ligula ante, molestie a aliquet sed, elementum molestie neque. Nam ut arcu vel nunc accumsan pulvinar sit amet sit amet eros. Nam sed varius mauris. 
+\end{doublespace}
+
+\chapter{Listes}
+
+\section{Listes à puces}
+
+\begin{itemize}
+\item Annabelle
+\item Gwënn
+\item[9] Isabelle
+\item Emmanuelle
+\item[Anderre] Ophélia
+\end{itemize}
+
+\section{Liste numérotées}
+
+\begin{enumerate}
+\item Baine
+\item Helfern
+\item Anderre
+\item [@] Sherlock
+\item [1.] Tsun-Kuhn-Mang
+\item Verzoria
+\end{enumerate}
+
+
+\section{Listes de description}
+
+\begin{description}
+\item [Anderre :] cité maudite
+\item [Kostya :] cité rouge
+\item [Helfern :] Capitale
+\end{description}
+
+\chapter{Les polices}
+
+\section{Différentes tailles pré-définies}
+
+\begin {itemize}
+\item \tiny tiny
+\item \scriptsize scriptsize
+\item \footnotesize footnotesize
+\item \small small
+\item \normalsize normalsize (la taille normale)
+\item \large large
+\item \Large Large
+\item \LARGE LARGE
+\item \huge huge
+\item \Huge Huge
+\end{itemize}
+
+\section{La mise en forme}
+
+\begin{itemize}
+\item \textbf{textbf}
+\item \textit{textit}
+\item \textsl{textsl}
+\item \texttt{texttt}
+\item \textsc{textsc}
+\item exposant\textsuperscript{textsuperscript}
+\item \fbox{fbox}
+\end{itemize}
+D'autres sont disponibles dans des packages différents.\\
+Afin d'obtenir une emphase automatique, on utilise la commande \emph{emph} qui génère automatiquement une mise en valeur adaptée.
+
+\section{Couleurs}
+
+\subsection{Couleurs par défaut}
+Afin d'utiliser de la couleur, on se servira du package \texttt{color}. Il permet de choisir parmi huit couleurs différentes par défaut : 
+\begin{itemize}
+\item \textcolor{black}{black}
+\item \textcolor{white}{white}
+\item \textcolor{red}{red}
+\item \textcolor{green}{green}         
+\item \textcolor{blue}{blue}
+\item \textcolor{yellow}{yellow}
+\item \textcolor{magenta}{magenta}
+\item \textcolor{cyan}{cyan}
+\end{itemize}
+
+\subsection{Création de nouvelles couleurs}
+On peut créer de nouvelles couleurs. Pour cela, on utilise la commande \texttt{definecolor}. Elle permet de créer des couleurs à partir des niveaux \textcolor{red} {r} \textcolor{green} {g} \textcolor{blue} {b} ou en niveau de gris.
+\\Pour ce faire, on définit une nouvelle couleur à l'aide de \texttt{definecolor} et on l'appelle comme précédemment.
+\\En niveau de gris, il faut donner un nombre entre 0 et 1, ici 0.78.
+\definecolor{testNiveauDeGris}{gray}{0.78}
+\textcolor{testNiveauDeGris}{Un niveau de gris}
+\\Ici 0.22
+\definecolor{testNiveauDeGris}{gray}{0.22}
+\textcolor{testNiveauDeGris}{Un autre niveau de gris}
+\\0 correspond à noir et 1 correspond à blanc.
+
+On effectue la meme principe pour le rgb, sauf qu'on donne trois nombres entre 0 et 1.
+\definecolor{testCouleur}{rgb}{0.66, 0.87, 0.40}
+\\Ici 0.66, 0.87 et 0.40.
+\textcolor{testCouleur}{Un test tout en couleur.}
+
+La synthaxe générale est \\textcolor\{nomcouleur\}\{texte\} \\et celle de la définition est \\definecolor\{nomCouleur\}\{gray ou rgb\}\{le ou les nombres\}.
+
+
+\subsection{Les packs de police}
+
+Il est également possible de modifier la police de caractère. Pour cela \LaTeX{} utilise des \texttt{packs de polices}.\\
+Un pack comprend quatre polices cohérentes, qui correspondent aux caractères avec empatements, aux caractères sans empattements, aux caractères façon machine à écrire (à la chasse fixe) et aux caractères servant à écrire des formules mathématiques.
+\\Une liste des différents packs de caractères existants :
+\begin{itemize}
+\item Pack bookman
+\item Pack charter
+\item Pack newcent
+\item Pack lmodern(le classique)
+\item Pack mathpazo
+\item Pack mathptmx (l'actuel)
+\end{itemize}
+
+\end{document}
+

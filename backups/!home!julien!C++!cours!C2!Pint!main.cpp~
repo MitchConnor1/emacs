@@ -1,0 +1,6 @@
+#include "Pint.hpp"
+#include <iostream>
+
+int main(){
+  Pint P(20);
+  

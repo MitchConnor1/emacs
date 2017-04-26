@@ -1,0 +1,13 @@
+#ifndef FRACTION_H
+#define FRACTION_H
+
+#include <iostream>
+class ZFraction{
+private:
+  int numerateur;
+  int denominateur;
+public:
+  ZFraction(int=0,int=0);
+  void affiche(std::ostream &flux)const;
+};
+#endif

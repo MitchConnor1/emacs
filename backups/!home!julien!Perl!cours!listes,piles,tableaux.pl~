@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+#assigner une liste à un tableau : 
+
+my @planetes = ('Mercure', 'Venus');
+my @copy = @planetes;  #copie par valeur
+
+my $b = $planetes[0]; #La première case du tableau
+my $a = $copy[$#copy]; #La dernière case du tableau, length - 1
+
+
+#parcours du tableau
+#version 1
+
+for (my $e = 0; $e <= $#planetes; $e++){
+
+    print $copy[$e],"\n";
+}
+
+#version 2
+
+foreach (@planetes){
+    print $_,"\n";
+}
+
+
+push(@planetes,'Terre'); #ajoute Terre dans planetes
+
+
+my $home = pop(@planetes); #Mercure, Venus et $home = Terre 
+
+push(@planetes,"Terre","Mars"); # Mercure Venus Terre Mars
+
+print "@planetes.\n";

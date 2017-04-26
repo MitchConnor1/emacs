@@ -1,0 +1,19 @@
+function countargs() {
+    echo "$# args"
+}
+
+
+IFS=,
+countargs "$*" #gère les arguments comme étant un seul argument séparé par l'IFS, celui par défaut étant TAB. Il n'y a ici qu'un seul argument.
+countargs "$@" #gère chaque argument individuellement. On dénombre donc tous les arguments. 
+
+
+#Opérateurs de substitution
+
+echo ${1:-non-sense} #Renvoie la valeur de $1 si $1 existe, sinon renvoie non-sense.
+echo ${pd:="pd"} #Renvoie la valeur de $pd si $pd existe, sinon fixe sa valeur sur "pd". Ne fonctionne pas sur les variables de position.
+echo $pd
+#echo ${1:?"this parameter hasn't been set"} #Renvoie la valeur de $1 si $1 existe, sinon imprime le message d'erreur renseigné. Le programme se termine à ce moment-là.
+echo ${1:+"indeed"} #Retourne indeed si $1 existe, sinon retourne null.
+echo ${2:1:3} #retourne trois caractère en commençant par celui en position 1. Si pas de :3, retourne jusqu'à la fin du mot.
+echo ${@:2:2} #retourne deux paramètres à partir du deuxième, sachant que le premier sera en position 1.

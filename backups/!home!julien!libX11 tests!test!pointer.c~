@@ -1,0 +1,29 @@
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xos.h>
+#include <X11/Xatom.h>
+#include <X11/X.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <X11/extensions/XInput2.h>
+#include <X11/cursorfont.h>
+
+int main(int argc, char *argv[]){
+  //Get system window
+int cursor_shape=XC_arrow;
+  Display *dpy;
+  Window root_window;
+  char *display_name=NULL;
+  Cursor bla;
+  XColor cursor_fg,cursor_bg;
+  dpy=XOpenDisplay(display_name);
+  root_window = XRootWindow(dpy, 0);
+  XSelectInput(dpy, root_window, KeyReleaseMask);
+  bla=XCreateFontCursor(dpy,cursor_shape);
+  XIWarpPointer(dpy,bla,None, root_window, 0, 0, 0, 0, 0, 0);
+  XWarpPointer(dpy, None, root_window, 0, 0, 0, 0, 200, 100);
+  
+  XFlush(dpy);
+  
+  return 0;}
+

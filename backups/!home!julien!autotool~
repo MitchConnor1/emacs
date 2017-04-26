@@ -1,0 +1,44 @@
+###### DEVELOPPEUR #########
+1 ) On génère les cripts de configuration du code = autoreconf -i
+
+
+
+Rq : Les scripts de configurations générés sont portables pour tout système UNIX. 
+
+configure.ac -> configure (script bash).
+config/* -> génère du code pour configure et dans config/*
+Makefile.am -> Makefile.in
+            -> Génère les README INSTALL (s'ils n'existent pas). 
+
+
+2 ) On configure le code et on crée les makefiles.
+  -> ./configure
+
+Fichier.in -> Fichier (si déclarés dans le configure.ac). 
+           -> config.log (le log des actions faites). 
+
+3 ) On compile
+ -> make
+
+4 ) On installe
+make install
+
+Pour distribuer la bibliothèque : 
+make dist
+
+Ça génère un bib-X.X.X.tar.gz qui contient le code source et les scripts et exécutables qui permettent de configurer le code source. 
+
+Pour un utilisateur voulant installer la bibliothèque :
+
+1 ) Pas besoin de le faire (déjà fait).
+
+2 ) On configure le code
+ -> ./configure
+
+2.1 ) Ex : Installer dans un dossier particulier 
+-> ./configure --PREFIX=$HOME/fakeroot
+3 ) On compile
+ -> make
+
+4 ) On installe
+ -> make install

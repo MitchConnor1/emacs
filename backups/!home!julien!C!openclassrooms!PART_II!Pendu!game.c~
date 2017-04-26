@@ -1,0 +1,92 @@
+#include "game.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int end_game(char *answer, char len, unsigned char cpt){
+  if (cpt == 0){
+    return (-1);
+  }
+    int i = 0;
+    for (i = 0; i < len; i++){
+      if (answer[i] == '*'){
+        return (0);
+      }
+    }
+    return (1);
+}
+
+void game(const char *word, char *answer ,char len, unsigned char *cpt, char *test){
+  int i = 0;
+  char success = 0;
+  printf("Il vous reste %d coups à jouer.\n", *cpt);
+  printf("Quel est le mot ?\n");
+  printf("Proposez une lettre : ");
+  char input = read_input();
+  if (!(already_answered(input, test, 26))){
+    add_answer(input, test, 26);
+    for (i = 0; i < len; i++){
+      if (word[i] == input){
+        answer[i] = input;
+        success = 1;
+      }
+    }
+    if (success == 0){
+      (*cpt)--;
+    }
+}
+  else{
+    printf("Vous avez déjà entré cette réponse, désolé.\n");
+    (*cpt)--;
+  }
+}
+
+void init_answer(char *answer, const char len){
+  
+  int i = 0;
+  for (i = 0; i < len; i++){
+    answer[i] = '*';
+  }
+  answer[i] = '\0';
+}
+
+char already_answered(char input,char test [], int len){
+  char i = 0;
+  for (i = 0; i < len; i++){
+    
+    if (test[i] == input){
+      return (1);
+    }
+  }
+  return (0);
+}
+
+void add_answer(char input,char *test, int len){
+  char i = 0;
+  printf("%c\n", input);
+  for (i = 0; i < len; i++){
+    if (test[i] == 0){
+      test[i] = input;
+      break;
+    }
+  }
+}
+
+
+int main_page(){
+  system("clear");
+  printf("1. Mode un joueur.\n");
+  printf("2. Mode deux joueurs.\n");
+  printf("3. Règles du jeu.\n");
+  printf("4. Options de paramètrage.\n");
+  printf("5. Consulter les meilleurs scores.\n");
+  printf("\n0. Quitter le jeu.\n");
+
+  printf("\nEntrez votre choix : ");
+  int choice = -1;
+  scanf("%d", &choice);
+  getchar();
+  
+  return (choice);
+}
+  

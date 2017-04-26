@@ -1,0 +1,10 @@
+void initialiser_Coordonnees_2D (Coordonnees_2D *point){
+
+  (*point).x = 0;
+  point -> y = y;
+
+  //Ces deux écritures sont strictement équivalentes.
+
+}
+
+  

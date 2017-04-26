@@ -1,0 +1,7 @@
+#ifndef CERCLE_H
+#define CERCLE_H
+
+#include "Point.hpp"
+
+class Cercle{
+  Point centre;

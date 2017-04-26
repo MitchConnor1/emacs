@@ -1,0 +1,8 @@
+int two_players();
+int continue_game();
+int set_nb_mystere(int, int, int);
+int main_page();
+void game(int, int, int);
+void set_difficulty(int *, int *);
+void display_rules();
+void display_credits();

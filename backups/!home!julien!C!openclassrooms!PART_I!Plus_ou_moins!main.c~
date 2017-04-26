@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv){
+  int nb_mystere=0, reponse=1,cpt=0;
+  const int MIN = 1, MAX = 100;
+  int continuer_partie=1;
+  srand(time(NULL));
+  while (continuer_partie){
+    cpt=0;
+    nb_mystere=(rand()%(MAX-MIN+1))+MIN;
+    while (reponse!=nb_mystere){
+      printf("Quel est le nombre ? ");
+      scanf("%d",&reponse);
+      if (reponse>nb_mystere){
+        printf("C'est moins !\n");
+      }
+      if (reponse<nb_mystere){
+        printf("C'est plus !\n");
+      }
+      cpt++;
+    }
+    printf("Bravo, vous avez trouvé le nombre mystere en %d coups.\n",cpt);
+    printf("Rejouer ?\n1. Oui\n2. Non\n");
+    scanf("%d",&continuer_partie);
+    if (continuer_partie==2){
+      continuer_partie=0;}
+  }
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "tab.h"
+
+int main(){
+  
+  int array[4];
+  float size_array=4;
+  array[0] = 10;
+  array[1] = 23;
+  array[2] = 505;
+  array[3] = 8;
+  //on aurait pu écrire int array[4] = {10, 23, 505, 8};
+  //si on fait un tableau plus grand qu'il n'y a de valeurs, l'ordinateur remplit le reste avec la valeur 0.
+  display(array,4);
+  printf("The sum of the elements in the array is %d.\n",sum(array,size_array));
+  printf("The mean of this array is %.2f.\n",mean(array,size_array));
+  int copy[4];
+  copy_array(array,copy,size_array);
+  display(copy,size_array);
+  save_values_inf_to_max(copy, 20, size_array);
+  display(copy,size_array);
+  sort(array,size_array);
+  printf("\n");
+  display(array,size_array);
+  return 0;
+}

@@ -1,0 +1,52 @@
+h1, h4{
+    color: red;
+     font-size: 32px;            
+}
+
+.steel_alive{
+    color: rgb(240, 96, 204);
+    text-decoration: line-through;
+}
+
+.balise_universelle{
+    color: darkblue;
+}
+
+.img_flottante{
+    float: left;
+}
+
+.under{
+    clear: left;
+}
+
+body{
+    /*background-color: black;   */
+    background-image: url("Livön.png");
+    background-attachment: fixed; /*Par défaut Scroll*/
+    background-repeat: no-repeat;  /*Répète sur une ligne. On peut également repeat-y, no-repeat ou repeat (dfaut).*/
+background-position: top right;
+}
+
+strong{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    opacity: 0.4;
+}
+
+ul{
+   border: red 3px;
+}
+
+h2{
+    color: teal;
+}
+/* Il y a de nombreuses autres balises :
+ * * = Toutes les balises 
+ * h1 em = Sans virgule entre les deux => concerne chaque em contenu dans h1.
+ * h1 + em = Le premier em situé dans les h1.
+ * a[title] = tous les a qui possèdent un attribut title.
+ * a[title="Cliquez ici"] = l'attribut doit avoir une valeur spécifique.
+ * a[title*=ici] = l'attribut doit contenir le mot ici, peu importe sa position.
+
+*/

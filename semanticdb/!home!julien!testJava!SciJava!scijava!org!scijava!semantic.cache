@@ -1,0 +1,65 @@
+;; Object scijava/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "scijava/"
+  :tables
+  (list
+    (semanticdb-table "SciJava.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("org.scijava" package nil nil [1588 1608])
+            ("java.util.Collection" include nil nil [1610 1638])
+            ("org.scijava.app.SciJavaApp" include nil nil [1640 1674])
+            ("org.scijava.plugin.Plugin" include nil nil [1675 1708])
+            ("org.scijava.service.Service" include nil nil [1709 1744])
+            ("SciJava" type
+               (:typemodifiers ("public")
+                :superclasses "AbstractGateway"
+                :members 
+                  ( ("SciJava" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [2141 2185])
+                    ("SciJava" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("empty" variable
+                               (:typemodifiers ("final")
+                                :type "boolean")
+                                (reparse-symbol formal_parameters) [2394 2413]))                          )
+                        (reparse-symbol class_member_declaration) [2379 2447])
+                    ("SciJava" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "serviceClasses") (reparse-symbol formal_parameters) [3448 3462]))                          )
+                        (reparse-symbol class_member_declaration) [3418 3505])
+                    ("SciJava" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "serviceClasses") (reparse-symbol formal_parameters) [3840 3854]))                          )
+                        (reparse-symbol class_member_declaration) [3782 3897])
+                    ("SciJava" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("context" variable
+                               (:typemodifiers ("final")
+                                :type "Context")
+                                (reparse-symbol formal_parameters) [4045 4066]))                          )
+                        (reparse-symbol class_member_declaration) [4030 4107])
+                    ("getShortName" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [4148 4196]))                  
+                :type "class")
+                nil [1989 4199]))          
+      :file "SciJava.java"
+      :pointmax 4200
+      :fsize 4199
+      :lastmodtime '(22717 27725 200094 334000)
+      :unmatched-syntax '((RSHIFT 3837 . 3839) (EXTENDS 3822 . 3829) (QUESTION 3820 . 3821) (LT 3819 . 3820) (FINAL 3797 . 3802) (LT 3813 . 3814) (DOT 3446 . 3447) (FINAL 3433 . 3438) (DOT 3445 . 3446) (BRACE_BLOCK 3401 . 3415) (PAREN_BLOCK 1966 . 1988) (IDENTIFIER 1959 . 1966))))
+  :file "!home!julien!testJava!SciJava!scijava!org!scijava!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

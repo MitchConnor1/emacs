@@ -1,0 +1,10 @@
+#ifndef PERSONNE_H
+#define PERSONNE_H
+
+class Personne{
+private:
+  char* pNom;
+  char* pSociete;
+public:
+  Personne(const char* = 0, const char* = 0);
+};

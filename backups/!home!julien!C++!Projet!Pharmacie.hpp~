@@ -1,0 +1,42 @@
+#ifndef __PHARMACIE_HPP
+#define __PHARMACIE_HPP
+
+#include <cassert>
+#include <iostream>
+#include <fstream>
+#include <stdexcept>
+#include <map>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Pharmacie{
+private:
+  map<string, vector<string> > meds; // A adapter à  l'architecture choisie
+  map<string,int> histo; // Contient l'histogramme des effets secondaires.
+
+public:
+  Pharmacie(string);
+  void parsePharma(ifstream&); // parse le fichier d'entrée
+  void parseMed(string);
+  vector <string> getSec();
+  map <string,int> Histo();
+  void afficheHisto();
+  void afficheMedoc();
+  void afficheSecond();
+  void afficher(){map<string,vector<string> > ::iterator p;
+    for (p=meds.begin();p!=meds.end();p++){
+      cout<<p->first<<endl;
+      vector<string>::iterator q;
+      for (q=p->second.begin();q!=p->second.end();q++){
+        cout<<*q<<endl;}
+      cout<<endl;
+    }
+  }
+  void secondCorresp();
+  void correspEntree();
+  void Ajout();
+};
+
+#endif

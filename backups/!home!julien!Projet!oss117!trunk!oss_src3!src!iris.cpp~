@@ -1,0 +1,246 @@
+#include "iris2.hpp"
+
+#include <iostream>
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <iostream>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+
+#include <string>
+
+
+using namespace std;
+using namespace cv;  
+
+cv::Point findPupil(cv::Mat &faceROI,cv::Rect EyeRegion){
+	
+	/** eyeROIUnscaled : resize face image to eye region **/
+	cv::Mat eyeROIUnscaled = faceROI(EyeRegion);
+
+		
+	cv::Mat eyeROI;
+  
+	/** Resizing according to Tristan Hume eyelike code **/
+	scaleToFastSize(eyeROIUnscaled, eyeROI);
+	
+	/** Draw eye region **/
+	rectangle(faceROI,EyeRegion,1234);
+	
+	/**Calculates Matlab gradient for X and Y of the image **/
+	cv::Mat gradientX = computeMatXGradient(eyeROI);
+	cv::Mat gradientY = computeMatXGradient(eyeROI.t()).t(); 
+	
+	/** Get the final gradient from gradientX and gradientY **/
+	cv::Mat mags = matrixMagnitude(gradientX, gradientY);
+	
+	/** To reduce calculation time we need to retain only the significant gradients.
+	 * For this we compute a minimal Threshold to retain these gradients **/
+	 
+	double gradientThresh = computeDynamicThreshold(mags, 50.0);
+	
+	/** For each row i of the image matrice :
+	 * Xr points towards the i row of gradientX, Yr towards the i row of gradientY
+	 * Mr towards the i row of the final gradient G
+	 * for each column j : 
+	 * 		gX = Xr[j], gY = Xr[j] , magnitude = Mr[j] -> value of the gradient at pixel (i,j)
+	 * if magnitude > threshold -> gradient can be kept and Xr and Yr can be normalized with the value of magnitude
+	 * else : we eliminate the pixel as a potential center **/
+	
+	for (int y = 0; y < eyeROI.rows; ++y) {
+    double *Xr = gradientX.ptr<double>(y), *Yr = gradientY.ptr<double>(y);
+    const double *Mr = mags.ptr<double>(y);
+    for (int x = 0; x < eyeROI.cols; ++x) {
+		double gX = Xr[x], gY = Yr[x];
+		double magnitude = Mr[x];
+		if (magnitude > gradientThresh) {
+			Xr[x] = gX/magnitude;
+			Yr[x] = gY/magnitude;
+		} 
+		else {
+			Xr[x] = 0.0;
+			Yr[x] = 0.0;
+			}
+		}
+	}
+	
+	/** To eliminate some possible points, we use Fabian Timm algorithm which puts a weight to each pixel
+	 * 	This weight is calculated from the grey value of the pixel of the smoothed inverted input Image.
+	 *  First the image is smoothed by a GaussianBlur, and the image values put into matrice weight
+	 *  Then "image" weight is inversed by the operation 255 - row[x]
+	 **/
+	
+	cv::Mat weight;
+	GaussianBlur( eyeROI, weight, cv::Size( 5,5 ), 0, 0 );
+	for (int y = 0; y < weight.rows; ++y) {
+		unsigned char *row = weight.ptr<unsigned char>(y);
+		for (int x = 0; x < weight.cols; ++x) {
+		row[x] = (255 - row[x]);
+			}
+	}
+	
+	/** Test all possible centers  : tests each possible center for each gradient location
+	 * if gX and gY are null (have been put to zero thanks to the preliminary steps, it passes and ignores 
+	 * the centers).
+	 **/
+	
+	cv::Mat outSum = cv::Mat::zeros(eyeROI.rows,eyeROI.cols,CV_64F); //a matrice of zeros 
+	for (int y = 0; y < weight.rows; ++y) {
+		const double *Xr = gradientX.ptr<double>(y), *Yr = gradientY.ptr<double>(y);
+		for (int x = 0; x < weight.cols; ++x) {
+		double gX = Xr[x], gY = Yr[x];
+		if (gX == 0.0 && gY == 0.0) {
+			continue;
+		}
+		testPossibleCentersFormula(x, y, weight, gX, gY, outSum);
+		}
+	}
+	/** Now, all the possible centers from tesPossibleCentersFormula are stocked in outSum. 
+	 * Possible centers are > 0. 
+	 * We still need to apply the 1/N from Fabian Timm algorithm 
+	 * For this we convert outsum to a matrice out, with smaller numbers (CV_32F) by multiplying them by a (1.0/size of the 
+	 * matrice) factor. 
+	 * We then use minMaxLoc to find the maximum (and minimum but it is useless ) in the out matrice
+	 **/
+	// numGradients = size of the weight matrice
+	double numGradients = (weight.rows*weight.cols);
+	cv::Mat out;
+	outSum.convertTo(out, CV_32F,1.0/numGradients);
+
+	//-- Find the maximum point
+	cv::Point maxP;
+	double maxVal;
+	cv::minMaxLoc(out, NULL,&maxVal,NULL,&maxP); //maxP will be the location of maxVal
+	
+	 
+	// draw eye centers
+	circle(eyeROI, maxP, 3, 1234);
+	
+	for(;;){
+		imshow("oeil",eyeROI);
+		if(waitKey(30) >= 0) break;
+	}
+
+	return maxP;
+}
+
+/** Function to resize eye picture **/
+void scaleToFastSize(const cv::Mat &src,cv::Mat &dst) {
+	cv::resize(src, dst, cv::Size(50,(((float)50)/src.cols) * src.rows));
+}
+
+/** Function to get Matlab gradient **/
+
+cv::Mat computeMatXGradient(const cv::Mat &mat) {
+	/**copy the mat matrice to a new matrice out where elements are double, due to third argument  CV_64F **/
+    cv::Mat out(mat.rows,mat.cols,CV_64F); 
+  
+    for (int y = 0; y < mat.rows; ++y) { 
+	/** for each row of mat, we point towards a row with *Mr, and *Or points toward the row of out
+	* The first colum of y of Or[0] = Mr[1]-Mr[0]
+	* for each colums we calculate a classic gradient  
+	* 		Or[x] = (Mr[x+1] - Mr[x-1])/2.0;	
+	* except for last column where : Or[mat.cols-1] = Mr[mat.cols-1] - Mr[mat.cols-2];
+	* */
+
+    const uchar *Mr = mat.ptr<uchar>(y);
+    double *Or = out.ptr<double>(y);
+    
+    Or[0] = Mr[1] - Mr[0];
+    for (int x = 1; x < mat.cols - 1; ++x) {
+      Or[x] = (Mr[x+1] - Mr[x-1])/2.0;
+    }
+    Or[mat.cols-1] = Mr[mat.cols-1] - Mr[mat.cols-2];
+  }
+  
+  return out;
+}
+
+/** Function to get the gradient magnitude from gradientX and gradientY **/
+
+cv::Mat matrixMagnitude(const cv::Mat &matX, const cv::Mat &matY) {
+	
+	/** creation of a matrice of double from the gradientX matrice **/
+   cv::Mat mags(matX.rows,matX.cols,CV_64F);
+  
+   /** for each row i of the gradientX matrice :
+    * Xr points towards the row i of gradientX 
+    * Yr points towards the row i of gradientY
+    * Mr points toward the row i of matrice mags
+    * for each comlumn j of the gradientX matrice : 
+    * 	gX = Xr[j]
+    * 	gY = Yr[j]
+    * 	Mr[j] = sqrt((gX * gX) + (gY * gY))
+    * */
+    
+   for (int y = 0; y < matX.rows; ++y) {
+     const double *Xr = matX.ptr<double>(y), *Yr = matY.ptr<double>(y);
+     double *Mr = mags.ptr<double>(y);
+     for (int x = 0; x < matX.cols; ++x) {
+       double gX = Xr[x], gY = Yr[x];
+       double magnitude = sqrt((gX * gX) + (gY * gY));
+       //normaliser matX matY au lieu de creer Mr[X]
+       Mr[x] = magnitude;
+     }
+   }
+   return mags;
+}
+
+/**Function to retain only significant gradients **/
+
+double computeDynamicThreshold(const cv::Mat &mat, double stdDevFactor) {
+	
+  /** cv::Scalar : vectors of 4 elements **/
+  cv::Scalar stdMagnGrad, meanMagnGrad;
+  
+  /** meanStdDev : calculates a mean and standard deviation of array element mat, return mean as an array for meanMagnGrad and 
+   * standard deviation as an array for stdMagnGrad. We need to select stdMagnGrad[0] and meanMagnGrad[0]**/
+  cv::meanStdDev(mat, meanMagnGrad, stdMagnGrad);
+  
+  // DEMANDER A ADRIEN LA FORMULE MAGIQUE
+  
+  double stdDev = stdMagnGrad[0] / sqrt(mat.rows*mat.cols);
+  return stdDevFactor * stdDev + meanMagnGrad[0];
+}
+
+/** Test the possible iris centers **/
+
+void testPossibleCentersFormula(int x, int y, const cv::Mat &weight,double gx, double gy, cv::Mat &out) {
+  /** for each row i of the matrice of zeros : 
+   * Wr points toward the weights at row i 
+   * x and y are a row number and a column number of weight 
+   * if the position in the weight matrice and the zeros matrice is the same, pass
+   * else : calculate the vector d  between the origin of the gradient vector and the possible center 
+   * then normalize dividing by magnitude 
+   * then dot product between the two and square and multiply by the weight ( see Fabian Timm algorithm)
+   * */
+  for (int cy = 0; cy < out.rows; ++cy) {
+    double *Or = out.ptr<double>(cy);
+    const unsigned char *Wr = weight.ptr<unsigned char>(cy);
+    for (int cx = 0; cx < out.cols; ++cx) {
+      if (x == cx && y == cy) { //eliminates if it is the same point
+        continue;
+      }
+      // create a vector from the possible center to the gradient origin
+      double dx = x - cx;
+      double dy = y - cy;
+      double magnitude = sqrt((dx * dx) + (dy * dy));
+      // normalize
+      dx = dx / magnitude;
+      dy = dy / magnitude;
+      //dot product=produit scalaire
+      double dotProduct = dx*gx + dy*gy;
+      //supress negative scalar products
+      dotProduct = std::max(0.0,dotProduct);
+      // square and multiply by the weight
+      Or[cx] += dotProduct * dotProduct * Wr[cx]; // Not exactly the same formula as in a paper because we do it for one point only
+      //on a enleve un truc ici. RIP truc. 
+    }
+  }
+}
+
+

@@ -1,0 +1,15 @@
+int var = 0;
+
+Ici, le programme :
+     1. demande au système d'exploitation la permission d'utiliser un peu de mémoire.
+     2. reçoit la réponse de l'OS en lui indiquant où il peut stocker la variable (en lui indisaunt l'adresse qu'il lui a réservée).
+     3. supprime la variable de la mémoire lorsque la fonction est terminée. Il dit à l'OS qu'il n'a plus besoin de cet espace mémoire là. 
+
+
+Afin de réaliser de l'allocation dynamique, on va avoir besoin de deux fonctions définies dans stdlib :
+     1. malloc, qui demande à l'OS la permission d'utiliser de la mémoire.
+     2. free, qui indique à l'OS qu'on a plus besoin de la mémoire et lui permemt de la libérer pour qu'un autre programme écrive dessus au besoin. 
+
+void* malloc (size_t nombre_octets_nécessaires);
+
+La fonction renvoie en fait un pointeur sur l'adresse que l'OS a réservé pour la variable. C'est un pointeur "universel", car la fonction ne connaît pas d'avance le type sur lequel elle va travailler. 

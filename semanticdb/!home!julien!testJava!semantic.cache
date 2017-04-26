@@ -1,0 +1,67 @@
+;; Object testJava/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "testJava/"
+  :tables
+  (list
+    (semanticdb-table "Calculator.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [1 39])
+            ("javafx.event.ActionEvent" include nil nil [40 72])
+            ("javafx.event.EventHandler" include nil nil [73 106])
+            ("javafx.scene.Scene" include nil nil [107 133])
+            ("javafx.stage.Stage" include nil nil [134 160])
+            ("javafx.scene.control.*" include nil nil [161 191])
+            ("javafx.scene.layout.*" include nil nil [192 221])
+            ("javafx.geometry.Pos" include nil nil [222 249])
+            ("Calculator" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("txtnum1" variable (:type "TextField") (reparse-symbol class_member_declaration) [307 325])
+                    ("txtnum2" variable (:type "TextField") (reparse-symbol class_member_declaration) [326 334])
+                    ("btnadd" variable (:type "Button") (reparse-symbol class_member_declaration) [339 353])
+                    ("btnsub" variable (:type "Button") (reparse-symbol class_member_declaration) [354 361])
+                    ("btndiv" variable (:type "Button") (reparse-symbol class_member_declaration) [362 369])
+                    ("btnmul" variable (:type "Button") (reparse-symbol class_member_declaration) [370 377])
+                    ("btnclear" variable (:type "Button") (reparse-symbol class_member_declaration) [378 387])
+                    ("lblanswer" variable (:type "Label") (reparse-symbol class_member_declaration) [392 408])
+                    ("start" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [446 464]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [428 1691])
+                    ("setWidths" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1698 1991])
+                    ("attachCode" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1997 2283])
+                    ("btncode" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("e" variable (:type "ActionEvent") (reparse-symbol formal_parameters) [2311 2324]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2290 3049])
+                    ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [3080 3093]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3056 3124]))                  
+                :type "class")
+                nil [252 3131]))          
+      :file "Calculator.java"
+      :pointmax 3132
+      :fsize 3131
+      :lastmodtime '(22713 15510 494725 40000)
+      :unmatched-syntax nil))
+  :file "!home!julien!testJava!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

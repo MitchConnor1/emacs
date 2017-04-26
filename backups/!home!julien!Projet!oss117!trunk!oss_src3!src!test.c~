@@ -1,0 +1,40 @@
+#include <X11/Xlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int main(void) {
+   Display *d;
+   Window w;
+   XEvent e;
+   char *msg = "Hello, World!";
+   int s;
+   unsigned int display_width,display_height;
+   
+   
+   d = XOpenDisplay(NULL);
+   if (d == NULL) {
+      fprintf(stderr, "Cannot open display\n");
+      exit(1);
+   }
+   display_width = DisplayWidth(d, 0);
+   display_height = DisplayHeight(d, 0);
+   s = DefaultScreen(d);
+   w = XCreateSimpleWindow(d, RootWindow(d, s), 0,0, display_width, display_height, 1,
+                           BlackPixel(d, s), WhitePixel(d, s));
+   XSelectInput(d, w, ExposureMask | KeyPressMask);
+   XMapWindow(d, w);
+   while (1) {
+      XNextEvent(d, &e);
+ if (e.type == Expose) {
+         XFillRectangle(d, w, DefaultGC(d, s), 20, 20, 0, 0);
+         XDrawArc(d, w, DefaultGC(d, s),0,0,15,15,0,360*64);
+      }
+      if (e.type == KeyPress)
+        XDrawArc(d,w,DefaultGC(d, s),display_width/2,0, 15,15,0,360*64);
+         break;
+   }
+ 
+   XCloseDisplay(d);
+   return 0;
+}

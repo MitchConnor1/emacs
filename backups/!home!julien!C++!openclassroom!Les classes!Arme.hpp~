@@ -1,0 +1,15 @@
+#ifndef Arme_h
+#define Arme_h
+
+#include <string>
+class Arme{
+private:
+  std::string name;
+  int degats;
+public:
+  Arme();
+  Arme(std::string, int);
+  void changer(std::string, int);
+  void afficher() const;
+};
+#endif

@@ -1,0 +1,298 @@
+;; Object Objet/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Objet/"
+  :tables
+  (list
+    (semanticdb-table "conv.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("conv" type
+               (:typemodifiers ("public")
+                :type "class")
+                nil [1 3403]))          
+      :file "conv.java"
+      :pointmax 3404
+      :fsize 3451
+      :lastmodtime '(22694 19702 242528 203000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Classable.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Classable" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("compare" function
+                       (:arguments 
+                          ( ("o" variable (:type "Object") (reparse-symbol formal_parameters) [170 178]))                          
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [157 180])
+                    ("isInferieur" function
+                       (:arguments 
+                          ( ("o" variable (:type "Object") (reparse-symbol formal_parameters) [210 218]))                          
+                        :type "boolean")
+                        (reparse-symbol interface_member_declaration) [189 238])
+                    ("isSuperieur" function
+                       (:arguments 
+                          ( ("o" variable (:type "Object") (reparse-symbol formal_parameters) [273 281]))                          
+                        :type "boolean")
+                        (reparse-symbol interface_member_declaration) [252 301])
+                    ("INFERIEUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [306 345])
+                    ("EGAL" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [350 383])
+                    ("SUPERIEUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [388 426])
+                    ("ERREUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [431 468]))                  
+                :type "interface")
+                nil [119 476]))          
+      :file "Classable.java"
+      :pointmax 1758
+      :fsize 1810
+      :lastmodtime '(22694 28119 739532 805000)
+      :unmatched-syntax '((DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188) (DEFAULT 244 . 251) (DEFAULT 181 . 188)))
+    (semanticdb-table "Personne.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.time.LocalDate" include nil nil [1 28])
+            ("java.time.temporal.ChronoUnit" include nil nil [29 66])
+            ("Personne" type
+               (:typemodifiers ("public" "abstract")
+                :members 
+                  ( ("nom" variable
+                       (:typemodifiers ("protected")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [112 133])
+                    ("prenom" variable
+                       (:typemodifiers ("protected")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [139 163])
+                    ("dateDeNaissance" variable
+                       (:typemodifiers ("protected")
+                        :type "LocalDate")
+                        (reparse-symbol class_member_declaration) [168 204])
+                    ("numero" variable
+                       (:typemodifiers ("protected")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [260 281])
+                    ("nbInstances" variable
+                       (:typemodifiers ("protected" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [353 386])
+                    ("Personne" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [430 559])
+                    ("Personne" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("nom" variable (:type "String") (reparse-symbol formal_parameters) [582 592])
+                            ("prenom" variable (:type "String") (reparse-symbol formal_parameters) [594 607])
+                            ("dateDeNaissance" variable (:type "LocalDate") (reparse-symbol formal_parameters) [609 634]))                          )
+                        (reparse-symbol class_member_declaration) [566 764])
+                    ("getNom" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [770 814])
+                    ("getPrenom" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [820 870])
+                    ("getNumero" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [876 921])
+                    ("getNbInstances" function
+                       (:typemodifiers ("public" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1008 1066])
+                    ("setNom" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("nom" variable (:type "String") (reparse-symbol formal_parameters) [1092 1102]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1073 1127])
+                    ("setPrenom" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("prenom" variable (:type "String") (reparse-symbol formal_parameters) [1159 1172]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1137 1203])
+                    ("calculerAge" function
+                       (:typemodifiers ("protected")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [1210 1313])
+                    ("toString" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1319 1490])
+                    ("finalize" function
+                       (:throws ("Throwable")
+                        :typemodifiers ("protected")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1532 1590]))                  
+                :type "class")
+                nil [70 1592]))          
+      :file "Personne.java"
+      :pointmax 1593
+      :fsize 1597
+      :lastmodtime '(22679 56256 378973 159000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Client.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.time.*" include nil nil [1 20])
+            ("Client" type
+               (:typemodifiers ("public")
+                :interfaces ("Classable")
+                :superclasses "Personne"
+                :members 
+                  ( ("type" variable
+                       (:typemodifiers ("private")
+                        :type "char")
+                        (reparse-symbol class_member_declaration) [186 204])
+                    ("Client" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("nom" variable (:type "String") (reparse-symbol formal_parameters) [224 234])
+                            ("prenom" variable (:type "String") (reparse-symbol formal_parameters) [236 249])
+                            ("d" variable (:type "LocalDate") (reparse-symbol formal_parameters) [251 262])
+                            ("type" variable (:type "char") (reparse-symbol formal_parameters) [264 273]))                          )
+                        (reparse-symbol class_member_declaration) [210 325])
+                    ("Client" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [331 380])
+                    ("getType" function
+                       (:typemodifiers ("public")
+                        :type "char")
+                        (reparse-symbol class_member_declaration) [385 429])
+                    ("setType" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("type" variable (:type "char") (reparse-symbol formal_parameters) [456 465]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [435 492])
+                    ("toString" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [498 910])
+                    ("compare" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("o" variable (:type "Object") (reparse-symbol formal_parameters) [936 944]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [916 1231]))                  
+                :type "class")
+                nil [22 1233]))          
+      :file "Client.java"
+      :pointmax 1234
+      :fsize 1234
+      :lastmodtime '(22674 23623 751270 840000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.time.LocalDate" include nil nil [1 28])
+            ("java.util.Arrays" include nil nil [29 53])
+            ("Main" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [103 117]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [79 1935])
+                    ("tri" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("tablo" variable
+                               (:dereference 1
+                                :type "Classable")
+                                (reparse-symbol formal_parameters) [2141 2158]))                          
+                        :type "Classable[]")
+                        (reparse-symbol class_member_declaration) [2110 2509])
+                    ("tri" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("tablo" variable
+                               (:dereference 1
+                                :type "Object")
+                                (reparse-symbol formal_parameters) [2542 2556])
+                            ("trieur" variable (:type "Comparateur") (reparse-symbol formal_parameters) [2558 2576]))                          
+                        :type "Object[]")
+                        (reparse-symbol class_member_declaration) [2514 3139])
+                    ("tri" function
+                       (:throws ("Exception")
+                        :arguments 
+                          ( ("" variable (:type "liste") (reparse-symbol formal_parameters) [3210 3215]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3181 3697]))                  
+                :type "class")
+                nil [55 3699]))          
+      :file "Main.java"
+      :pointmax 3706
+      :fsize 3718
+      :lastmodtime '(22704 59669 257602 131000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Comparateur.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Comparateur" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("compare" function
+                       (:arguments 
+                          ( ("o1" variable (:type "Object") (reparse-symbol formal_parameters) [689 698])
+                            ("o2" variable (:type "Object") (reparse-symbol formal_parameters) [700 709]))                          
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [676 711])
+                    ("INFERIEUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [716 755])
+                    ("EGAL" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [760 793])
+                    ("SUPERIEUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [798 836])
+                    ("ERREUR" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol interface_member_declaration) [841 878]))                  
+                :type "interface")
+                nil [636 886]))          
+      :file "Comparateur.java"
+      :pointmax 979
+      :fsize 997
+      :lastmodtime '(22694 29256 529191 710000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ListeGenerique.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.util.ArrayList" include nil nil [1 28]))          
+      :file "ListeGenerique.java"
+      :pointmax 926
+      :fsize 932
+      :lastmodtime '(22704 57173 945659 281000)
+      :unmatched-syntax '((BRACE_BLOCK 189 . 925) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 809) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 804) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 798) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 797) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 793) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 792) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 788) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157) (BRACE_BLOCK 189 . 782) (GT 187 . 188) (IDENTIFIER 178 . 187) (AND 176 . 177) (IDENTIFIER 167 . 175) (EXTENDS 159 . 166) (IDENTIFIER 157 . 158) (PUBLIC 128 . 134) (LT 156 . 157))))
+  :file "!home!julien!Documents!Courses!Bioinformatics!Languages!Java!Java8!Objet!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

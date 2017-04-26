@@ -1,0 +1,9 @@
+#include "List.hpp"
+#include <iostream>
+using namespace std;
+
+void List::affiche(){
+  Element* courant;
+  courant=tete;
+  while(courant!=NULL){
+    

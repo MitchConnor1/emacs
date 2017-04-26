@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int nbSansAmes[5]; //Déclare un tableau pouvant contenir 5 int.
+  return 0;
+}

@@ -1,0 +1,15 @@
+#ifndef Technicien_h
+#def Technicien_h
+
+#include "Employe.hpp"
+
+class Technicien:public Employe{
+protected:
+  static const double Base=1000;
+  static const double Part=0.8;
+  static const double Gain_Unite=23.456;
+  int nb_unite_produite;
+public:
+  Technicien(string,string,int,int,int);
+
+#endif

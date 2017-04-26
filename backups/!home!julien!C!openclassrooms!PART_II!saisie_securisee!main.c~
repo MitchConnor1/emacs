@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+
+  char nom[20] = {0};
+
+  printf("Quel est votre nom ? ");
+  scanf("%s", nom);
+  printf("Vous vous appelez %s\n", nom);
+
+  return (0);
+
+}

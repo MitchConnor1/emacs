@@ -1,0 +1,17 @@
+\documentclass{book}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+\author{Mitch \textsc{Connor}}
+\date{\today}
+\title{Elodie}
+\begin{document}
+
+
+\chapter{}
+
+C'était armée d'un large sourire et d'une humeur fantastique qu'Elodie Llevot attaquait chaque journée qu'elle vivait depuis qu'elle avait emmenagé dans cette petite ville de campagne. Il fallait dire que le moindre instant qu'elle y passait justifiait à lui seul tous les compliments qu'on lui avait donné sur 'endroit.\\
+Et quel plaisir éprouvait-elle en découvrant encore et toujours la présence de sa petite esclave agenouillée au pied de son lit ! \\

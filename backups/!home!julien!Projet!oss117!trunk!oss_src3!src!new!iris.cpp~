@@ -1,0 +1,170 @@
+#include "iris.hpp"
+
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+
+using namespace std;
+using namespace cv;  
+
+int findPupil(cv::Mat &frame,cv::Point& Pupil){
+
+  if (frame.cols == 0) {
+    printf("Error reading file findPupil");
+    return 1;
+  }
+
+  scaleToFastSize(frame, frame);
+  cv::Mat gradientX = computeMatXGradient(frame);
+  cv::Mat gradientY = computeMatXGradient(frame.t()).t(); 
+	
+  cv::Mat mags = matrixMagnitude(gradientX, gradientY);
+	
+  /** only grandients of interest are kept **/
+	 
+  double gradientThresh = computeDynamicThreshold(mags, 50.0);
+	
+
+  for (int y = 0; y < frame.rows; ++y) {
+    double *Xr = gradientX.ptr<double>(y), *Yr = gradientY.ptr<double>(y);
+    const double *Mr = mags.ptr<double>(y);
+    for (int x = 0; x < frame.cols; ++x) {
+      double gX = Xr[x], gY = Yr[x];
+      double magnitude = Mr[x];
+      if (magnitude > gradientThresh) {
+        Xr[x] = gX/magnitude;
+        Yr[x] = gY/magnitude;
+      } 
+      else {
+        Xr[x] = 0.0;
+        Yr[x] = 0.0;
+      }
+    }
+  }
+	
+  /** Smoothing the noise **/
+	
+  cv::Mat weight;
+  GaussianBlur( frame, weight, cv::Size( 5,5 ), 0, 0 );
+  for (int y = 0; y < weight.rows; ++y) {
+    unsigned char *row = weight.ptr<unsigned char>(y);
+    for (int x = 0; x < weight.cols; ++x) {
+      row[x] = (255 - row[x]);
+    }
+  }
+	
+  /** Check every gradient center  **/
+	
+  cv::Mat outSum = cv::Mat::zeros(frame.rows,frame.cols,CV_64F); //a matrice of zeros 
+  for (int y = 0; y < weight.rows; ++y) {
+    const double *Xr = gradientX.ptr<double>(y), *Yr = gradientY.ptr<double>(y);
+    for (int x = 0; x < weight.cols; ++x) {
+      double gX = Xr[x], gY = Yr[x];
+      if (gX == 0.0 && gY == 0.0) {
+        continue;
+      }
+      testPossibleCentersFormula(x, y, weight, gX, gY, outSum);
+    }
+  }
+  
+
+
+  double numGradients = (weight.rows*weight.cols);
+  cv::Mat out;
+  outSum.convertTo(out, CV_32F,1.0/numGradients);
+
+  cv::Point maxP;
+  double maxVal;
+  cv::minMaxLoc(out, NULL,&maxVal,NULL,&maxP); //maxP will be the location of maxVal
+	
+  circle(frame, maxP, 3, 1234);
+  Pupil = maxP;
+  return 0;
+}
+
+
+void scaleToFastSize(const cv::Mat &src,cv::Mat &dst) {
+  cv::resize(src, dst, cv::Size(50,(((float)50)/src.cols) * src.rows));
+}
+
+
+
+cv::Mat computeMatXGradient(const cv::Mat &mat) {
+  cv::Mat out(mat.rows,mat.cols,CV_64F); 
+  
+  for (int y = 0; y < mat.rows; ++y) { 
+
+    const uchar *Mr = mat.ptr<uchar>(y);
+    double *Or = out.ptr<double>(y);
+    
+    Or[0] = Mr[1] - Mr[0];
+    for (int x = 1; x < mat.cols - 1; ++x) {
+      Or[x] = (Mr[x+1] - Mr[x-1])/2.0;
+    }
+    Or[mat.cols-1] = Mr[mat.cols-1] - Mr[mat.cols-2];
+  }
+  
+  return out;
+}
+
+
+cv::Mat matrixMagnitude(const cv::Mat &matX, const cv::Mat &matY) {
+       
+  cv::Mat mags(matX.rows,matX.cols,CV_64F);
+ 
+    
+  for (int y = 0; y < matX.rows; ++y) {
+    const double *Xr = matX.ptr<double>(y), *Yr = matY.ptr<double>(y);
+    double *Mr = mags.ptr<double>(y);
+    for (int x = 0; x < matX.cols; ++x) {
+      double gX = Xr[x], gY = Yr[x];
+      double magnitude = sqrt((gX * gX) + (gY * gY));
+      Mr[x] = magnitude;
+    }
+  }
+  return mags;
+}
+
+/**Function to retain only significant gradients **/
+
+double computeDynamicThreshold(const cv::Mat &mat, double stdDevFactor) {
+	
+  //Scalar = 4 grandiants vector.
+  cv::Scalar stdMagnGrad, meanMagnGrad;
+  
+  cv::meanStdDev(mat, meanMagnGrad, stdMagnGrad);
+  
+ 
+  
+  double stdDev = stdMagnGrad[0] / sqrt(mat.rows*mat.cols);
+  return stdDevFactor * stdDev + meanMagnGrad[0];
+}
+
+/** Test the possible iris centers **/
+
+void testPossibleCentersFormula(int x, int y, const cv::Mat &weight,double gx, double gy, cv::Mat &out) {
+ 
+  for (int cy = 0; cy < out.rows; ++cy) {
+    double *Or = out.ptr<double>(cy);
+    const unsigned char *Wr = weight.ptr<unsigned char>(cy);
+    for (int cx = 0; cx < out.cols; ++cx) {
+      if (x == cx && y == cy) { 
+        continue;
+      }
+      double dx = x - cx;
+      double dy = y - cy;
+      double magnitude = sqrt((dx * dx) + (dy * dy));
+      // normalization
+      dx = dx / magnitude;
+      dy = dy / magnitude;
+      double dotProduct = dx*gx + dy*gy;
+      dotProduct = std::max(0.0,dotProduct);
+      Or[cx] += dotProduct * dotProduct * Wr[cx];
+      
+    }
+  }
+}
+
+

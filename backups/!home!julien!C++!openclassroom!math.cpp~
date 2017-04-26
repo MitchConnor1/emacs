@@ -1,0 +1,6 @@
+#include "math.hpp"
+
+int acquisition(int nbReçu){
+  int valeur(nbReçu+2);
+  return valeur;
+}

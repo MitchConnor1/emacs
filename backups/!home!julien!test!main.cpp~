@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+
+
+
+
+int main(){
+
+  std::ifstream file;
+  file.open("test_calibration.txt");
+
+  int a = 0, b = 0, c = 0, d = 0;
+
+  file >> a;
+  file >> b;
+  file >> c;
+  file >> d;
+
+  std::cout << d << std::endl;
+
+  return 0;
+
+}

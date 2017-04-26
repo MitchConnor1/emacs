@@ -1,0 +1,29 @@
+#ifndef DICO_H
+#define DICO_H
+
+
+//*****************  DICO  ***************************
+
+/*Ce fichier contient l'ensemble des fonctions manipulant le fichier contenant la liste des mots possibles dans le pendu.
+ */
+
+
+//La longueur du plus long des mots contenus dans le fichier.
+
+#define MOT_LE_PLUS_LONG 14
+
+//Le fichier contenant les mots à trouver
+
+#define FILE_NAME "mots.txt"
+
+
+// Récupère un mot dans le fichier FILE_NAME, et le place dans un char*
+
+void get_word(const char*, char*);
+
+//Une version sécurisée de la lecture, renvoie une lettre.
+char read_input();
+
+
+
+#endif

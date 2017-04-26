@@ -1,0 +1,83 @@
+/** FIFOS **/
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+/** Open CV **/
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+/** Xlib **/
+
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xatom.h>
+
+
+#include <iostream>
+int main(){
+	
+	Display *dpy;
+   	Window root_window;
+	dpy = XOpenDisplay(0);
+	root_window = XRootWindow(dpy, 0);
+
+	XSelectInput(dpy, root_window, KeyReleaseMask);
+
+	const char * mouse_position = "mouse_position";
+	const char * label_info = "/usr/local/src/OSS/label.txt";
+        if (system("xinput list | grep 'ossmouse pointer'")==0){
+          std::cout<<4;
+          system("xinput list | grep 'ossmouse pointer' | cut -f 2 | cut -d '=' -f 2 > /usr/local/src/OSS/label.txt");}
+	FILE* label_id;
+	label_id = fopen(label_info,"r");
+	int id;
+	fscanf(label_id,"%d",&id);
+	fclose(label_id);
+	int xmouse;
+	int ymouse;
+	
+	FILE* mouse_file;
+	
+	mouse_file = fopen(mouse_position,"r");
+	
+	int screen_num;
+	
+	int width; 
+	int height;
+	screen_num = DefaultScreen(dpy);
+	width = DisplayWidth(dpy,screen_num);
+	height = DisplayHeight(dpy,screen_num);
+	
+	
+	
+	for (;;){
+	
+		fscanf(mouse_file,"%d %d",&xmouse,&ymouse);
+
+		if (xmouse<0){
+			xmouse=0;
+		}
+		if (ymouse<0){
+			ymouse=0;
+		}
+		if (xmouse>width){
+			xmouse = 0;
+		}
+		if (ymouse>height){
+			ymouse = 0;
+		}
+		
+		XWarpPointer(dpy,root_window, root_window, 0, 0, 0, 0, xmouse, ymouse);
+		
+		XFlush(dpy);
+		
+	}
+	fclose(mouse_file);
+	return 0;
+}	
+		
+		

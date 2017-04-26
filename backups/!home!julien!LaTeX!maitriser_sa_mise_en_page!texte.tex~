@@ -1,0 +1,32 @@
+\documentclass{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+\begin{document}
+
+\part{Partie}
+\chapter*{Chapitre}
+\section{Section}
+\subsection{Une sous-section}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo erat, ultrices eu ante ut, congue fringilla sem. Donec sed mauris vitae nulla semper ultricies. In ut justo enim. Quisque porta eleifend ligula. Praesent mattis mattis velit quis sagittis. Phasellus ac quam orci. Phasellus non est lacus. Nulla purus ex, pulvinar at ultricies hendrerit, pellentesque id justo. Vestibulum tincidunt, dui eu maximus vulputate, odio libero scelerisque augue, quis tincidunt mauris est vel nunc. Vivamus dignissim, nibh quis semper dignissim, urna arcu scelerisque dui, sit amet ultrices ex ante vel urna. Maecenas posuere placerat dui vel lobortis.
+
+\subsection{Une autre sous-section}
+
+Suspendisse mauris risus, sagittis ut augue in, maximus volutpat diam. Integer congue nunc sit amet tellus suscipit, at convallis leo mattis. Suspendisse faucibus auctor est et ultricies. Quisque quis tristique magna. Fusce nisl orci, finibus et ullamcorper nec, viverra quis purus. Ut ut dui et lectus auctor porttitor eu at dui. Aenean rhoncus eget nisl sed posuere. Aliquam erat volutpat. Nulla facilisi. Etiam arcu nunc, egestas eu ultrices fermentum, egestas ut mi. Maecenas dictum tellus ligula, consectetur vehicula elit elementum ut. Praesent viverra arcu et ultrices lobortis. 
+
+\chapter*{Chapitre 2}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin nunc eget metus consequat sollicitudin. Vivamus aliquet justo sed elit bibendum porta. Nullam imperdiet, nibh quis tempor elementum, neque lectus pretium eros, sed maximus dui mauris a lacus. Vestibulum eleifend viverra semper. Integer vel fermentum lectus, volutpat faucibus ligula. Maecenas non dolor ut ipsum dictum congue. Nullam viverra lobortis ligula, sed ultricies risus egestas sed. Suspendisse a purus dolor. Nam tempus nisl vitae aliquam ultrices. Nunc condimentum arcu eu justo lobortis, sit amet dapibus lorem bibendum. Nunc at laoreet tellus. Vestibulum imperdiet non sapien at semper. Sed tempor odio eu magna consectetur tincidunt. Morbi aliquam dolor gravida tortor bibendum, id cursus justo ultrices. Pellentesque molestie metus id lectus egestas feugiat. Nam ac erat ac lorem imperdiet iaculis non et ante. 
+
+\appendix
+\chapter{Un schéma}
+
+\chapter{Un article annexe}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin nunc eget metus consequat sollicitudin. Vivamus aliquet justo sed elit bibendum porta. Nullam imperdiet, nibh quis tempor elementum, neque lectus pretium eros, sed maximus dui mauris a lacus. Vestibulum eleifend viverra semper. Integer vel fermentum lectus, volutpat faucibus ligula. Maecenas non dolor ut ipsum dictum congue. Nullam viverra lobortis ligula, sed ultricies risus egestas sed. Suspendisse a purus dolor. Nam tempus nisl vitae aliquam ultrices. Nunc condimentum arcu eu justo lobortis, sit amet dapibus lorem bibendum. Nunc at laoreet tellus. Vestibulum imperdiet non sapien at semper. Sed tempor odio eu magna consectetur tincidunt. Morbi aliquam dolor gravida tortor bibendum, id cursus justo ultrices. Pellentesque molestie metus id lectus egestas feugiat. Nam ac erat ac lorem imperdiet iaculis non et ante. 
+
+\chapter{Un canard}
+\end{document}

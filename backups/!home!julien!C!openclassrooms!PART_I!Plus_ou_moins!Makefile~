@@ -1,0 +1,9 @@
+CC = gcc
+CCFLAGS = -g -Wall
+LDFLAGS = -std=c99
+
+PROG = main
+
+all: $(PROG)
+
+main : main.o game.o

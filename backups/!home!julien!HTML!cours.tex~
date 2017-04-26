@@ -1,0 +1,659 @@
+\documentclass[openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{url}
+
+\title{Les langages HTML5 et CSS3}
+\begin{document}
+\maketitle
+
+\part{Le HTML}
+
+\chapter{Comment fait-on pour créer des sites web ?}
+
+\section{Le fonctionnement des sites web}
+
+Tous les sites web sont basés sur le HTML et le CSS, ils sont incontournables et universels. Ils sont à la base même du Web. Le langage HTML a été inventé par Tim Berners-Lee en 1991.\\
+Il suit encore avec attention l'évolution du Web. Il a créé le \emph{World Wide Web Consortium} qui définit les nouvelles versions des langages liés au Web. Il a par ailleurs également créé la \emph{World Wide Web Foundation} qui analyse et suit l'évolution du Web.
+
+\section{HTML et CSS : deux langages pour créer un site web}
+Pour créer un site web, il faut donner des instructions à l'ordinateur. 
+On utilise pour cela deux langages qui se complètent, car ils ont des rôles différents :
+\begin{description}
+\item [HTML (\emph{HyperText Markup Language}) :] Il a fait son apparition dès 1991 lors du lancement du Web. Son rôle est de gérer et organiser le contenu. C'est donc en HTML que l'on écrira ce qui doit être affiché sur la page : texte, image, lien...
+\item [CSS (\emph{Cascading Style Sheets}) :] Né en 1996. Son rôle est de gérer l'apparence de la page Web (agencement, positionnement, décoration, couleurs, taille du texte\dots{}).
+\end{description}
+Note : Il existe égalment le XHTML. C'est une variante du HTML qui se veut plus rigoureuse et qui est donc un peu plus délicate à manipuler. Elle n'est plus vraiment utilisée. \\
+Ce cours s'attarde sur la version HTML5 de HTML.\\
+
+Il est parfaitement possible de créer un site web en HTML uniquement, mais l'information paraîtra \og brute \fg. 
+
+\section{Les différentes versions de HTML et de CSS}
+Au fil du temps, ces deux langages ont beaucoup évolué. Dans HTML 1.0, il était impossible d'afficher des images.
+
+
+\subsection{Les versions de HTML}
+
+\begin{description}
+\item [HTML 1 :] C'est la toute première version créée par Tim Berners-Lee en 1991.
+\item [HTML 2 :] La deuxième version de HTML apparaît en 1994 et prend fin en 1996 avec l'apparition de son successeur. Les règles et le fonctionnement de cette version sont donnés par le W3C (tandis que la première version avait été créée par un seul homme).
+\item [HTML 3 :] Apparue en 1996, elle rajoute les tableaux, les applets, les scripts, le positionnement du texte autour des images\dots{}
+\item [HTML 4 :] Cette version aura été utilisée un long moment durant les années 2000. Elle apparaît pour la première fois en 1998 et propose l'utilisation de frames (qui découpent une page web en plusieurs parties), des tableaux plus complexes, des améliorations sur les formulaires\dots C'est cette version qui introduira l'utilisation du CSS.
+\item [HTML 5 :] Elle inclut la possibilité d'inclure facilement des vidéos, un meilleur agencement du contenu, de nouvelles fonctionnalités pour les formulaires\dots
+\end{description}
+
+
+\subsection{Les versions de CSS}
+
+\begin{description}
+\item [CSS 1 :] Dès 1996, on dispose de la première version du CSS. Elle pose les bases de ce langage qui permet de présenter sa page web, comme les couleurs, les marges, les polices de caractère\dots
+\item [CSS 2 :] Apparue en 1999 puis complétée par CSS 2.1, cette nouvelle version rajoute de nombreuses options. On peut ainsi utiliser des techniques de positionement très précises, permettant d'afficher des éléments où on le souhaite sur la page.
+\item [CSS 3 :] Elle permet des bordures arrondies, des dégrradés, des ombres\dots
+\end{description}
+
+\section{Les navigateurs}
+Le navigateur est le programme permettant de voir les sites web. Son rôle est de lire le code HTML et CSS pour afficher un résultat visuel à l'écran. \\
+Le problème est que les différents navigateurs n'affichent pas le même site exactement de la même façon. Il faudra donc vérifier la compatibilité du site.\\
+Cette différence est due au fait que les navigateurs ne connaissent pas toujours les dernières fonctionnalités HTML et CSS. De plus, plusieurs version des navigateurs coexistent. On peut avoir une liste des fonctionnalités prises en charge par les différentes versions de chaque navigateur sur : \url{www.caniuse.com}
+
+
+\section{En résumé}
+
+\begin{itemize}
+\item Le Web a été inventé par Tim Berners-Lee au début des années 1990.
+\item Pour créer des sites Web, on utilise deux langages informatiques, HTML(fond) et CSS (forme).
+\item Il y a plusieurs versions de ceux-ci. Les dernières sont HTML5 et CSS3.
+\item Le navigateur web est un programme qui permet d'afficher des sites web. Il lit les langages HTML et CSS pour savoir ce qu'il doit afficher.
+\item Il en existe de nombreux : Google Chrome, Mozilla Firefox, Internet Explorer, Safari, Opera\dots Chacun affiche un site web de manière légèrement différente.
+\end{itemize}
+
+\chapter{Une première page HTML}
+
+Il ne suffit pas de taper du texte pour créer une page Web. Il faut également renseigner des \emph{balises}, qui donneront des instructions à l'ordinateur comme \og aller à la ligne \fg, \og afficher une image \fg\dots
+
+\section{Les balises et leurs attributs}
+
+\subsection{Les balises}
+Les pages HTML sont remplies de ce qu'on appelle des balises. Elles sont entourées de chevrons ( <balise> ). Elles indiquent la nature du texte qu'elles encadrent. On distingue des types de balises :
+\begin{description}
+\item [Les balises en paires :] Elles s'ouvrent, contiennent du texte, et se ferment plus loin. Par exemple : \\
+<title> Ceci est un titre </title>.\\
+Cela signifie pour l'ordinateur que tout ce qui n'est pas entre ces deux balises n'est pas un titre.
+\item [Les balises orphelines :] Ce sont les balises qui servent le plus souvent à insérer un élément à un endroit précis (par exemple une image). Il n'est pas nécessaire de délimiter le début et la fin de l'image, il faut juste dire à l'ordinateur d'afficher l'image à cet endroit. Par exemple :\\
+<br/>\\
+Cela insérera un saut de ligne à cet endroit.
+\end{description}
+
+\subsection{Les attributs}
+Ce sont les options des balises. Ils viennent les compléter pour donner des informations supplémentaires. Il se place après le nom de la balise ouvrant et a le plus souvent une valeur. Par exemple, pour insérer une image :\\
+<img src="" alt="">\\
+On donne à attribut à la balise où trouver l'image à afficher, à l'aide de son attribut src. S'il s'agit d'une balise en paire, on ne met les attributs que dans la balise ouvrante.
+
+
+\section{Structure de base d'une page HTML}
+
+Dans une page HTML, les balises s'ouvrent et se ferment dans un ordre précis. La balise <html> est la première ouverte et la dernière fermée. Les balises se ferment toujours dans le sens inverse de leur ouverture. 
+\begin{description}
+\item [Le doctype :] <!DOCTYPE html> est une balise spéciale. Elle est indispensable, car elle indique que nous travaillons sur une page Web. 
+\item [La balise <html> :] Elle englobe la totalité du programme. Elle s'ouvre au début et se termine à la fin.
+\item [L'en-tête <head> :] Elle donne quelques informations générales sur la page comme son titre, l'encodage (pour la gestion des caractères spéciaux). Elle est généralement assez courte. Ces informations ne sont pas affichées sur la page, ce sont en revanche des indications importantes pour l'ordinateur.
+\item [le corps <body> :] C'est là que se trouve la partie principale de la page. Tout ce qui sera écrit ici sera affiché à l'écran. C'est à l'intérieur du corps que sera écrit la majeure partie du code. 
+\end{description}
+Voici deux exemples de balises d'en-tête.
+\subsection {L'encodage (charset) }
+Cette balise indique l'encodage utilisé dans le fichier .html.\\
+L'encodage indique la façon dont le fichier est enregistré. Il détermine comment les caractères spéciaux seront affichés. Il vaut toujours mieux indiquer \texttt{utf-8}.
+
+\subsection{titre principal de la page}
+C'est le titre de la page. Toute page \emph{doit} avoir un titre qui décrit ce qu'elle contient. Il s'affiche en général dans l'onglet du navigateur. Le titre apparaît également dans les résultats des pages de recherche Google. 
+
+
+
+\section {En résumé}
+
+\begin{itemize}
+\item On utilise un éditeur de texte pour créer un fichier ayant l'extension .html. Ce sera le c\oe ur de la page web.
+\item Ce fichier peut être ouvert par un navigateur Web.
+\item À l'intérieur du fichier sera écrit le contenu de la page, entouré de balises HTML.
+\item Les balises peuvent être en paire ou unique.
+\item Elles sont parfois accompagnées d'attributs pour donner des indications supplémentaires.
+\item Une page web est consituée de deux sections principales : une en-tête et un corps. 
+\item On peut afficher le code source de n'importe quelle page Web.
+\end{itemize}
+
+
+\chapter{Organiser son texte}
+
+\section{Les paragraphes}
+La plupart du temps, lorsqu'on écrit du texte dans une page web, il sera contenu dans un paragraphe, délimité par des balises <p> </p>, la première signifiant \emph{début} du paragraphe, et la seconde signifiant \emph{fin} du paragraphe. \\
+Au sein d'un paragraphe, aller à la ligne dans le traitement de texte n'induit pas ce résultat sur la page en elle-même. Il faudra pour cela utiliser la balise <br/>.
+
+\section{Les titres}
+
+On peut utiliser en HTML six titres de niveau différent. Ils sont rangés par ordre d'importance, et délimités comme par exemple : <h1> header </h1>.\\
+Cette balise est différente de la balise <title>. Les <h> sont des titres qui seront affichés \emph{dans} la page Web.\\
+On voit ici la différence entre le HTML et le CSS. En effet, <h1> signifie juste \og titre important \fg. C'est le CSS qui décidera du rendu des titres de ce niveau.
+
+\section{La mise en valeur}
+On dispose pour cela d'un certain nombre de balises, différentes dans leur sens :
+\begin{itemize}
+\item La balise <em> met un peu le texte en valeur.
+\item La balise <strong> met bien le texte en valeur.
+\item La balise <mark> fait ressortir visuellement une portion du texte. 
+\end{itemize}
+Bien évidemment, ces balises marchent par paire.\newline
+
+Il est important de voir que ces balises sont vecteurs de sens bien plus que de rendu. En effet, de nombreux programmes analysent le code source des pages Web, à commencer par les robots des moteurs de recherche. Ils parcourent le web en lisant le code HTML de tous les sites. Les mots-clefs \og importants \fg ont tendance à avoir plus d'intérêt à leurs yeux. 
+
+\section{Les listes}
+Il existe deux types de listes : les listes ordonnées et les listes non ordonnées.
+
+\subsection{Listes non ordonnées}
+C'est un système permettant de créer une liste d'éléments sans notion d'ordre (il n'y a pas de premier ni de dernier). Il suffit d'utiliser la balise <ul></ul>. Chaque élément sera ensuite écrit à l'aide d'une balise <li>.\\
+Il est évidemment possible d'imbriquer des listes à puces.
+
+\subsection{Liste ordonnées}
+Les éléments dans la liste seront ordonnés, il faut donc faire attention à l'ordre dans lequel ils seront placés. Elle s'utilise de la même façon que la précédente, à la différence qu'on utilise une balise <ol></ol>.
+
+\subsection{Listes de définition}
+Un troisième type de liste, plus rare, est la liste de définition. <dl> la délimite, <dt> donne le terme à définir et <dd> donne sa définition. 
+
+\section{En résumé}
+
+\begin{itemize}
+\item Le HTML comporte de nombreuses balises qui permettent d'organiser le texte de sa page. Elles donnent des indications telles que : ceci est un paragrapge, ceci est un titre \dots{} 
+\item Les paragraphes sont délimités par <p></p> et les sauts de ligne par <br>.
+\item Il exite six niveaux de titres, de h1 à h6, à utiliser selon l'importance du titre.
+\item On peut mettre en valeurs certaines portions de texte avec les balises <strong>, <em> et <mark>.
+\item Pour créer des liste, on utilise la balise <ul> ou <ol>, resp. non ordonée et ordonée, et on y insère des éléments avec une balise <li> pour chaque item.
+\end{itemize}
+
+\chapter{Créer des liens}
+
+Un lien est un texte sur lequel on peut cliquer pour se rendre sur une autre page. 
+\section{Un lien vers un autre site}
+
+Il est facile de reconnaître les liens sur une page : ils sont écrits d'une façon un peu différente (par exemple en bleu souligné) et un curseur en forme de main apparaît lorsqu'on le passe dessus. \\
+Pour faire un lien, la balise à utiliser sera <a>, à laquelle il faudra rajouter un attribut href contenant l'adresse de la page désirée. On écrit ensuite le texte qui servira de lien, et on ferme la balise </a>.
+Faire un lien vers un autre site demande à copier son url en http://.\\
+Si l'url du site contient des \&, il faudra les remplacer par des \&amp.\\
+Ces liens sont appelés des \emph{liens absolus} car ils sont construits à l'aide de l'adresse complète. 
+
+\section{Un lien vers une autre page de son site}
+Si nous ne disposons pas encore d'url en http, cela ne nous empêchera pas de faire des liens entre nos pages malgrè tout. Il suffira pour cela tout simplement de donner son emplacement sur le disque, à partir du fichier HTML qui l'appelle. On parlera alors de \emph{liens relatifs}. 
+
+\section{Un lien vers une ancre}
+Une \emph{ancre} est une sorte de point de repère à placer dans les pages HTML lorsqu'elles sont très longues. En effet, il peut s'avérer utile de faire un lien amenant plus bas dans la même page pour que le visiteur puisse passer directement à la partie qui l'intéresse.\\
+Pour créer une ancre, il suffit de rajouter l'attribut \og id \fg à une balise qui va alors servir de point de repère. Ce peut être n'importe quelle balise, un titre par exemple. Une fois l'ancre créée, il ne reste plus qu'à créer un lien, lequel doit être précédé d'un \#.\newline
+
+Il est également possible de créer un lien vers une ancre sur une autre page. Il suffit pour cela de donner l'url de la page, suivi d'un \#, puis de l'id de l'ancre. 
+
+\section{Cas pratique d'utilisation des liens}
+
+Les liens peuvent être utiles pour lancer un téléchargement, créer un nouvel e-mail, ouvrir une nouvelle fenêtre \dots{}
+\begin{description}
+\item [Un lien qui affiche une infobulle au survol :] On peut utiliser l'attribut title qui affichera une bulle d'aide lorsqu'on pointera sur le lien. Il s'agit d'un attribut falcultatif. Cela permet de donner des informations avant de cliquer sur le lien.
+\item [Une lien qui ouvre une nouvelle fenêtre :] Il est possible de forcer l'ouverture d'un lien dans une nouvelle fenêtre. Pour cela il suffit de rajouter l'attribut \texttt{target} avec la valeur \texttt{\_blank}. Selon le navigateur, il s'ouvrira dans une nouvelle fenêtre ou un nouvel onglet.
+\item [Un lien pour envoyer un mail :] Il existe des liens de type \texttt{mailto}. Il faut juste rajouter mailto: devant l'adresse en question, à l'intérieur des \og "" \fg.
+\item [Un lien pour télécharger un fichier :] Il suffit de faire exactement comme un lien vers une autre de ses pages, mais en indiquant cette fois le nom du fichier à télécharger. Le navigateur, voyant qu'il ne s'agit pas d'une page Web, en déduira que c'est un fichier à télécharger.
+\end{description}
+
+\section{En résumé}
+
+\begin{itemize}
+\item Les liens permettent de changer de page et sont par défaut écrits en bleu et soulignés.
+\item Pour insérer un lien, on utilise la balise <a> suivi de l'attribut href pour indiquer l'adresse de la page cible.
+\item On peut faire un lien vers une autre page de son site en utilisant un lien relatif.
+\item Les liens permetttent aussi d'amener vers d'autres endroits sur la même page. Il faut créer une ancre avec l'attribut id pour marquer un endroit de la page, puis faire un lien faire l'ancre à l'aide d'un \og \# \fg.
+\end{itemize}
+
+\chapter{Les images}
+
+Il existe différents formats d'images que l'on peut citer dans les sites web, et on ne doit pas les choisir au hasard. En effet, les images peuvent être volumineuses à télécharger, ce qui ralentit le temps de chargement de la page.
+
+\section{Les différents formats d'image}
+Toutes les images diffusées sur Internet ont un point commun : elle sont \emph{compressées}. Cela signifie que l'ordinateur fait des calculs pour qu'elles soient moins lourdes et donc plus rapides à charger.
+
+\subsection{Le JPEG}
+
+Les images au format JPEG (\emph{Joint Photographic Expert Group}) sont très répandues sur le Web. Ce format est conçu pour réduire le poids des photos (c'est-à-dire la taille du fichier associé), qui peuvent comporter plus de seize million de couleurs différentes. Elles sont enregistrées avec l'extension \texttt{.jpg} ou \texttt{jpeg}.\\
+Il est à noter que le JPEG détériore légèrement la qualité de l'image, d'une façon généralement imperceptible. Quand il s'agit d'une photo, on ne peut en général pas détecter la perte de qualité. En revanche, il est possible que ce ne soit pas le cas si ce n'est pas une photo.
+
+\subsection{Le PNG}
+
+Le format PNG (\emph{Portable Network Graphics}) est le plus récent de tous. Ce format est adapté à la plupart des graphiques. Le PNG a deux gros avantages : il peut être rendu transparent et il n'altère pas la qualité de l'image.\\
+Ce format a été inventé pour concurrencer le GIF à l'époque où il fallait payer des royalties pour pouvoir utiliser ce dernier. C'est aujourd'hui le schéma le plus puissant pour enregistrer la plupart des images. \\
+Il existe en deux versions, en fonction du nombre de couleurs que doit comporter l'image :
+\begin{description}
+\item [PNG 8 bits :] 256 couleurs;
+\item [PNG 24 bits :] 16 millions de couleurs (autant qu'une image JPEG).
+\end{description}
+La compression JPEG est cependant plus puissante sur les photos.
+
+\subsection{Le GIF}
+C'est un format assez vieux, qui a néanmoins été très utilisé (et qui le reste par habitude).\\
+Aujourd'hui, le PNG est globablement bien meilleur que le GIF : les images sont en général plus légères et la transparence de meilleure qualité. De plus, il est limité à 256 couleurs. \\
+Il possède cependant la capacité d'être animé.
+
+\subsection{Les autres formats}
+Les autres formats non cités ici, comme le bitmap (BMP) par exemple, sont à bannir car ce sont des formats non compressés. Ils ne sont ainsi pas du tout adaptés au Web. On peut tout de même les mettre sur un site, mais le chargement sera alors \emph{très} long.  
+
+\section{Insérer une image}
+La balise permettant d'insérer une image est la balise orpheline <img>. Elle doit être accompagnée de deux attributs obligatoires :
+\begin{description}
+\item [src :] qui permet d'indiquer où se trouve l'image que l'on souhaite insérer. On peut aussi bien utiliser un chemin absolu qu'un chemin relatif.
+\item [alt :] qui signifie \og texte alternatif \fg. On doit toujours indiquer un texte alternatif à l'image, c'est-à-dire un texte court relatif au contenu de l'image. Ce texte sera affiché si l'image ne peut pas être téléchargée. Cela aide aussi les robots des moteurs de recherche pour les recherches d'images.
+\end{description}
+Les images doivent obligatoirement se trouver à l'intérieur d'un paragraphe. Comme pour les liens, on peut ajouter un attribut title pour faire apparaître une info-bulle.
+
+\subsection{Miniature cliquable}
+Si l'image est très grosse, il vaut mieux en afficher la miniature sur le site. On ajoutera ensuite un lien depuis la miniature vers la vraie image.
+
+\section{Les figures}
+Les figures sont des éléments qui viennent enrichir le texte pour compléter les informations de la page. Ce peuvent être des images, du code source, des citations\dots{}. Bref, tout ce qui vient \emph{illuster} le texte est une figure. On utilise pour les placer la balise en paire <figure>, dans laquelle on place l'élément en question. Le plus souvent, la figure sera accompagnée d'une légende, à placer à l'aide de la balise paire <figcaption>.\\
+Si on fait de notre image une figure, elle pourra être placée en dehors d'un paragraphe.\\
+Si l'image n'apporte aucune information, on la place dans un paragraphe. Si elle apporte une information, on la place dans une figure.\\
+La balise figure a avant tout un rôle \emph{sémantique}. Cela signifie qu'elle indique à l'ordinateur que l'image a du sens et qu'elle est importante pour la bonne compréhension du texte. Cela peut permettre à un programme de récupérer toutes les figures du texte et de les référencer dans un tableau de figures, par exemple.\\
+Enfin, une figure peut très bien comporter plusieurs images.
+
+\section{En résumé}
+\begin{itemize}
+\item Il existe plusieurs formats d'image adaptés au Web :
+  \begin{description}
+  \item [JPEG :] Pour les photos.
+  \item [PNG :] Pour toutes les autres illustrations.
+  \item [GIF :] Pour les images animées.
+  \end{description}
+\item On insère une image avec la balise orpheline <img/>. Elle doit obligatoirement comporter l'attribut src et l'attribut alt.
+\item Si une image illustre le texte (et n'est donc pas seulement décorative), il est conseillé de la placer au sein d'une balise <figure>. La balise <figcaption> permet d'écrire la légende de l'image.
+\end{itemize}
+
+\part{Le CSS}
+\setcounter{chapter}{0}
+\chapter{Mettre en place le CSS}
+
+Le CSS ( \og \textit{Cascade Sheet Style} \fg ) vient compléter le HTML dans le but de mettre en forme la page web.
+
+\section{La petite histoire du CSS}
+
+Le CSS \emph{gère la mise en forme du site}. Il permet notamment de choisir la couleur du texte, la police, taille, les bordures, le fond...\\
+
+Au début du Web, le CSS n'existait pas. Il fallait tout efffectuer uniquement à l'aide du langage HTML. De fait, le HTML est né en 1991 et le CSS en 1996. \\
+Il existe en effet des balises HTML dédiées à la mise en forme : \texttt{<font color=\"\#aab1c3\"> } par exemple, permettant de définir la couleur du texte. Cependant, les pages HTML devinrent vite complexes, comportant de plus en plus de balises et devenant un joyeux mélange entre le fond et la forme. C'est pour cela que fut créé le langage CSS.\\
+
+\subsection{CSS : La prise en charge des navigateurs}
+
+Tout comme le HTML, le CSS a évolué. il y a quatre versions importantes de CSS :
+\begin{itemize}
+\item CSS 1;
+\item CSS 2.0;
+\item CSS 2.1;
+\item CSS 3.0.
+\end{itemize}
+Ce sont les navigateurs web qui font le travail le plus complexe : ils doivent \emph{lire} le code CSS et \emph{comprendre} comment afficher la page. Cependant, ces logiciels ne sont pas égaux quant à leur connaissance des propriétés CSS qui existent. De fait, plus le navigateur est vieux, moins il connait de fonctionnalités CSS. Le site \url{www.caniuse.com} propose des tables de compatibilité des fonctionnalités de HTML et CSS sur différents navigateurs, et sur leurs différentes versions. 
+
+\section{Où écrit-on le CSS ?}
+
+Il peut être écrit dans trois endroits différents : 
+\begin{itemize}
+\item dans un fichier \texttt{.css} (\emph{recommandé});
+\item dans l'en-tête \texttt{<head>} du fichier HTML;
+\item directement dans les balises du fichier HTML via un attribut \texttt{style} (\emph{non recommandé}).
+\end{itemize}
+
+Pour utiliser un fichier \texttt{.css}, il faut rajouter la ligne suivante dans le \texttt{<head>} :\\
+\texttt{<link rel="stylesheet" href="style.css" />}\\
+Elle indique le fichier HTML est associé à un fichier appelé \texttt{style.css} et chargé de la mise en forme. 
+
+\section{Appliquer un style : sélectionner une balise}
+On trouve, dans un code CSS, trois éléments différents :
+\begin{description}
+\item [Des noms de balises :] on écrit les noms des balises dont on veut modifier l'apparence. Par exemple, si on souhaite modifier l'apparence de tous les paragraphes <p>, il faut écrire \emph{p}.
+\item [Des propriétés CSS :] les \fg effets de style \og de la page sont rangés dans des propriétés. Il y a par exemple la propriété \emph{color} qui permet de sélectionner une couleur, \emph{font-size} qui permet d'afficher la taille du texte, etc... 
+\item [Les valeurs :] pour chaque propriété CSS, on doit indiquer une valeur. Par exempe, pour la propriété \emph{color}, il faut indiquer le nom de la couleur.
+\end{description}
+Une propriété se présente ainsi :\\
+h1\\
+\{\\
+  color: blue;\\
+  font-size: 12pt;\\
+\}\\
+
+\section{Appliquer un style : class et id}
+Cette méthode a néanmoins un défaut : elle implique tous les paragraphes possèdent la même présentation, par exemple qu'ils seront tous écrits en bleu.\\
+Pour résoudre ce problème, on peut utiliser ces attributs spéciaux qui fonctionnent sur toutes les balises :
+\begin{itemize}
+\item l'attribut class;
+\item l'attribut id.
+\end{itemize}
+
+\subsection{l'attribut class}
+Il peut se placer sur n'importe quelle balise, de cette manière :\\
+<h1 class="name"> </h1>\\
+On donnera comme valeur à l'attribut class un nom qui servira à identifier la balise. Ce nom a pour seule obligation de commencer par une lettre. On peut par la suite modifier cet endroit là uniquement en renseignant le nom de la class précédé d'un point : \texttt{.name} dans le cas présent.
+\subsection{l'attribut id}
+
+Il fonctionne de la même manière que l'attribut class, à la différence qu'il ne peut être utilisé qu'une seule fois dans le code. \\
+Ce sera utile lorsqu'on utilisera du Javascript pour reconnaître certaines balises.\\
+En pratique, on ne mettra des id que sur des éléments uniques dans la page, comme par exemple un logo. L'id, dans le CSS, doit être précédé d'un \#\\ : \texttt{\#logo} par exemple.
+
+\subsection{Les balises universelles}
+Il peut arriver que nous ayons besoin d'appliquer une class à certains mots qui ne sont pas entourés de balises.\\
+En effet, class est un attribut, on ne peut donc en mettre un que sur une balise.\\
+On a donc inventé deux balises dites \emph{universelles}, n'ayant aucune signification particulière.
+\begin{description}
+\item [<span> </span> :] est une balise de type \emph{inline}, c'est-à-dire une balise que l'on place au sein d'un paragraphe de texte, pour sélectionner certains mots uniquement. Les balises <strong> et <em> sont de la même famille. Elle s'utilise donc au milieu d'un paragraphe.
+\item [<div> </div> :] C'est une balise de type \emph{block}, c'est-à-dire qui entoure un bloc de texte. C'est la famille des balises <h1> et <p>. Elles créent un nouveau bloc dans la page et provoquent obligatoirement un retour à la ligne. Elle est fréquemment utilisée dans la création d'un design.
+\end{description}
+
+\section{Appliquer un style à plusieurs balises}
+\begin{description}
+\item [h1, em :] Le code sera appliqué aux deux balises.
+\item [* :] C'est le sélecteur universel. Il sélectionne toutes les balises sans exception.
+\item [h3 em :] Sélectionne tous les <em> contenus dans les <h3>.
+\item [h3 + p :] Sélectionne le premier <p> de chaque <h3>.
+\item [a[title] :] Sélectionne tous les liens <a> qui possèdent un attribut title.
+\item [a[title="Cliquez ici"] :] Sélectionne tous les <a> qui possèdent un attribut title dont la valeur est Cliquez ici. 
+\item [Et bien d'autres :] On peut les trouver le site \url{https://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html\#selectors}.
+\end{description}
+
+\section{En résumé}
+\begin{itemize}
+\item CSS est un autre langage qui vient compléter le HTML. Son rôle est de mettre en forme les pages web.
+\item Il faut être vigilant sur la compatibilité des navigateurs avec certaines fonctionnalités récentes de CSS3. Quand un navigateur de connaît pas une instruction de mise en forme, il l'ignore complètement.
+\item On peut écrire le code CSS à plusieurs endroits différents, le plus conseillé étant de créer un fichier séparé portant l'extension .css.
+\item En CSS, on sélectionne quelles portions de la page HTML on veut modifier et on change leur présentation avec des propriétés CSS.
+\item Il existe de nombreuses façons de sélectionner la portion de la page que l'on veut mettre en forme. Par exemple, on peut viser :
+  \begin{itemize}
+  \item toutes les balises d'un même type, en écrivant simplement leur nom (h1 par exemple).
+  \item certaines balises spécifiques, auxquelles on a donné des noms à l'aide des attributs class ou id (.nomclasse ou \#noid).
+  \item uniquement les balises se trouvant à l'intérieur d'autres balises (h3 em).
+  \item etc.
+  \end{itemize}
+\end{itemize}
+
+\chapter{Formatage du texte}
+
+\section{La taille}
+Pour modifier la taille du texte, on utilise la propriété CSS \texttt{font-size}. On peut indiquer la taille du texte de deux façons différentes :
+\begin{description}
+\item [De façon absolue :] en pixels, centimètres ou millimètres. Cette méthode est très précise mais plus délicate à manipuler que la suivante.
+\item [De façon relative :] en pourcentage, \og em \fg ou \og ex \fg, cette technique est moins précise mais plus souple. Elle s'adapte plus facilement aux préférences de taille des visiteurs.
+\end{description}
+\subsection{Une taille absolue}
+Pour indiquer une taille absolue, on utilise généralement les pixels. Par exemple, pour décider d'une taille de 16 pixels :\\
+\texttt{font-size: 16px;}\\
+Le px peut être remplacé par cm ou mm. Cette méthode est cependant moins adaptée aux écrans.
+
+\subsection{Une taille relative}
+Il y a plusieurs moyens d'indiquer une valeur relative. On peut écrire la taille avec des mots anglais :
+\begin{description}
+\item [xx-small :] minuscule;
+\item [x-small :] très petit;
+\item [small :] petit;
+\item [medium :] moyen;
+\item [large :] grand;
+\item [x-large :] très grand;
+\item [xx-large :] gigantesque.
+\end{description}
+Cette technique a un défaut : il n'y a que sept tailles disponibles. Il existe une autre façon de faire :
+\begin{itemize}
+\item Si on écrit 1em, le texte aura une taille normale.
+\item Si on souhaite grossir le texte, on inscrit une taille supérieure à 1, comme 1.3em.
+\item Si on souhaite réduire le texte, on inscrit une taille inférieure à 1, comme 0.8em.
+\end{itemize}
+
+D'autres unités sont disponibles. Il existe par exemple le \og ex \fg, qui fonctionne sur le même principe que em mais qui est plus petit de base, ou le pourcentage (80\%, 130\%).
+
+\section{La police}
+
+La police pose certains problèmes. En effet, pour qu'elle s'affiche correctement, il faut que tous les internautes l'aient. Sinon, le navigateur prendra une police par défaut, qui n'aura vraissemblablement rien à voir avec celle désirée. Il est possible de faire télécharger une police par le CSS.
+
+\subsection{Modifier la police utilisée}
+
+La propriété CSS qui permet d'indiquer la police à utiliser est \texttt{font-family}. Exemple :\\
+\texttt{font-family: Arial, Georgia, Verdana, "Times New Roman"};\\
+Ici, le navigateur essaiera de charger Verdana. S'il ne l'a pas, il tentera les suivantes. En général, on indique en tout dernier serif, ce qui correspond à une possible par défaut. Il existe une autre police par défaut appelée sans-serif.\\
+Les polices suivantes fonctionnent sur la plupart des navigateurs :
+\begin{itemize}
+\item Arial;
+\item Arial Black;
+\item Comic sans MS;
+\item Courier New;
+\item Georgia;
+\item Impact;
+\item Times New Roman;
+\item Trebuchet MS;
+\item Verdana.
+\end{itemize}
+
+\subsection{Utiliser une police personnalisée avec @font-face}
+Grâce à CSS 3, il est possible d'utiliser n'importe quelle police sur son site. Cela fonctionne bien avec la plupart des navigateurs. Ceci dit, cela implique plusieurs choses : 
+\begin{itemize}
+\item Il faudra que le navigateur des visiteurs \emph{télécharge} automatiquement le fichier de la police, dont le poids peut atteindre 1Mo.
+\item La plupart des polices sont soumises au droit d'auteur, il n'est donc pas légal de les utiliser sur son site. Il existe des sites comme \url{fontsquirrel.com} ou \url{dafont.com} proposent le téléchargement d'un certain nombre de polices libres de droit. 
+\item Il existe plusieurs formats de fichiers de polices et ceux-ci ne fonctionnent pas sur tous les navigateurs.
+\end{itemize}
+
+Vocii les différents formats de fichiers de police qui existent et qu'il faut connaître :
+\begin{description}
+\item [.ttf :] \textit{TrueTypeFont} Fonctionne sur IE9 et tous les autres navigateurs.
+\item [.eot :] \textit{Embedded OpenType} Fonction sur Internet Explorer uniquement, toutes versions. Ce formet est propriétaire, produit par Microsoft.
+\item [.otf :] \textit{OpenType Font} Ne fonctionne pas sur Internet Explorer.
+\item [.svg :] \textit{SVG Font} Le seul format reconnu sur les iPhones et iPads pour le moment.
+\item [.woff :] \textit{Web Open Font Format} Nouveau format conçu pour le Web, qui fonctionne sur IE9 et sur tous les autres navigateurs.
+\end{description}
+En CSS, pour déclarer une nouvelle police, il faut la déclarer comme ceci :\\
+\texttt{@font-face \{ font-family: 'UnePolice'; src: url('unePolice.woff');\}}\\
+L'idéal est de proposer plusieurs formats pour la police : le navigateur chargera celui qu'il sait lire. Cela s'indique ainsi :\\
+\texttt{@font-face \{font-family: 'Police';\\src:url('Police.eot') format ('eot'),\\url('Police.woff') format('woff');\}}
+
+\section{Italique, gras, souligné\dots{}}
+Il existe en CSS une série de propriétés classiques de mise en forme du texte. Cette section renseigne comment afficher le texte en gras, en italique, en souligné\dots{} et même d'aller jusqu'à le faire clignoter.
+
+\subsection{Mettre en italique}
+En CSS, pour mettre en italique, on utilise font-style qui peut prendre trois valeurs :
+\begin{description}
+\item [italic :] Le texte sera mis en italique.
+\item [oblique :] Le texte sera passé en oblique.
+\item [normal :] le texte sera normal (par défaut). Cela permet d'annuler une mise en italique, par exemple celle de <em>.
+\end{description}
+\subsection{Mettre en gras}
+La propriété CSS pour passer un texte en gras est font-weight et peut prendre ces valeurs :
+\begin{description}
+\item [bold :] Le texte sera en gras.
+\item [normal :] Le texte sera normal (par défaut).
+\end{description}
+
+\subsection{Soulignement et autres décorations}
+La propriété CSS associée est text-decoration. Elle permet entre autres choses de souligner le texte.
+\begin{description}
+\item [underline :] souligné.
+\item [line-through :] barré.
+\item [overline :] ligne au-dessus.
+\item [blink :] Clignotant. Ne fonctionne pas sur tous les navigateurs.
+\item [none :] Normal (par défaut).
+\end{description}
+
+\section{L'alignement}
+Le CSS permet d'effectuer tous les alignements connus : à gauche, à droite, centré et justifié.\\
+Il faut pour cela utiliser la propriété text-align suivie de la valeur désirée :
+\begin{description}
+\item [left :] Le texte sera aligné à gauche (alignement par défaut).
+\item [center :] Le texte sera centré.
+\item [right :] Le texte sera aligné à droite.
+\item [justify :] Le texte sera justifié, c'est-à-dire de faire en sorte qu'il prenne toute la largeur possible sans laisser d'espace blanc à la fin des lignes. Les textes des journaux, par exemple, sont toujours justifiés.
+\end{description}
+L'alignement de fonctionne que sur les balises de type block (<p>, <div>, <h1>\dots{}).
+
+\section{Les flottants}
+Le CSS permet de faire flotter un élément autour d'un texte. On dit aussi qu'il fait un \og habillage \fg. La propriété à utiliser est float, qui peut prendre deux valeurs :
+\begin{description}
+\item [left :] l'élément flottera à gauche.
+\item [right :] l'élément flottera à droite.
+\end{description}
+Il suffit d'appliquer un float à une balise, aussi bien les blocks que les inlines. \\
+Si on souhaite arrêter d'écrire autour du flottant et passer en dessous, une solution est d'utiliser la propriété clear, qui prend trois valeurs :
+\begin{description}
+\item [left :] Le texte se poursuit en dessous après un float: left. 
+\item [right :] Le texte se poursuit en dessous après un float: right.
+\item [both :] Le texte se poursuit en dessous, dans tous les cas.
+\end{description}
+
+\section{En résumé}
+
+\begin{itemize}
+\item On modifie la taille du texte avec la propriété CSS \texttt{font-size}. On peut indiquer la taille en pixels, en em, en pourcentage\dots{}
+\item On change la police du texte avec \texttt{font-family}. Seules quelques polices sont connues de tous les navigateurs. On peut cependant utiliser une police personnalisée à l'aide de la propriété \texttt{@font-face} : cela forcera les navigateurs à télécharger la police utilisée.
+\item De nombreuses propriétés de mise en forme existent : \texttt{font-style} pour l'italique, \texttt{font-weight} pour la mise en gras, \texttt{text-decoration} pour le soulignement\dots{}
+\item Le texte peut être aligné avec \texttt{text-align}.
+\item On peut faire en sorte qu'une image soit \og habillée \fg de texte avec \texttt{float}.
+\end{itemize}
+
+\chapter{La couleur et le fond}
+
+\section{Couleur du texte}
+
+La propriété permettant de modifier la couleur du texte est \texttt{color}. Il existe différentes façons de renseigner la couleur :
+
+\subsection{Indiquer le nom de la couleur}
+La méthode la plus simple consiste à indiquer directement le nom de la couleur, existante dans une liste pré-établie.\\
+Le défaut de cette méthode est qu'il n'existe que seize couleurs dites \og standards \fg. D'autres existent, mais elles ne fonctionneront pas forcément de la même façon sur tous les ordinateurs. Les couleurs de base sont :
+\begin{itemize}
+\item white;
+\item silver;
+\item gray;
+\item black;
+\item red;
+\item maroon;
+\item lime;
+\item green;
+\item yellow;
+\item olive;
+\item blue;
+\item navy;
+\item fuschia;
+\item purple;
+\item aqua;
+\item teal.
+\end{itemize}
+Il suffit donc d'écrire \texttt{color: maroon;} pour passer tous les composants d'une balise en marron.
+
+\subsection{La notation hexadécimale}
+Seize couleurs peuvent cependant paraître limite si on considère que la plupart des écrans peuvent en affichier seize \emph{millions}. Une façon d'indiquer précisèment quelle couleur nous intéresse est la notation hexadécimale (en base 16). Cela se présente comme une combinaison de lettres et de chiffres commençant par un \#.\\
+Ex : \#FF5A28 est une couleur proche du orange.\\
+Les deux premiers indiquent une quantité de rouge, les deux suivants une quantité de vert, et les deux derniers une quantité de bleu. En mélangeant ces quantités (qui sont les composantes Rouge-Vert-Bleu de la couleur), on peut obtenir toutes les couleurs que l'on veut.\\
+Ainsi \#000000 correspond à la couleur noire et \#FFFFFF à la couleur blanche.
+
+\subsection{La méthode rgb}
+Il est possible d'indiquer une quantité de rouge-vert-bleu en utilisant la notation décimale. Il faudra alors procéder ainsi :\\
+Ex : color: rgb(240, 96, 204); donnera une couleur mauve.\\
+Ces quantités sont toujours comprises entre 0 et 255.
+
+\section{Couleur de fond}
+Pour indiquer une couleur de fond, on utilise la propriété CSS \texttt{background-color}. Elle s'utilise exactement de la même manière que la propriété \texttt{color} vue précédemment.\\
+Pour modifier le fond de l'ensemble de la page, il faudra utiliser la balise \texttt{body}. On pourra alors modifier la couleur de l'ensemble du texte avec \texttt{color}.
+
+\subsection{L'héritage}
+Si on applique un style à une balise, toutes les balises qui se trouvent à l'intérieur prendront le même style. Par exemple, si on applique une couleur de fond noire et une couleur de texte blanche à la balise \texttt{body}, tous les titres et paramètres possèderont les mêmes caractéristiques. Ce phénomène se nomme l'héritage : on dit que les balises se trouvant dans une autre balise \og héritent \fg de ses propriétés.\\
+Si on a appliqué une autre couleurs aux titres, cette couleur aura évidemment la priorité. 
+
+\section{Images de fond}
+
+\subsection{Appliquer une image de fond}
+La propriété permettant d'appliquer une image de fond est \texttt{background-image}. Comme valeur, on doir renseigner \texttt{url("nomDeL'image.extension")}. L'adresse indiquant où trouver l'image peut être absolue ou relative. 
+
+\subsection{Options disponibles pour l'image de fond}
+On peut compléter la propriété précédente par plusieurs autres propriétés permettant de changer le comportement de l'image de fond.
+\begin{description}
+\item [background-attachment :] permet de fixer le fond. L'effet obtenu est intéressant car on voit alors le texte \og glisser \fg par-dessus le fond. Deux valeurs sont possibles :
+  \begin{itemize}
+  \item fixed : l'image de fond reste fixe.
+  \item scroll : l'image de fond défile avec le texte (par défaut).
+  \end{itemize}
+\item [background-repeat :] Affecte la répétition du fond.
+  \begin{itemize}
+  \item no-repeat : Le fond ne sera pas répété, l'image sera donc unique sur la page.
+  \item repeat-x : Le fond sere répété uniquement sur la première ligne, horizontalement.
+  \item repeat-y : Le fond sera répété uniquement sur la première colonne, verticalement.
+  \item repeat : Le fond sera répété en mosaïque (par défaut).
+  \end{itemize}
+\item [background-position :] Permet d'indiquer où doit se trouver l'image de fond. Cette propriété n'est utile que si elle est combinée avec \texttt{background-repeat: no-repeat;}. Il faut donner à cette propriété deux valeurs en pixels (px) pour indiquer la position du fond par rapport au coin supérieur gauche de la page. \\
+Ex : \texttt{background-position: 30px 50px;} placera le fond à 30 pixels à gauche et à 50 pixels du haut. Il est aussi possible d'utiliser ces valeurs prédéfiniers :
+\begin{itemize}
+\item top;
+\item bottom;
+\item left;
+\item center;
+\item right.
+\end{itemize}
+Ces mots peuvent être combinés.
+\end{description}
+\subsection{Combiner les propriétés}
+On peut combiner ces propriétés en une seule en utilisant \texttt{background} dont la valeur prend celles des propriétés vues précédemment. \\
+Ex : \texttt{background: url("fond.png") fixed no-repeat top right;}\\
+L'ordre des valeurs n'a pas d'importance, pas plus qu'il n'est nécessaire d'en donner à chacune des propriétés. 
+
+\subsection{Plusieurs images de fond}
+Depuis CSS3, il est possible de donner plusieurs images de fond à un élément. Il suffit pour cela de séparer les déclarations par une virgule.\\
+Ex : \texttt{background: url("soleil.png") fixed no-repeat top right, url("neige.png") fixed;}\\
+La première image de cette liste sera placée par-dessus les autres. L'ordre de déclaration des images a donc de l'importance.
+
+\section{La transparence}
+Le CSS permet de jouer très facilement avec le niveau de transparence des éléments.
+\subsection{La propriété opacity}
+Elle permet d'indiquer le niveau d'opacité (inverse de la transparence).
+\begin{itemize}
+\item Avec une valeur de 1, l'image sera totalement opaque (valeur par défaut).
+\item Avec une valeur de 0, l'image sera transparante.
+\end{itemize}
+Il faut choisir une valeur comprise entre 0 et 1. Ainsi, avec une opacité de 0.6, l'image de fond sera opaque à 60\%.
+
+\subsection{La notation RGBa}
+Elle correspond à la notation RGB vue précédemment, mais présentant un quatrième paramètre : le niveau de transparence (appelé \og canal alpha \fg). Il prend les mêmes valeurs que précédemment, et s'applique à la couleur. \\
+Cette fonctionnalité est assez récente, et n'est pas disponible sur tous les navigateurs.
+
+\section{En résumé}
+
+\begin{itemize}
+\item On change la couleur du texte avec la propriété \texttt{color}, la couleur de fond avec \texttt{background-color}.
+\item On peut indiquer une couleur en écrivant son nom en anglais, sous forme hexadécimale ou en notation rgb.
+\item On peut ajouter une image de fond avec \texttt{background-image}. On peut choisir de fixer l'image de fond, de l'afficher en mosaïque ou non, et même de la positionner où on veut sur la page. 
+\item On peut rendre une portion de la page transparente avec la propriété \texttt{opacity} ou avec la notation RGBa (identique à la notation RGB, une quatrième couleur indiquant le niveau de transparence).
+\end{itemize}
+
+\chapter{Les bordures et les ombres}
+
+\section{Bordures standard}
+Le CSS offre un large choix de bordures pour décorer les pages web. De nombreuses propriétés permettent de modifier l'apparence dess bordures : \texttt{border-width}, \texttt{border-color}, \texttt{border-style}\dots{}.\\
+On peut aller à l'essentiel en utilisant uniquement la super-propriété \texttt{border} qui regroupe l'ensemble de ces propriétés. On pourra utiliser jusqu'à trois valeurs pour modifier l'apparence de la bordure :
+\begin{description}
+\item [La largeur :] Indique la largeur de la bordure en mettant une valeur en pixel (comme 2px).
+\item [La couleur :] Indique la couleur de la bordure en utilisant soit un nom, soit la notation hexadécimale, soit la notation rgb.
+\item [Le type de bordure :] Indique le titre de bordure souhaité à l'aide d'une liste prédéfinie :
+  \begin{itemize}
+  \item none : pas de bordures (par défaut);
+  \item solid : un trait simple;
+  \item dotted : pointillés;
+  \item dashed : tirets;
+  \item double : bordure double;
+  \item groove : en relief;
+  \item ridge : un autre effet relief;
+  \item inset : effet 3D global enfoncé;
+  \item outset : effet 3D global surélevé.
+  \end{itemize}
+\end{description}
+Ainsi, si on souhaite par exemple obtenir une bordure bleue, en tirets, épaisse de 3 pixels, on écrira :\\
+Ex : \texttt{border: 3px blue, dashed;}
+Il est même possible de mettre une bordure différente de chaque côté. Il suffit alors de préciser celle que l'on souhaite modifier :
+\begin{description}
+\item [border-top :] bordure du haut;
+\item [border-bottom :] bordure du bas;
+\item [border-left :] bordure de gauche;
+\item [border-right :] bordure de droite.
+\end{description}
+Chacune de ces propriétés possède des équivalents pour déterminer chaque détails de la bordure (width, color\dots{}). Ce sont des super-propriétés, comme \texttt{border}.\\
+On peut modifier les bordures de tous les éléments de la page.
+\end{document}

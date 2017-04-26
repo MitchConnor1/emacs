@@ -1,0 +1,13 @@
+#ifndef DUREE_H
+#define DUREE_H
+
+class Duree{
+private:
+  int heures;
+  int minutes;
+  int secondes;
+public:
+  Duree(int=0,int=0,int=0);
+};
+
+#endif

@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int triple(int nb){
+  nb=nb*3;
+  return nb;
+}
+
+int main(int argc, char** argv){
+  int test=4;
+  printf("%d",triple(test));
+  return 0;
+}
+

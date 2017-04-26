@@ -1,0 +1,5 @@
+//FIFO names
+
+const char * iris_position = "iris_position";
+const char * mouse_position = "mouse_position";
+const char * calibration_points = "calibration_points";

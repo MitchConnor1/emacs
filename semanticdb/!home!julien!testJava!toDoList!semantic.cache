@@ -1,0 +1,144 @@
+;; Object toDoList/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "toDoList/"
+  :tables
+  (list
+    (semanticdb-table "Main.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [186 224])
+            ("javafx.application.Platform" include nil nil [225 260])
+            ("javafx.event.ActionEvent" include nil nil [261 293])
+            ("javafx.event.EventHandler" include nil nil [294 327])
+            ("javafx.scene.Scene" include nil nil [328 354])
+            ("javafx.stage.Stage" include nil nil [355 381])
+            ("javafx.scene.control.*" include nil nil [382 412])
+            ("javafx.scene.layout.*" include nil nil [413 442])
+            ("javafx.geometry.*" include nil nil [443 468])
+            ("javafx.collections.*" include nil nil [469 497])
+            ("javafx.util.*" include nil nil [498 519])
+            ("Main" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("newTask" variable
+                       (:typemodifiers ("private" "static")
+                        :type "TextField")
+                        (reparse-symbol class_member_declaration) [567 600])
+                    ("deleteAll" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Button")
+                        (reparse-symbol class_member_declaration) [605 637])
+                    ("selectAll" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Button")
+                        (reparse-symbol class_member_declaration) [638 648])
+                    ("root" variable
+                       (:typemodifiers ("private" "static")
+                        :type "BorderPane")
+                        (reparse-symbol class_member_declaration) [653 684])
+                    ("rb1" variable
+                       (:typemodifiers ("private" "static")
+                        :type "RadioButton")
+                        (reparse-symbol class_member_declaration) [689 720])
+                    ("rb2" variable
+                       (:typemodifiers ("private" "static")
+                        :type "RadioButton")
+                        (reparse-symbol class_member_declaration) [721 725])
+                    ("rb3" variable
+                       (:typemodifiers ("private" "static")
+                        :type "RadioButton")
+                        (reparse-symbol class_member_declaration) [726 730])
+                    ("start" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [880 898]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [862 1894])
+                    ("selection" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1901 1996])
+                    ("deletion" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2002 2268])
+                    ("newTaskAction" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2274 2440])
+                    ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [2474 2487]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2450 2511]))                  
+                :type "class")
+                nil [522 2518]))          
+      :file "Main.java"
+      :pointmax 2523
+      :fsize 2522
+      :lastmodtime '(22718 35284 771853 413000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Model.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [1 39])
+            ("javafx.application.Platform" include nil nil [40 75])
+            ("javafx.event.ActionEvent" include nil nil [76 108])
+            ("javafx.event.EventHandler" include nil nil [109 142])
+            ("javafx.scene.Scene" include nil nil [143 169])
+            ("javafx.stage.Stage" include nil nil [170 196])
+            ("javafx.scene.control.*" include nil nil [197 227])
+            ("javafx.scene.layout.*" include nil nil [228 257])
+            ("javafx.geometry.*" include nil nil [258 283])
+            ("javafx.collections.*" include nil nil [284 312])
+            ("javafx.util.*" include nil nil [313 334])
+            ("Model" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("Model" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [441 464]))                  
+                :type "class")
+                nil [338 473]))          
+      :file "Model.java"
+      :pointmax 483
+      :fsize 482
+      :lastmodtime '(22713 34865 68590 185000)
+      :unmatched-syntax nil)
+    (semanticdb-table "View.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("javafx.application.Application" include nil nil [1 39])
+            ("javafx.application.Platform" include nil nil [40 75])
+            ("javafx.event.ActionEvent" include nil nil [76 108])
+            ("javafx.event.EventHandler" include nil nil [109 142])
+            ("javafx.scene.Scene" include nil nil [143 169])
+            ("javafx.stage.Stage" include nil nil [170 196])
+            ("javafx.scene.control.*" include nil nil [197 227])
+            ("javafx.scene.layout.*" include nil nil [228 257])
+            ("javafx.geometry.*" include nil nil [258 283])
+            ("javafx.collections.*" include nil nil [284 312])
+            ("javafx.util.*" include nil nil [313 334])
+            ("View" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("View" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [610 632]))                  
+                :type "class")
+                nil [513 635]))          
+      :file "View.java"
+      :pointmax 636
+      :fsize 635
+      :lastmodtime '(22713 34862 648572 912000)
+      :unmatched-syntax nil))
+  :file "!home!julien!testJava!toDoList!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

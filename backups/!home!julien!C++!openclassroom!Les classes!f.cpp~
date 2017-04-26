@@ -1,0 +1,47 @@
+#include "f.hpp"
+
+using namespace std;
+
+Chienne::Chienne(string _nom){
+  pointVie=100;
+  nom=_nom;
+}
+
+Chienne::Chienne(string _nom,string _nomArme,int _degatsArme) : pointVie(100),nom(_nom),arme(_nomArme,_degatsArme)
+{}
+
+Chienne::Chienne(Chienne const& c):pointVie(c.pointVie),nom(c.nom),arme(c.arme){}
+
+Chienne::~Chienne(){}
+
+
+void Chienne::recevoirDegats(int _degats){
+  pointVie-=_degats;
+  if (pointVie<0){
+    pointVie=0;
+  }
+}
+
+void Chienne::attaquer(Chienne &c){
+  c.recevoirDegats(arme.getDegats());}
+
+void Chienne::restaurer(int _vie){
+  pointVie+=_vie;
+  if (pointVie>100){
+    pointVie=100;
+  }
+}
+
+void Chienne::changerArme(string _arme,int _degats){
+  arme.changer(_arme,_degats);
+}
+
+bool Chienne::enVie() const {
+  return pointVie>0;
+}
+
+void Chienne::etat() const{
+  cout<<"Vie : "<<pointVie<<endl;
+  cout<<"Nom : "<<nom<<endl;
+  arme.afficher();
+}

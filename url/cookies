@@ -1,0 +1,95 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".flickr.com"
+  [url-cookie "BX" "7721dhlbu833p&b=3&s=g5" "22-Sep-2017 16:53:13.00 GMT" "/" ".flickr.com" nil]
+  [url-cookie "xb" "563705" "Fri, 22 Sep 2017 16:53:13 GMT" "/" ".flickr.com" nil]
+  [url-cookie "localization" "fr-fr%3Bfr%3Bfr" "20-Sep-2018 16:55:15.00 GMT" "/" ".flickr.com" nil])
+ ("www.latex-tutorial.com"
+  [url-cookie "Max-Age" "31536000" "26-Dec-2017 05:51:57.00 GMT" "/" "www.latex-tutorial.com" nil]
+  [url-cookie "django_language" "en" "26-Dec-2017 05:51:57.00 GMT" "/" "www.latex-tutorial.com" nil])
+ (".statisticbrain.com"
+  [url-cookie "visid_incap_1013064" "KdAlyL+VR92Kdr7SISmfQ34JU1gAAAAAQUIPAAAAAADShBQ9JdnyzXxOuQfkIAVC" "Fri, 15 Dec 2017 10:21:46 GMT" "/" ".statisticbrain.com" nil])
+ (".codeproject.com"
+  [url-cookie "HttpOnly" nil "06-Dec-2017 05:00:00.00 GMT" "/" ".codeproject.com" nil]
+  [url-cookie "vk" "2d46b891-c495-4e8b-99db-1e7da372ca88" "06-Dec-2017 05:00:00.00 GMT" "/" ".codeproject.com" nil])
+ (".stackexchange.com"
+  [url-cookie "HttpOnly" nil "01-Jan-2055 00:00:00.00 GMT" "/" ".stackexchange.com" nil]
+  [url-cookie "prov" "118bc2f2-0603-9477-fbd2-03b68d10409e" "01-Jan-2055 00:00:00.00 GMT" "/" ".stackexchange.com" nil])
+ (".stackoverflow.com"
+  [url-cookie "HttpOnly" nil "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil]
+  [url-cookie "prov" "19f820b3-6b15-a3c5-27b0-ae29793e32cf" "01-Jan-2055 00:00:00.00 GMT" "/" ".stackoverflow.com" nil])
+ (".openclassrooms.com"
+  [url-cookie "__cfduid" "d4399ea28afc90b5bceefbb291a2014ec1475822334" "07 Oct 17 06:38:54 [GMT]" "/" ".openclassrooms.com" nil]
+  [url-cookie "HttpOnly" nil "07 Oct 17 06:38:54 [GMT]" "/" ".openclassrooms.com" nil])
+ (".google.com"
+  [url-cookie "SID" "3QPtXEaeUJpGu7GHcl3a1Z3BaKd2UFgoJfDkYRlsmAtZy1uqfyWz19tGKG3XBPfMDfQBTw." "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" nil]
+  [url-cookie "Priority" "HIGH" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" nil]
+  [url-cookie "HSID" "Aw_VM_YAFA3bWEwOL" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" nil]
+  [url-cookie "HttpOnly" nil "14-Oct-2017 00:20:31.00 GMT" "/" ".google.com" nil]
+  [url-cookie "APISID" "TPALjn3-9Hxf03Rd/AQ3JPicM4_cYXYZLm" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" nil]
+  [url-cookie "NID" "101=eu4J28qvgQDIVPF0okQKkilzk3FGjAf-5GPmNtslOLNS4I2ndtrIQxlXI6vCuaV2vS0v5bObdLUdS4RU44lROsp5v3TXEgGGUlOq6HVavELn6OnenoBR13x5nmmWAAsu" "14-Oct-2017 00:20:31.00 GMT" "/" ".google.com" nil]
+  [url-cookie "CONSENT" "YES+FR.fr+20150712-15-0" "10-Jan-2038 07:59:59.00 GMT" "/" ".google.com" nil])
+ ("docs.school"
+  [url-cookie "_balance" "64" "12-Nov-2019 22:49:33.00 GMT" "/" "docs.school" nil])
+ ("ubuntuforums.org"
+  [url-cookie "bb_sessionhash" "3df7eda8e5dd89ab5f26956ef6d51709" "24-Dec-2017 14:00:39.00 GMT" "/" "ubuntuforums.org" nil]
+  [url-cookie "HttpOnly" nil "24-Dec-2017 14:00:39.00 GMT" "/" "ubuntuforums.org" nil]
+  [url-cookie "bb_lastvisit" "1482588039" "24-Dec-2017 14:00:39.00 GMT" "/" "ubuntuforums.org" nil]
+  [url-cookie "Max-Age" "31536000" "24-Dec-2017 14:00:39.00 GMT" "/" "ubuntuforums.org" nil]
+  [url-cookie "bb_lastactivity" "0" "24-Dec-2017 14:00:39.00 GMT" "/" "ubuntuforums.org" nil])
+ (".gamepedia.com"
+  [url-cookie "__cfduid" "d3ad8e17c1fe0fd21cc9fe23bdc0e036b1482590698" "24 Dec 17 14:44:58 [GMT]" "/" ".gamepedia.com" nil]
+  [url-cookie "HttpOnly" nil "24 Dec 17 14:44:58 [GMT]" "/" ".gamepedia.com" nil])
+ (".physicsclassroom.com"
+  [url-cookie "__cfduid" "d8d513a7aa2c302f1dedac67e97cd71051483162192" "31 Dec 17 05:29:52 [GMT]" "/" ".physicsclassroom.com" nil]
+  [url-cookie "HttpOnly" nil "31 Dec 17 05:29:52 [GMT]" "/" ".physicsclassroom.com" nil])
+ (".expressjs.com"
+  [url-cookie "__cfduid" "d283394e00b783d0192694001c6ff5da61483799251" "07 Jan 18 14:27:31 [GMT]" "/" ".expressjs.com" nil]
+  [url-cookie "HttpOnly" nil "07 Jan 18 14:27:31 [GMT]" "/" ".expressjs.com" nil])
+ (".sci-hub.io"
+  [url-cookie "session" "73d38774b8e5dda59dc35e8844ccd395" "25-Sep-2017 20:30:27.00 GMT" "/" ".sci-hub.io" nil]
+  [url-cookie "Max-Age" "15552000" "25-Sep-2017 20:30:27.00 GMT" "/" ".sci-hub.io" nil]
+  [url-cookie "refresh" "1490819427.5598" "25-Sep-2017 20:30:27.00 GMT" "/" ".sci-hub.io" nil])
+ (".differencebetween.com"
+  [url-cookie "__cfduid" "d21e90e467417f09bbeae2da422feb8361474563074" "22 Sep 17 16:51:14 [GMT]" "/" ".differencebetween.com" nil]
+  [url-cookie "HttpOnly" nil "22 Sep 17 16:51:14 [GMT]" "/" ".differencebetween.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("accounts.google.com"
+  [url-cookie "GAPS" "1:5lFX5BLBBFXnG0GrkJz3pl1tdd2U1g:4Pkd50p4ZoGjcgck" "11-Oct-2018 14:40:12.00 GMT" "/" "accounts.google.com" t]
+  [url-cookie "HttpOnly" nil "11-Oct-2018 14:40:12.00 GMT" "/" "accounts.google.com" t]
+  [url-cookie "Priority" "HIGH" "11-Oct-2018 14:40:12.00 GMT" "/" "accounts.google.com" t]
+  [url-cookie "LSID" "mail|o.mail.google.com|s.FR|ss:3QPtXGYu_u-pXuWYawF-JKddvUXBOXUNWv5C3y4baQrOg6nbQB-3HId_V2pMqJnfoIgr_w." "11-Oct-2018 14:40:12.00 GMT" "/" "accounts.google.com" t]
+  [url-cookie "ACCOUNT_CHOOSER" "AFx_qI5NfYCsddhjInsXZX6k2tFFHvRt7Ib778-aaBQaFBqD85VwtEgvWN-9TSzupUVGUvdiwVrTw1Mbpdt1Aa_OrrusRBupVMCi9gI-RM8yC9GI1vRGJvshjhQWFPyEspGyWnJb0tkI" "11-Oct-2018 14:36:53.00 GMT" "/" "accounts.google.com" t])
+ ("www.wikipedia.org"
+  [url-cookie "HttpOnly" nil "Sun, 07 May 2017 12:00:00 GMT" "/" "www.wikipedia.org" t]
+  [url-cookie "WMF-Last-Access" "05-Apr-2017" "Sun, 07 May 2017 12:00:00 GMT" "/" "www.wikipedia.org" t])
+ ("ent.u-bordeaux.fr"
+  [url-cookie "org.jasig.portal.PORTLET_COOKIE" "N2orr0XNJ2Mj6k-tg6H5MMIO1fjfWK64ZwiBaJij" "24-Dec-2017 14:46:19.00 GMT" "/uPortal/" "ent.u-bordeaux.fr" t]
+  [url-cookie "Version" "1" "24-Dec-2017 14:46:19.00 GMT" "/uPortal/" "ent.u-bordeaux.fr" t]
+  [url-cookie "Comment" "uPortal Portlet Master Cookie" "24-Dec-2017 14:46:19.00 GMT" "/uPortal/" "ent.u-bordeaux.fr" t]
+  [url-cookie "Max-Age" "31536000" "24-Dec-2017 14:46:19.00 GMT" "/uPortal/" "ent.u-bordeaux.fr" t])
+ ("developer.mozilla.org"
+  [url-cookie "csrftoken" "b6P99Nuxe6oAiUF44IK5hr3mePlXMAa9" "29-Dec-2017 01:10:37.00 GMT" "/" "developer.mozilla.org" t])
+ (".github.com"
+  [url-cookie "logged_in" "no" "Mon, 02 Mar 2037 13:53:04 -0000" "/" ".github.com" t]
+  [url-cookie "HttpOnly" nil "Mon, 02 Mar 2037 13:53:04 -0000" "/" ".github.com" t])
+ ("en.wikipedia.org"
+  [url-cookie "WMF-Last-Access" "05-Apr-2017" "Sun, 07 May 2017 12:00:00 GMT" "/" "en.wikipedia.org" t]
+  [url-cookie "HttpOnly" nil "Sun, 07 May 2017 12:00:00 GMT" "/" "en.wikipedia.org" t])
+ (".wikipedia.org"
+  [url-cookie "WMF-Last-Access-Global" "05-Apr-2017" "Sun, 07 May 2017 12:00:00 GMT" "/" ".wikipedia.org" t]
+  [url-cookie "HttpOnly" nil "Sun, 07 May 2017 12:00:00 GMT" "/" ".wikipedia.org" t])
+ (".google.com"
+  [url-cookie "SSID" "AKsBuxforO0jzli3n" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" t]
+  [url-cookie "HttpOnly" nil "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" t]
+  [url-cookie "Priority" "HIGH" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" t]
+  [url-cookie "SAPISID" "fO1LmN_klaXLFmMG/AyOmDsnjtEU9zMHN7" "11-Oct-2018 14:40:12.00 GMT" "/" ".google.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

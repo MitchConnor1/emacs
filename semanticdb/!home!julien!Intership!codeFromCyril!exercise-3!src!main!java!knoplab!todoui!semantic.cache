@@ -1,0 +1,77 @@
+;; Object todoui/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "todoui/"
+  :tables
+  (list
+    (semanticdb-table "TodoUi.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("knoplab.todoui" package nil nil [1 24])
+            ("java.io.IOException" include nil nil [26 53])
+            ("javafx.beans.Observable" include nil nil [54 85])
+            ("javafx.collections.FXCollections" include nil nil [87 127])
+            ("javafx.collections.ObservableList" include nil nil [128 169])
+            ("javafx.fxml.FXML" include nil nil [170 194])
+            ("javafx.fxml.FXMLLoader" include nil nil [195 225])
+            ("javafx.scene.control.CheckBox" include nil nil [226 263])
+            ("javafx.scene.control.Label" include nil nil [264 298])
+            ("javafx.scene.control.ListCell" include nil nil [299 336])
+            ("javafx.scene.control.ListView" include nil nil [337 374])
+            ("javafx.scene.control.TextField" include nil nil [375 413])
+            ("javafx.scene.input.KeyCode" include nil nil [414 448])
+            ("javafx.scene.input.KeyEvent" include nil nil [449 484])
+            ("javafx.scene.layout.BorderPane" include nil nil [485 523])
+            ("javafx.scene.layout.HBox" include nil nil [524 556])
+            ("knoplab.todo.DefaultTodoService" include nil nil [557 596])
+            ("knoplab.todo.TodoEvent" include nil nil [597 627])
+            ("knoplab.todo.TodoEventType" include nil nil [628 662])
+            ("knoplab.todo.TodoService" include nil nil [663 695])
+            ("TodoUi" type
+               (:typemodifiers ("public")
+                :superclasses "BorderPane"
+                :members 
+                  ( ("todoService" variable (:type "TodoService") (reparse-symbol class_member_declaration) [908 959])
+                    ("TodoUi" function
+                       (:constructor-flag t
+                        :throws ("IOException")
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [1645 3180])
+                    ("createCell" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("" variable (:type "listView") (reparse-symbol formal_parameters) [3321 3329]))                          )
+                        (reparse-symbol class_member_declaration) [3284 3373])
+                    ("addTask" function
+                       (:typemodifiers ("private")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3387 3580])
+                    ("onTaskEvent" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("event" variable (:type "TodoEvent") (reparse-symbol formal_parameters) [3640 3655]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3616 4229])
+                    ("onKeyTyped" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("event" variable (:type "KeyEvent") (reparse-symbol formal_parameters) [4268 4282]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4245 4372])
+                    ("setAllTasksDone" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4388 4502])
+                    ("removeSelected" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4518 4644]))                  
+                :type "class")
+                nil [826 6746]))          
+      :file "TodoUi.java"
+      :pointmax 6747
+      :fsize 6746
+      :lastmodtime '(22712 7380 577028 911000)
+      :unmatched-syntax '((GT 5404 . 5405) (PUBLIC 5346 . 5352) (LT 5388 . 5389) (GT 3319 . 3320) (IDENTIFIER 3295 . 3303) (LT 3303 . 3304) (GT 3282 . 3283) (PRIVATE 3250 . 3257) (LT 3266 . 3267) (SEMICOLON 1638 . 1639) (GT 1621 . 1622) (LT 1605 . 1606) (SEMICOLON 1580 . 1581) (GT 1570 . 1571) (LT 1554 . 1555) (IDENTIFIER 1422 . 1431) (SEMICOLON 1431 . 1432) (SEMICOLON 1390 . 1391) (PAREN_BLOCK 1388 . 1390) (EQ 1353 . 1354) (GT 1342 . 1343) (IDENTIFIER 1312 . 1326) (LT 1326 . 1327))))
+  :file "!home!julien!Intership!codeFromCyril!exercise-3!src!main!java!knoplab!todoui!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

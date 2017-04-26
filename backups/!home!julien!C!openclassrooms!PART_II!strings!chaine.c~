@@ -1,0 +1,40 @@
+#include "chaine.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+int size_str(const char* chain){
+  int cpt=0;
+  while (chain[cpt] != '\0'){
+
+    cpt++;}
+
+  return cpt;
+}
+
+char* copy_str(char* destination, const char* source){
+  int cpt = 0;
+  
+  while(source[cpt] != '\0'){
+    destination[cpt] = source[cpt];
+    cpt++;
+  }
+  destination[cpt+1] = '\0';
+
+  return destination;
+
+}
+
+char *cat_str(char* chaine1, const char* chaine2){
+
+  int cpt=0, size = size_str(chaine1);
+  while (chaine2[cpt] != '\0'){
+    chaine1[size+cpt] = chaine2[cpt];
+    cpt++;
+  }
+  chaine1[cpt+1] = '\0';
+
+  return chaine1;
+
+}

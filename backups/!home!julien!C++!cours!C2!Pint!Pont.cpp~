@@ -1,0 +1,13 @@
+#include "Pint.hpp"
+
+Pint::Pint(){
+  n=0;
+  data=0;
+}
+
+Pint::Pint(const Pint& p){
+  n=p.n;
+  for (int i=0;i<n;i++){
+    *(data+i)=*(p.data+i);
+  }
+}

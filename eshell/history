@@ -1,0 +1,56 @@
+ls
+l
+git log
+exit
+ls
+cd
+ls
+man cp
+git log
+cd simplegit-progit/
+git commit
+git status
+git log
+cd
+ls
+ ls
+l
+ls
+alias
+whatis cpan
+man cpan
+ls
+*ls
+which ls
+which *ls
+which which
+ls
+cd t
+cd test/
+ls
+cat README.md 
+which cat
+cd
+man cat
+whatis cat
+help cat
+make
+cd Miscellaneous/Korsar/
+ls
+make
+make clean
+rm korsar 
+make
+cd
+cd OSS/oss117/trunk/oss/ressources/
+ls
+cd ..
+ls
+cd src/
+ls
+make
+ls
+make clean
+cd
+suspend
+exit

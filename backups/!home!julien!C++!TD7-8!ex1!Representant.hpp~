@@ -1,0 +1,8 @@
+#ifndef Rep_h
+#define Rep_h
+
+#include "Commercial"
+
+class Representant:public Commercial
+
+#endif

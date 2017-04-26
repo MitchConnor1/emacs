@@ -1,0 +1,19 @@
+#ifndef GAME_H
+#define GAME_H
+
+int end_game(char*, char, unsigned char);
+
+void game(const char*, char*, char, unsigned char*);
+
+
+void init_answer(char *, const char);
+
+char already_answered(char input, char test [], int len);
+
+
+void add_answer(char input,char test [], int len);
+
+
+
+int main_page();
+#endif

@@ -1,0 +1,13 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+//calcule la taille d'une chaîne de caractère.
+int size_str(const char*);
+//VRAIE fonction = strlen(chaine)
+
+//copier une chaîne de caractère dans une autre.
+char* copy_str(char*, const char*);
+//VRAIE fonction = strcpy(destination, source)
+
+char *cat_str(char*, const char*);

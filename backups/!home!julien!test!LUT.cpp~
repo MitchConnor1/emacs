@@ -1,0 +1,27 @@
+#include <iostream>
+#include <opencv2/core/core.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <cerrno>
+
+
+
+int main( int argc, char** argv){
+
+  int divide_with = 0;
+  std::stringstream s;
+  s << argv[2];
+  s >> divide_with;
+  
+  uchar table[256];
+
+  for (int i = 0; i < 256; i++){
+    table[i] = (uchar)(divide_with * (i / divide_with));
+  }
+
+  std::cout << table << std::endl;
+
+  return (EXIT_SUCCESS);
+
+}

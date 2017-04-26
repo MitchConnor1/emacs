@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float aire_rectangle(float longueur,float largeur){
+  return (longueur*largeur);
+}
+
+int main(){
+  l=4;
+  L=5;
+  printf("%f m^2\n",aire_rectangle(l,L));
+  return 0;
+}

@@ -1,0 +1,11 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\begin{document}
+
+J'écris mon E\up{eme} document avec \og \LaTeX{} \fg.
+\LaTeX{} est un langage créé par Leslie \bsc{Lamport}.
+
+\end{document}

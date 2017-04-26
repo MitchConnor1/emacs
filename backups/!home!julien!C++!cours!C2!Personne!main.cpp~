@@ -1,0 +1,6 @@
+#include "Personne.hpp"
+
+int main(){
+  Personne("Michel","L'Oréal");
+  return 0;
+}

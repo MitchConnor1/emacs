@@ -1,0 +1,13 @@
+//Structure permettant de répéter les mêmes instructions plusieurs fois. 
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+  int nb=0;
+  while(nb<11){//fera 11 tour de boucle, car il entre dans le dernier à 10 et incrémente après. Faire 10 tours implique nb<10. . 
+    nb++;
+    printf("tour de boucle numero %d.\n",nb);
+  }
+  return 0;
+}

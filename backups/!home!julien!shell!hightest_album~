@@ -1,0 +1,6 @@
+#renvoie $2 artistes possédant le plus d'album. Si on a pas rentré de fichier, le programme s'arrête. Si on a pas rentré de $2, le script renvoie les 10 premiers. 
+
+filename=$1
+howmany=${2:-10}
+
+sort -nr $filename | head $howmany

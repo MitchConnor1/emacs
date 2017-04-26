@@ -1,0 +1,19 @@
+\section{SPARKQL}
+
+définir une onto à l'aide de prefix, à laquelle on renseigne l'ontologie qui nous intéresse.
+
+. => =
+\begin{texttt}
+Exemple :\\
+SELECT ?subject ?age
+WHERE
+{
+ ?subject a myonto:Person.
+ ?subject myonto:age ?age.
+}
+  
+\end{texttt}
+Cela nous renvoie la liste des personnes, ainsi que l'âge qu'ils ont.
+
+Pour trouver personnes de plus de quarante ans, on utilise des filtres : \\
+\texttt{FILTER(?age>40)}

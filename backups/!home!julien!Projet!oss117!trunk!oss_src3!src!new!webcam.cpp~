@@ -1,0 +1,21 @@
+#include "webcam.hpp"
+
+/** Open Cv **/
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+/**Methods**/
+
+cv::VideoCapture activate_webcam(){
+ 
+
+  cv::VideoCapture cap(0); // Ouvre la caméra par défaut. 
+  if(!cap.isOpened())  // Vérifie si la liaison est bien établie.
+        exit(0);
+        
+  return cap;
+}
+	
+	

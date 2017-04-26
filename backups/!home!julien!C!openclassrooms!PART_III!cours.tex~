@@ -1,0 +1,171 @@
+\documentclass{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+
+\begin{document}
+
+\chapter{Création d'une fenêtre et de surfaces}
+
+\section{Charger et arrêter la SDL}
+
+La bibliothèque doit charger un certain nombre d'informations dans la mémoire pour pouvoir fonctionner correctement. Ces informations sont chargées en mémoire dynamiquement par des \texttt{malloc}. Il faudra donc une fois nos actions effectuées libérer la mémoire. \\
+Nous devrons pour ce faire utiliser ces deux fonctions :
+\begin{description}
+\item[\texttt{SDL\_Init} :] charge la SDL en mémoire (des \texttt{malloc} y sont faits).
+\item[\texttt{SDL\_Quit} :] libère la SDL de la mémoire (des \texttt{free} y sont faits).
+
+\end{description}
+
+\subsection{Chargement de la SDL}
+
+La fonction \texttt{SDL\_Init} prend un paramètre, indiquant quelle partie de la SDL sera chargée. En effet, la SDL est composée de plusieurs parties, chacune dévolue à une utilité spécifique. Une partie de la SDL gère l'écran, une autre gère le son...\\
+La SDL met ainsi à disposition plusieurs constantes pour indiquer quelle partie sera utilisée dans le programme.
+
+\begin{description}
+\item [\emph{SDL\_INIT\_VIDEO} :] Charge le  système d'affichage(vidéo). C'est la partie qui sra le plus souvent utilisée.
+\item [\emph{SDL\_INIT\_AUDIO} :] Charge le système de son. Cela permettra plus tard de par exemple jouer de la musique. 
+\item [\emph{SDL\_INIT\_CDROM} :] Charge le système de CD-ROM. Cela permettra de manipuler le lecteur de CD-ROM.
+\item [\emph{SDL\_INIT\_JOYSTICK} :] Charge de système de gestion du joystick.
+\item [\emph{SDL\_INIT\_EVERYTHING} :] Charge tous les systèmes listés ci-dessus à la fois.
+\end{description}
+
+Ainsi, si on fait au début du programme :\\
+\texttt{SDL\_Init(SDL\_INIT\_VIDEO);}\\
+alors le système vidéo sera chargé et on pourra ouvrir une fenêtre, y dessiner... Ici, nous envoyons à \texttt{SDL\_Init} un nombre, défini par une constante. La fonction regardera le nommbre qu'elle reçoit, et en déduira quels systèmes elle doit charger. Pour charger plusieurs systèmes simultanément sans toutefois tous les charger, on se sert du symbole \emph{\og | \fg}.\\
+Ex : \texttt{SDL\_Init(SDL\_INIT\_VIDEO | SDL\_INIT\_AUDIO);}\\
+Ces options qu'on envoie à cette fonction sont aussi appelées \emph{flags}. 
+
+\subsection{Arrêt de la SDL}
+
+La fonction \texttt{SDL\_Quit()} ne prend pas de paramètres, et s'appelle ainsi très simplement.\\
+\texttt{SDL\_Quit();}\\
+Tous les systèmes initialisés seront arrêtés et libérés de la mémoire. C'est un moyen de quitter la SDL proprement à la fin du programme.
+
+
+\subsection{Gérer les erreurs}
+
+La fonction \texttt{SDL\_Init} renvoie une valeur :
+\begin{itemize}
+\item -1 en cas d'erreur.
+\item 0 si tout s'est bien passé.
+\end{itemize}
+Nous écrirons les erreurs reçues dans un fichier, à l'aide de la fonction \texttt{fprint}.
+Nous écrirons l'erreur dans la sortie d'erreur standard, en général sous Linux la console. Ce flux est accessible à l'aide de la variable \texttt{stderr} définie par \texttt{stdio.h} et qui pointe vers un endroit où l'erreur peut être écrite.
+\\Cette variable est automatiquement crée au début du programme et supprimée à la fin.\\
+On se sert également de \texttt{SDL\_GetError()}, qui renvoie une chaîne de caractère contenant la dernière erreur de la SDL enregistrée.
+
+
+\section{Ouverture d'une fenêtre}
+
+Pour le moment, nous initialiserons juste la vidéo.
+
+\subsection{Choix du mode vidéo}
+
+La première chose à faire après avoir chargé le système est d'indiquer le mode vidéo que l'on souhaite utiliser. Nous utiliserons ainsi la fonction \texttt{SDL\_SetVideoMode()}, qui prend quatre paramètres.
+\begin{itemize}
+\item La largeur de la fenêtre désirée (en pixels).
+\item La hauteur de la fenêtre désirée (en pixels).
+\item Le nombre de couleurs affichables (en bit/pixels).
+\item Des options (flags).
+  \begin{description}
+  \item [SDL\_HWSURFACE :] Les données seront chargées dans la mémoire vidéo, c'est-à-dire dans la mémoire de la carte 3D. Cette mémoire est plus rapide, mais elle est aussi plus limitée.
+  \item [SDL\_SWSURFACE :] Les données seront chargées dans la mémoire système, c'est-à-dire la RAM. C'est une mémoire abondante, mais moins rapide et moins optimisée.
+  \item [SDL\_RESIZABLE :] La fenêtre sera redimensionnable.
+  \item [SDL\_NOFRAME :] La fenêtre n'aura ni barre de titre ni bordure.
+  \item [SDL\_FULL\_SCREEN :] Mode plein écran. Dans ce mode, aucune fenêtre n'est ouverte et le programme prend toute la place de l'écran, en changeant automatiquement la résolution de celui-ci au besoin.
+  \item [SDL\_DOUBLEBUF :] Mode double-buffering. 
+  \end{description}
+\end{itemize}
+Ainsi, faire :
+\\\texttt{SDL\_SetVideoMode(640, 480, 32, SDL\_HWSURFACE | SDL\_RESIZABLE | SDL\_DOUBLEBUF );}\\créera une fenêtre redimmensionnable de taille 640 * 480, présentant 32 bits/pixels avec le double buffering activé, et chargée dans la mémoire vidéo.
+
+\subsection{Mettre en pause le programme}
+
+Cela ne suffira cependant pas à faire apparaître notre fenêtre. En effet, notre fonction est suivie directement par la fonction \texttt{SDL\_Quit()} et par l'arrêt du programme. Il nous faut rajouter une fonction, qui contiendra une boucle attendant un événement d'arrêt. Ainsi, l'affichage sera possible. \\La fonction cesse quand on clique sur la croix rouge, par exemple. \newline
+
+La fonction \texttt{SDL\_WM\_SetCaption()} permet de donner un nom à la fenêtre. Elle prend deux paramètres : Le titre que l'on veut donner à la fenêtre, et le titre qu'on veut donner à l'icône. 
+
+
+\section{Manipulation des surfaces}
+
+La seule forme que la SDL permette de dessiner est le rectangle. Ces rectangles sont appelés des \texttt{surfaces}. C'est la brique de base de la SDL. 
+
+\subsection{L'écran}
+
+On utilise dans tous les programmes une surface appelée généralemment \texttt{screen}, qui correspond à l'intégralité de la fenêtre. \\
+Les surfaces seront mémorisées dans une variable de type \texttt{SDL\_Surface}.\\
+On crée la surface en initialisant un pointeur seulement, car c'est la SDL qui allouera l'espace en mémoire pour la surface. En effet, une surface n'a pas toujours la même taille, et la SDL est donc obligée de faire une allocation dynamique. La taille de la surface peut dépendre par exemple de la taille de la fenêtre. \\
+La fonction \texttt{SDL\_SetVideoMode} décrite plus haut renvoie un pointeur vers la surface qui vient d'être créée. On peut donc initialiser notre variable \texttt{screen} ainsi. 
+
+\subsection{colorer une surface}
+
+On peut colorer une surface de trois façons différentes :
+\begin{itemize}
+\item Soit en remplissant la surface d'une couleur unie.
+\item Soit en chargeant une image.
+\item Soit en la modifiant pixels par pixels.
+\end{itemize}
+La fonction \texttt{SDL\_FillRect} colore une surface à l'aide d'une couleur unie. Elle prend trois paramètres :
+\begin{itemize}
+\item Un pointeur vers la surface vers laquelle on doit dessiner.
+\item La partie de la surface devant être remplie, \emph{NULL} si on souhaite tout remplir.
+\item La couleur à utiliser pour remplir la surface. 
+\end{itemize}
+
+En SDL, une couleur est stockée dans un nombre de type \texttt{Uint32}. Ce type personnalisé permet de s'assurer que la mémoire utilisée sera la même quel que soit l'OS. Celui-ci fait 32 bits. Il en existe de 16 et 8 bits. La SDL ne fait en vérité qu'un simple \emph{typedef} selon l'OS utilisé. On peut consulter dans \emph{SDL\_types.h}.\\
+La fonction \texttt{SDL\_MapRGB} renvoie un \texttt{Uint32}. Elle prend quatre paramètres.
+\begin{itemize}
+\item Le format des couleurs, qui dépend du nombre de bits/pixels donnés lors de l'appel de \texttt{SDL\_SetVideoMode}. On peut le récupérer en appelant \texttt{ecran -> format}. 
+\item La quantité de rouge de la couleur.
+\item La quantité de vert de la couleur.
+\item La quantité de bleu de la couleur.
+\end{itemize}
+Il est possible soit de stocker cette valeur dans une variable du bon type, soit d'appeler la fonction diretement dans \texttt{SDL\_FillRect}.\\
+
+\subsection{Mise à jour de l'écran}
+
+Cette fonction colore bien le rectangle demandé, cependant cette action ne s'effectue que dans la mémoire. Afin de voir ces modifications à l'écran, il faut demander à l'ordinateur de faire les mises à jour avec les nouvelles données.\\
+On utilise ainsi \texttt{SDL\_Flip}, qui prend en paramètre un pointeur vers la surface à mettre à jour. 
+
+\subsection{Dessiner une nouvelle surface à l'écran}
+
+Afin de créer une nouvelle surface, qui ne corresponde pas à la totalité d'un écran, il faut utiliser la fonction \texttt{SDL\_CreateRGBSurface}. Elle sert à créer une surface unie. Cette fonction prend huit paramètres, mais seuls les quatres premiers nous intéressent pour l'instant. Ils sont :
+\begin{itemize}
+\item Une liste de flags (SDL\_HWSURFACE et SDL\_SWSURFACE)
+\item La largeur de la surface (en pixels).
+\item La hauteur de la surface (en pixels).
+\item Le nombre de couleurs (en bits/pixels).
+\end{itemize}
+Le reste des paramètres sera renseigné à 0. \\
+Cette surface a été allouée manuellement, il faudra donc la désallouer à l'aide de \texttt{SDL\_FreeSurface}. Ce n'est pas le cas d'écran, qui sera désalloué par \texttt{SDL\_Quit}.
+
+\subsection {Coller la nouvelle surface à l'écran}
+
+Pour voir cette nouvelle surface, il faudra la \textbf{blitter}, c'est-à-dire la coller sur l'écran. On utilisera pour cela la fonction \texttt{SDL\_BlitSurface}. Elle attend quatre paramètres.
+\begin{itemize}
+\item Un pointeur vers la surface à coller.
+\item Une information sur la partie de la surface à coller, \emph{NULL} si on souhaite tout coller.
+\item Un pointeur vers la surface sur laquelle on doit coller. 
+\item Un pointeur sur une variable contenant des coordonées, indiquant où sera collée la surface sur l'écran.
+\end{itemize}
+Ces coordonnées seront renseignées par une variable de type \texttt{SDL\_Rect}. Il s'agit d'une structure contenant plusieurs sous-variables, dont un x et un y, sous forme d'int.\\
+Le point de coordonnées (0,0) se situe en haut à gauche, et celui de coordonnée (max, max) se situe en bas à droite. 
+
+\newpage
+\section {En résumé}
+
+\begin{itemize}
+\item La SDL doit être chargée avec \texttt{SDL\_Init} au début du programme et déchargée avec \texttt{SDL\_Quit} à la fin.
+\item Les flags sont des constantes qu'on peut additionner entre elles à l'aide du symbole \og | \fg. Elles jouent le rôle d'options.
+\item La SDL fait manipuler des surfaces qui ont la forme de rectangles avec le type \texttt{SDL\_Surface}. Le dessin sur le fenêtre se fait à l'aide de ces surfaces.
+\item Il y a toujours une surface qui prend l'intégralité de la fenêtre, qu'on appelle \texttt{screen} en général.
+\item Le remplissage d'une surface se fait à l'aide de \texttt{SDL\_FillRect}, et le collage sur l'écran à l'aide de \texttt{SDL\_BlitSurface}.
+\item Les couleurs sont définies en RGB.
+\end{itemize}
+
+
+\chapter{Afficher des images}
+\end{document}

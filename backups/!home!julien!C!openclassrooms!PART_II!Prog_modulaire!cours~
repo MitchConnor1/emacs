@@ -1,0 +1,8 @@
+/*Une variable déclarée dans une fonction est supprimée à la fin de la fonction. Elle n'est accessible que dans cette fonction.  
+ *Une variable déclarée en dehors des fonctions est une variable globale, accessible depuis toutes les fonctions depuis tous les fichiers source du proket. 
+ *Une fonction est par défaut accessible depuis tous les fichiers du projet. 
+
+ *Le mot-clef static :
+ * Lorsqu'il est placé devant une variable globale, il signifie qu'elle sera accessible seulement et uniquement dans ce fichiers, et bien sûr dans chaque bloc y figurant.
+ *Lorsqu'il est placé devant une variable au sein d'une fonction, elle conservera sa valeur à chaque exécution de fonction. Elle ne sera plus supprimée à la fin de l'exécution de la fonction. 
+ *Lorsqu'il est placé devant une fonction ou un prototype de fonction, il signifie que la fonction ne pourra être appelée que depuis ce fichier. 

@@ -1,0 +1,65 @@
+README
+ _____   _____   _____ 
+|     | |       |
+|     | |_____  |_____
+|     |       |       |
+|_____|  _____|  _____|
+    
+        ( )_( )             
+        (='.'=) 
+        (")__(")
+De l'Oeil à la SouriS
+Projet Master Bio-informatique 2016 
+Université de Bordeaux
+
+VERSION 1.0
+Libre de droit et d'accès.
+
+
+ _______ Etape 1 ______________
+
+ ________________________________________
+|                                        |
+|#Installation OSS                       |                       
+|                                        |
+|#Placer les dossiers res et src         |
+|#dans le répertoire courant             |
+|                                        |  
+|$cd src                                 |
+|$make                                   |  
+|________________________________________|
+
+________ Etape 2 ______________
+ ________________________________________
+|                                        |
+|#Création du fichier .xinitRC           |                                                 
+|$sudo gedit ~/.xinitrc                  |
+|$chmod +x ~/.xinitrc                    |
+|                                        |  
+|#lien symbolique                        |
+|$ln -s ~/.xinitrc ~/.xsession           |
+|                                        |
+|#création du fichier .desktop           |
+|$cd /usr/share/xsessions/x.desktop      |
+|  [Desktop Entry]                       |
+|  Name=Xsession                         |
+|  Exec=/etc/X11/Xsession                |
+|________________________________________|
+
+_______ Etape 3 ______________
+ ________________________________________
+|                                        |
+|#fichier .xinitRC                       |
+|#Mettre le chemin du répertoire         |
+|#si ce n'est pas le                     |
+|#répertoire courant                     |
+|                                        |
+|$cd ~ && ./oss_iris_driver &            |
+|$./oss_calibrate                        |
+|$onboard &                              |
+|$./oss_move_cursor &                    |                              
+|$Name=Gestionnaire de fenêtre OSS       |
+|$Exec=oss                               |
+|________________________________________|
+                                 
+END

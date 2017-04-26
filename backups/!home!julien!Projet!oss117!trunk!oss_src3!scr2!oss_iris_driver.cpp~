@@ -1,0 +1,64 @@
+//FIFO file names
+
+const char *iris_position = "iris_position";
+const char *mouse_position = "mouse_position";
+const chat *calibration_points = "calibration_points";
+
+
+//Critical memory
+
+static pthread_mutex_t mutex_iris = PTHREAD_MUTEX_INITIALIZER;
+int xeye;
+int yeye;
+clock_t last_frame;
+
+
+
+float xslope;
+float xintersect;
+float yslope;
+float yintersect;
+
+
+FILE* s2c;
+
+
+void pipe_broken(int signo){
+
+  printf("Interative attention signal caught.\n");
+  s2c = fopen(iris_position, "w");
+
+  if (s2c == NULL){
+    fprintf(stderr, "Impossible d'ouvrir le fichier : %s.\n", strerror(errno) );
+    exit(1);
+  }
+}
+
+void get_calibration(){
+  
+  FILE *calibration_file;
+
+  xslope = 0;
+  xintersect = 0;
+  yslope = 0;
+  yintersect = 0;
+  
+  calibration_file = fopen("calibration_point.txt", "r");
+
+  if ( ! calibration_file){
+    fseek(calibration_file, 0, SEEK_END);
+    unsigned long len = (unsigned long)ftell(calibration_file);
+    rewind (calibration_file);
+    if (len == 4){
+      fscanf (calibration_file, "%f", &xslope);
+      fscanf (calibration_file, "%f", &xintersect);
+      fscanf (calibration_file, "%f", &yslope);
+      fscanf (calibration_file, "%f", &yintersect);
+    }
+    else if (len > 4){
+      fprintf(stderr, "Bug : Calibration_point.txt contains too many lines.\n");
+      assert(false);
+    }
+    fclose(calibration_file);
+  }
+  

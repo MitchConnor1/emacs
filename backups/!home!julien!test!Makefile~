@@ -1,0 +1,7 @@
+CC=g++
+CFLAGS = `pkg-config opencv --cflags --libs`
+
+PROG=draw
+OBJS=$(PROG).o
+main : how_to_scan_images.cpp
+	$(CC) -o main how_to_scan_images.cpp $(CFLAGS)  

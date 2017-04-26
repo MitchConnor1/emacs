@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "chaine.h"
+
+int size_str(const char*);
+
+int main(int argc, char *argv[]){
+ 
+  char chain[50];
+  
+  chain[0] = 'S';
+  chain[1] = 'A';
+  chain[2] = 'L';
+  chain[3] = 'U';
+  chain[4] = 'T';
+  chain[5] = '\0';
+  printf("%s\n", chain);
+
+  /*Equivalent
+  int i = 0;
+  for (i = 0; i < 6; i++){
+    
+    printf("%c",chain[i]);
+  }
+  printf("\n");
+
+  */
+  //  int i = strlen("Erere");
+  char copy[] = " Pa";
+  cat_str(chain, copy);
+  int i = 0;
+  for (i=0; i < 8; i++){
+    
+  printf("%c",chain[i]);
+  }
+  return 0;
+
+}

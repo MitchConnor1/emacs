@@ -1,0 +1,84 @@
+Les manipulations :
+
+    1. On appelle la fonction d'ouverture de fichier 'fopen' qui nous renvoie un pointeur sur le fichier
+    2. On vérifie si l'ouverture a réussi (si le fichier existait) en testant la valeur du pointeur qu'on a reçu.
+    3. Si le pointeur est différent de NULL, donc si l'ouverture a fonctionné, on peut s'amuser à lire et à écrire dans le fichier.
+    4. Une fois terminé, il faut le "fermer" à l'aide de la fonction fclose.
+
+FILE *fopen(const char* nom_du_fichier, const chat* mode_ouverture);
+
+On voit que la fonction renvoie un pointeur sur une structure de type FILE. Elle est définie dans stdio.h.
+
+
+mode_ouverture : 
+               *"r" = lecture seule.
+               *"w" = écriture seule.
+               *"a" = mode d'ajout. On écrit dans le fichier en partant de la fin.
+               *"r+" = lecture et écriture.
+               *"w+" = lecture et écriture, avec suspension du contenu au préalable. Le fichier est d'abord vidé de son contenu, on écrit puis on lit ce qu'on a écrit.
+               *"a+" : ajout en lecture/écriture à la fin.
+               *Si on ajoute un b, alors le fichier s'ouvre en mode binaire.
+
+int flose (FILE *pointeur_sur_fichier);
+
+Elle revoie 0 si la fermeture a marché, EOF (un define de stdio.h) si la fermeture a échoué. 
+
+
+int fputc(int caractere, FILE *pointeur_sur_fichier);
+
+Ecrit un caractère dans un fichier. 
+Retourne EOF si ça a échoué, une autre valeur sinon.
+
+char *fputs(const char* chaine, FILE *pointeur_sur_chaine);
+
+Ecrit une chaîne entière dans le fichier.
+
+La fonction fprintf s'utilise comme printf, permet de faire varier des paramètres.
+
+
+
+La lecture : Au fur et à mesure qu'on lit un fichier, on a un curseur qui avance. 
+
+int fgetc(FILE *pointeur_sur_fichier);
+
+Retourne un int correspondant au premier caractère lu.
+
+
+char *fgets(char *chaine, int nb_caractere_a_lire, FILE *pointeur_sur_fichier);
+
+Il lira au maximum toute une ligne à la fois, pas davantage. 
+
+fscanf cherche un patern précis et le lit.
+
+
+
+
+Le curseur et les foctions le manipulant.
+
+long ftell(File *pointeur_sur_fichier);
+
+Renvoie la position du curseur dans le fichier.
+
+int fseek (FILE *pointeur_sur_fichier, long deplacement, int origine);
+
+Déplace le cursur d'un certain nombre de caractère à partir de la position origine. 
+deplacement attend un nombre positif pour se déplacer en avant, négatif pour se déplacer en arrière, et 0 pour ne pas bouger.
+origine attend un int, mais on peut utiliser des define : 
+        SEEK_SET = indique le début du fichier.
+        SEEK_CUR = indique la position actuelle du curseur.
+        SEEK_END = indique la fin du fichier.
+
+
+void rewind (FILE *pointeur_sur_fichier);
+
+Renvoie à la position 0 dans le fichier.
+
+int rename(const char* ancien_nom, const char* nouveau_nom);
+
+Renomme le fichier.
+
+int remove(const char* fichier_a_supprimer);
+
+Supprime un fichier.
+
+

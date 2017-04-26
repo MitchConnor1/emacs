@@ -1,0 +1,7 @@
+struct Coordonnees_2D{
+
+  float x;
+  float y;
+
+};
+

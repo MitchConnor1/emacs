@@ -1,0 +1,102 @@
+#include <iostream>
+#include "webcam2.hpp"
+#include "faceDetection.hpp"
+#include "findEyes.hpp"
+#include "iris2.hpp"
+
+#include <string>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+/** Threads **/
+
+#include <pthread.h>
+#include <semaphore.h>
+ 
+
+#include <stdlib.h>
+#include <unistd.h>
+
+
+
+/** Open CV **/
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+/** Xlib **/
+
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xatom.h>
+
+using namespace std;
+using namespace cv;
+
+/** To compile : 
+ g++ -o eyelike main2.cpp webcam2.cpp webcam2.hpp faceDetection.cpp faceDetection.hpp findEyes.cpp findEyes.hpp iris2.cpp iris2.hpp $(pkg-config opencv --cflags --libs)
+ * */
+/**
+class Data {
+	public:
+		CV::VideoCapture* camera;
+		Data(): camera(0){ };
+		virtual ~destructor(){
+			delete camera;
+		}
+};
+**/
+int main(){
+	
+	cv::VideoCapture cap;
+	cap=activate_webcam();
+	cv::Rect face;
+	cv::Rect rightEyeRegion;
+	cv::Rect leftEyeRegion;
+	cv::Point leftPupil;
+	cv::Point rightPupil;
+	
+	//Data data;
+	cv::Mat frame;
+	int face_detected;
+
+	while(1){
+		cap >> frame;
+		cv::flip(frame, frame, 1);
+		if( !frame.empty() ){
+			face_detected=detectFace(frame,face); 
+		}
+		if (face_detected == 0){ //if a face has been found 
+			findEyesRegion(frame,face,rightEyeRegion,leftEyeRegion);
+		}
+		
+		/** the coordinates of left and right pupil corresponds of the coordinates of a point on 
+		 * an image of 50x50 pixels 
+		 * */
+		
+		leftPupil = findPupil(frame,leftEyeRegion);
+		rightPupil = findPupil(frame,rightEyeRegion);
+		
+		
+		imshow("video",frame);
+		if(waitKey(30) >= 0) break; // TO COMMENT
+		
+		/**
+		
+		
+		camera.update();
+		cv::Mat img = get_image_from_camera( data );
+		
+		Image img = camera.image();
+		Rectangle rect = detect_face_on_image( img );
+		Position eye = findEyeeCenter( img, rect );
+		afficher( img, rect, eye );
+		ecrire_ficier( eye );
+	**/
+}
+    return 0;
+     
+}

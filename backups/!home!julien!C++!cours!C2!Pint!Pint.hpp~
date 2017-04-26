@@ -1,0 +1,10 @@
+class Pint{
+private:
+  int* ptr;
+public:
+  Pint(int x=10){ptr=new int();};
+  Pint(const Pint& r){ptr=new int(r.val());}
+  ~Pint(){delete ptr;}
+  int val() const{return *ptr;}
+
+};

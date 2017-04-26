@@ -1,0 +1,7 @@
+liste = [3, 4, 5]
+def print_a_list(liste):
+    for item in liste:
+        print(item)
+liste.append(5)
+print_a_list(liste)
+print ("Hello")

@@ -1,0 +1,11 @@
+\documentclass{book}
+
+\usepackage[T1]{fonten}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+\title{Les droits de l'homme}
+\author{Mitch Connor}
+\date{21 décembre 2066}
+\begin{document}
+

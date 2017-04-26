@@ -1,0 +1,19 @@
+#include <iostream>
+
+
+#include <string>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <X11/Xlib.h>
+
+int update_point_positions(File*,std::vector<int>&,std::vector<int>&);
+int linear_regression(std::vector<int> &, std::vector<int> &)

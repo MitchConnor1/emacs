@@ -1,0 +1,55 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+
+const char * iris_position = "iris_position";
+const char * mouse_position = "mouse_position";
+const char * calibration_points = "calibration_points";
+
+// Face Detection constants 
+
+const float scaleFactor = 1.1;
+const int neighborNum = 2;
+const int faceSize = 150;
+
+
+// findEyesRegion constants 
+
+const int kEyePercentTop = 25;
+const int kEyePercentSide = 13;
+const int kEyePercentHeight = 30;
+const int kEyePercentWidth = 35;
+const float kSmoothFaceFactor = 0.005;
+
+
+// Eye Corner
+
+const bool kEnableEyeCorner = false;
+const int maxCorners = 1;
+const double qualityLevel = 0.01;
+const double minDistance = 0.;
+const int blockSize = 3;
+const bool useHarrisDetector = false;
+const double k = 0.04;
+
+
+// Preprocessing
+
+const bool kSmoothFaceImage = false;
+
+
+// Algorithm Parameters
+
+const int kFastEyeWidth = 50;
+const int kWeightBlurSize = 5;
+const bool kEnableWeight = true;
+const float kWeightDivisor = 1.0;
+const double kGradientThreshold = 50.0;
+
+
+// Postprocessing
+
+const bool kEnablePostProcess = true;
+const float kPostProcessThreshold = 0.97;
+
+#endif

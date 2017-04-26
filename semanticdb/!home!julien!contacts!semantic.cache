@@ -1,0 +1,223 @@
+;; Object contacts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "contacts/"
+  :tables
+  (list
+    (semanticdb-table "MainApp.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("de.knoplab.contactapp" package nil nil [1 31])
+            ("javafx.application.Application" include nil nil [33 71])
+            ("javafx.stage.Stage" include nil nil [72 98])
+            ("org.scijava.SciJava" include nil nil [99 126])
+            ("MainApp" type
+               (:typemodifiers ("public")
+                :superclasses "Application"
+                :members 
+                  ( ("MainApp" function
+                       (:constructor-flag t
+                        :throws ("Exception")
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [206 377])
+                    ("main" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [411 424]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [387 473]))                  
+                :type "class")
+                nil [159 481]))          
+      :file "MainApp.java"
+      :pointmax 482
+      :fsize 481
+      :lastmodtime '(22773 41824 689764 369000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ContactViewService.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.mycompany.contactapp" package nil nil [1 34])
+            ("java.util.List" include nil nil [36 58])
+            ("javafx.scene.image.Image" include nil nil [59 91])
+            ("org.scijava.service.SciJavaService" include nil nil [92 134])
+            ("ContactViewService" type
+               (:typemodifiers ("public")
+                :interfaces ("SciJavaService")
+                :members 
+                  ( ("showView" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [229 252])
+                    ("addContact" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "newContact") (reparse-symbol formal_parameters) [336 346])
+                            ("controller" variable (:type "ViewControllerInterface") (reparse-symbol formal_parameters) [348 382]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [300 384]))                  
+                :type "interface")
+                nil [165 386]))          
+      :file "ContactViewService.java"
+      :pointmax 387
+      :fsize 386
+      :lastmodtime '(22773 40541 208156 759000)
+      :unmatched-syntax nil)
+    (semanticdb-table "DefaultContactViewService.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("java.util.ArrayList" include nil nil [38 65])
+            ("java.util.List" include nil nil [66 88])
+            ("javafx.scene.image.Image" include nil nil [89 121])
+            ("org.scijava.Prioritized" include nil nil [122 153])
+            ("org.scijava.log.LogService" include nil nil [154 188])
+            ("org.scijava.plugin.Parameter" include nil nil [189 225])
+            ("org.scijava.plugin.Plugin" include nil nil [226 259])
+            ("org.scijava.plugin.PluginService" include nil nil [260 300])
+            ("org.scijava.service.AbstractService" include nil nil [301 344])
+            ("org.scijava.service.SciJavaService" include nil nil [345 387])
+            ("DefaultContactViewService" type
+               (:typemodifiers ("public")
+                :interfaces ("ContactViewService")
+                :superclasses "AbstractService"
+                :members 
+                  ( ("currentView" variable (:type "ViewController") (reparse-symbol class_member_declaration) [573 600])
+                    ("DefaultContactViewService" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [747 1109])
+                    ("getContactList" function (:constructor-flag t) (reparse-symbol class_member_declaration) [1136 1190])
+                    ("showView" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1218 1653])
+                    ("addContact" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "newContact") (reparse-symbol formal_parameters) [1710 1720])
+                            ("controller" variable (:type "ViewController") (reparse-symbol formal_parameters) [1722 1747]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1674 2358]))                  
+                :type "class")
+                nil [470 2360]))          
+      :file "DefaultContactViewService.java"
+      :pointmax 2361
+      :fsize 2361
+      :lastmodtime '(22773 41882 966188 995000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ViewController.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.mycompany.contactapp" package nil nil [1 34])
+            ("java.util.List" include nil nil [36 58])
+            ("org.scijava.plugin.SciJavaPlugin" include nil nil [59 99])
+            ("ViewController" type
+               (:typemodifiers ("public")
+                :interfaces ("SciJavaPlugin")
+                :members 
+                  ( ("refresh" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [190 212])
+                    ("init" function (:type "void") (reparse-symbol interface_member_declaration) [217 229])
+                    ("show" function (:type "void") (reparse-symbol interface_member_declaration) [235 247])
+                    ("addContact" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [252 277])
+                    ("openContact" function
+                       (:typemodifiers ("public")
+                        :type "Contact")
+                        (reparse-symbol interface_member_declaration) [282 311])
+                    ("newContactNotification" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("name" variable (:type "String") (reparse-symbol formal_parameters) [351 362]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [316 364]))                  
+                :type "interface")
+                nil [130 371]))          
+      :file "ViewController.java"
+      :pointmax 372
+      :fsize 371
+      :lastmodtime '(22773 41367 758583 522000)
+      :unmatched-syntax nil)
+    (semanticdb-table "DefaultViewController.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.mycompany.contactapp" package nil nil [1 34])
+            ("java.io.IOException" include nil nil [36 63])
+            ("java.util.List" include nil nil [64 86])
+            ("java.util.logging.Level" include nil nil [87 118])
+            ("java.util.logging.Logger" include nil nil [119 151])
+            ("javafx.application.Application" include nil nil [152 190])
+            ("javafx.beans.value.ChangeListener" include nil nil [191 232])
+            ("javafx.beans.value.ObservableValue" include nil nil [233 275])
+            ("javafx.fxml.FXMLLoader" include nil nil [276 306])
+            ("javafx.scene.Scene" include nil nil [307 333])
+            ("javafx.stage.Stage" include nil nil [334 360])
+            ("org.scijava.Context" include nil nil [361 388])
+            ("org.scijava.plugin.Parameter" include nil nil [389 425])
+            ("org.scijava.plugin.Plugin" include nil nil [426 459])
+            ("DefaultViewController" type
+               (:typemodifiers ("public")
+                :interfaces ("ViewController")
+                :superclasses "Application"
+                :members 
+                  ( ("context" variable
+                       (:typemodifiers ("static" "private")
+                        :type "Context")
+                        (reparse-symbol class_member_declaration) [631 662])
+                    ("listView" variable
+                       (:typemodifiers ("static" "private")
+                        :type "ContactMainView")
+                        (reparse-symbol class_member_declaration) [668 708])
+                    ("ViewController" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [791 822])
+                    ("init" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [846 937])
+                    ("refresh" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [956 1013])
+                    ("start" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("primaryStage" variable (:type "Stage") (reparse-symbol formal_parameters) [1056 1074]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1038 2478])
+                    ("show" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2502 2546])
+                    ("addContact" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2566 2607])
+                    ("openContact" function
+                       (:typemodifiers ("public")
+                        :type "Contact")
+                        (reparse-symbol class_member_declaration) [2627 2799])
+                    ("newContactNotification" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("name" variable (:type "String") (reparse-symbol formal_parameters) [2854 2865]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2819 2921]))                  
+                :type "class")
+                nil [528 2937]))          
+      :file "DefaultViewController.java"
+      :pointmax 2938
+      :fsize 2937
+      :lastmodtime '(22773 42223 96715 713000)
+      :unmatched-syntax nil))
+  :file "!home!julien!contacts!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

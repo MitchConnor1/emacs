@@ -1,0 +1,11 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+  char age=20;
+  if (age>=18){
+    printf("Vous êtes majeur !");
+  }
+  return 0;
+}

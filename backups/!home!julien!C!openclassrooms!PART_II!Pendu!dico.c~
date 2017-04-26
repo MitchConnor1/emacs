@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#include "dico.h"
+
+char read_input(){
+
+  char character = 0;
+
+  character = getchar();
+  character = toupper(character);
+
+  while (getchar() != '\n');
+
+  return character;
+
+}
+
+void get_word(const char* name, char *word){
+
+  FILE* file = NULL;
+  file = fopen(name, "r");
+  int nb_mots = 0;
+  if (file != NULL){
+    fscanf(file, "%d", &nb_mots);
+  }
+  int num_mot = (rand()%(nb_mots)+1);
+  nb_mots = 0;
+  char character_read = 0;
+  while(nb_mots < num_mot){
+    character_read = fgetc(file);
+    if (character_read == '\n'){
+      nb_mots++;}
+  }
+  fgets(word, MOT_LE_PLUS_LONG, file);
+  word[strlen(word)-1] = '\0';
+  fclose(file);
+}

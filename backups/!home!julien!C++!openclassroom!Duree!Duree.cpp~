@@ -1,0 +1,2 @@
+Duree::Duree(int _heures,int _minutes,int _secondes){
+  

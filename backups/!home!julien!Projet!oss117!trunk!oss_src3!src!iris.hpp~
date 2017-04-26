@@ -1,0 +1,23 @@
+#ifndef __IRIS_HPP__
+#define __IRIS_HPP__
+
+#include <iostream>
+
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <iostream>
+#include <queue>
+#include <stdio.h>
+#include <math.h>
+
+#include <string>
+
+int findPupil(cv::Mat &frame,cv::Point &Pupil);
+void scaleToFastSize(const cv::Mat &src,cv::Mat &dst);
+cv::Mat computeMatXGradient(const cv::Mat &mat);
+cv::Mat matrixMagnitude(const cv::Mat &matX, const cv::Mat &matY);
+double computeDynamicThreshold(const cv::Mat &mat, double stdDevFactor);
+void testPossibleCentersFormula(int x, int y, const cv::Mat &weight,double gx, double gy, cv::Mat &out);
+#endif

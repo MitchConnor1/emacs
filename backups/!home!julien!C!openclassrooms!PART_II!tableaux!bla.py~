@@ -1,0 +1,5 @@
+h = []
+
+h.append(4,3,1,5,6)
+for i in h:
+    print i

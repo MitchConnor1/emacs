@@ -1,0 +1,6 @@
+#include "Vecteur_Binaire.cpp"
+
+int main{
+  Vecteur_Binaire V;
+  return 0;
+}

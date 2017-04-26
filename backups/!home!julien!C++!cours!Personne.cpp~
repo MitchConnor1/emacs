@@ -1,0 +1,6 @@
+#include "Personne.hpp"
+
+void Personne::sePresente() const {
+  std::cout<<"My name is "<<Nom<<std::endl\
+           <<"I work at "<<Societe<<std::endl;
+}

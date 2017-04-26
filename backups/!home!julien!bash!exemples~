@@ -1,0 +1,67 @@
+Transformer des fichiers .pcx en fichiers .gif
+
+outfile=${filename%.pcx}.gif
+
+
+Retirer le chemin absolu et ne garder que le nom du fichier (équivalent de 'basename').
+
+
+bannername=${pathname##*/}
+
+
+Afficher les résultats de la variable $PATH les uns après les autres. 
+
+echo -e ${PATH//:/'\n'}
+
+
+récupérer résultats ls par date de modification de fichier.
+
+date=$1
+ls -l | grep -i "^.\{42\}$date" | cut -c55-
+
+On suppose ici les dates affichées à la colonne 42 et les lignes à la colonne 55.
+Le {42} recherche n importe quelle ligne possédant 41 caractère puis le 42ème correspond à l argument.
+-c55- extrait des caractères de la colonne 55 à la fin de la ligne.
+
+
+
+
+Implémentations de pushd et popd
+
+DIR_STACK=""
+export DIR_STACK
+
+(rappel : avec export, DIR_STACK sera connue de tous les processus et sous-processus).
+
+pushd (){
+
+    dirname=$1
+    if cd ${dirname:?"missing directory name."}
+    then
+        DIR_STACK="$dirname ${DIR_STACK:-$PWD' '}"
+        echo "DIR_STACK"
+    else
+        echo still in $PWD
+    fi
+}
+
+
+popd (){
+
+    DIR_STACK=${DIR_STACK#* }
+    cd ${DIR_STACK%% *}
+    echo "$PWD"
+
+}
+
+
+A self made cd function
+
+function cd{
+
+    builtin cd "$@"
+    es=$?
+    echo "$OLDPWD --> $PWD"
+    return $es #Permet d'avoir un code de retour.
+    
+}

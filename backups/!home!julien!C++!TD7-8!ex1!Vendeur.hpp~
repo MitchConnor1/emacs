@@ -1,0 +1,10 @@
+#ifndef vendeur_h
+#define vendeur_h
+
+#include "Commercial.hpp"
+
+class Vendeur:public Commercial{
+public:
+  Vendeur(string,string,int,int,int);
+  double calculer_base_salaire();
+#endif

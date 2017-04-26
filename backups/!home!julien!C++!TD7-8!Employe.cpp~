@@ -1,0 +1,16 @@
+#include "Employe.hpp"
+
+Employe::Employe(string _nom,string _prenom,int _age, int _anciennete){
+  nom=_nom;
+  prenom=_prenom;
+  age=_age;
+  anciennete=anciennete;
+}
+
+Employe::~Employe(){
+  cout<<"Un employe a été viré, longue vie à l'entreprise !"<<endl;
+}
+
+double Employe::calculer_base_salaire(){
+  return (Base + chiffre_affaire * PART);
+}
